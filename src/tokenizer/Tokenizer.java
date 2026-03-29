@@ -12,6 +12,9 @@ public class Tokenizer {
     public Tokenizer(int vocabSize, boolean deterministic) {
         this.vocabSize = vocabSize;
         this.vocab = deterministic ? new TreeSet<>() : new HashSet<>();
+        for (char c = 0; c < 256; c++) {
+            this.vocab.add(String.valueOf(c));
+        }
         this.stoi = new HashMap<>();
         this.itos = new HashMap<>();
     }
@@ -61,7 +64,6 @@ public class Tokenizer {
 
             this.vocab.add(maxString);
 
-            System.out.printf("New merge: '%s'\n", maxString);
             this.buildMaps();
 
             // seems like there is a problem with my greedy tokenizing strategy
@@ -135,6 +137,17 @@ public class Tokenizer {
         return tokens;
     }
 
+    public void tokenizeFile(String filename, String outputFile) throws IOException {
+        ArrayList<Integer> tokens = tokenizeFile(filename);
+
+        DataOutputStream output = new DataOutputStream(new FileOutputStream(outputFile));
+
+        for (int t : tokens)
+            output.writeInt(t);
+
+        output.close();
+    }
+
     public ArrayList<Integer> encode(String input) {
         ArrayList<Integer> tokens = new ArrayList<>();
 
@@ -179,4 +192,27 @@ public class Tokenizer {
     public String decodeSingle(int input) {
         return this.itos.get(input);
     }
+
+    public void saveState(String vocabFile, String stoiFile) throws IOException {
+        PrintStream vocabOut = new PrintStream(new File(vocabFile));
+        PrintStream stoiOut = new PrintStream(new File(stoiFile));
+
+        vocabOut.print(this.vocab);
+        stoiOut.print(this.stoi);
+
+        vocabOut.close();
+        stoiOut.close();
+    }
+
+    public Set<String> __vocab() {
+        return this.vocab;
+    };
+
+    public Map<String, Integer> __stoi() {
+        return this.stoi;
+    }
+
+    public Map<Integer, String> __itos() {
+        return this.itos;
+    };
 }
