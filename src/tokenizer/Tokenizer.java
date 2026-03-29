@@ -1,25 +1,23 @@
 package tokenizer;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.TreeSet;
-import java.util.ArrayList;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Iterator;
+import java.util.*;
+import java.io.*;
 
 public class Tokenizer {
-    private TreeSet<String> vocab;
-    private HashMap<String, Integer> stoi;
-    private HashMap<Integer, String> itos;
+    private Set<String> vocab;
+    private Map<String, Integer> stoi;
+    private Map<Integer, String> itos;
     private int vocabSize;
 
-    public Tokenizer(int vocabSize) {
+    public Tokenizer(int vocabSize, boolean deterministic) {
         this.vocabSize = vocabSize;
-        this.vocab = new TreeSet<>();
+        this.vocab = deterministic ? new TreeSet<>() : new HashSet<>();
         this.stoi = new HashMap<>();
         this.itos = new HashMap<>();
+    }
+
+    public Tokenizer(int vocabSize) {
+        this(vocabSize, false);
     }
 
     public void train(String[] files) throws IOException {
@@ -30,7 +28,7 @@ public class Tokenizer {
         while (vocab.size() < vocabSize) {
             HashMap<String, Integer> frequencyMap = new HashMap<>();
 
-            for (String file: files) {
+            for (String file : files) {
                 ArrayList<Integer> tokens = tokenizeFile(file);
 
                 Iterator<Integer> tokensIter = tokens.iterator();
@@ -52,7 +50,7 @@ public class Tokenizer {
             String maxString = null;
             int maxFreq = 0;
 
-            for (String entry: frequencyMap.keySet()) {
+            for (String entry : frequencyMap.keySet()) {
                 int value = frequencyMap.get(entry);
 
                 if (value > maxFreq && !this.vocab.contains(entry)) {
@@ -66,25 +64,24 @@ public class Tokenizer {
             System.out.printf("New merge: '%s'\n", maxString);
             this.buildMaps();
 
-
             // seems like there is a problem with my greedy tokenizing strategy
             // if we have the sequence .\r\n
             // and we merge the pair \r\n first,
             // we will get that \r\n is a token, but .\r is not
-            // so when we try to tokenize, the greedy strategy stops at "." and .\r\n never gets tokenized
+            // so when we try to tokenize, the greedy strategy stops at "." and .\r\n never
+            // gets tokenized
             // we could take a fixed size buffer and decrease the length until tokenizable
-            // or we could keep track of all new additions and make sure we don't add one twice
+            // or we could keep track of all new additions and make sure we don't add one
+            // twice
             // eventually .\r will be added
         }
-        
-            
 
         System.out.println(vocab);
     }
 
     public void buildMaps() {
         int i = 0;
-        for (String w: this.vocab) {
+        for (String w : this.vocab) {
             this.stoi.put(w, i);
             this.itos.put(i, w);
             i++;
@@ -92,7 +89,7 @@ public class Tokenizer {
     }
 
     public void getBaseVocab(String[] files) throws IOException {
-        for (String file: files) {
+        for (String file : files) {
             BufferedInputStream input = new BufferedInputStream(new FileInputStream(file));
 
             int res;
@@ -113,7 +110,7 @@ public class Tokenizer {
 
         int res;
 
-        String buffer = "";
+        String buffer = String.valueOf((char) input.read());
         while ((res = input.read()) != -1) {
             if (this.vocab.contains(buffer) && !this.vocab.contains(buffer + String.valueOf((char) res))) {
                 tokens.add(this.stoi.get(buffer));
@@ -122,8 +119,64 @@ public class Tokenizer {
             buffer += String.valueOf((char) res);
         }
 
+        while (buffer.length() > 0) {
+            String tokenBuffer = new String(buffer);
+
+            while (!vocab.contains(tokenBuffer)) {
+                tokenBuffer = tokenBuffer.substring(0, tokenBuffer.length() - 1);
+            }
+
+            tokens.add(this.stoi.get(tokenBuffer));
+            buffer = buffer.substring(tokenBuffer.length());
+        }
+
         input.close();
 
         return tokens;
+    }
+
+    public ArrayList<Integer> encode(String input) {
+        ArrayList<Integer> tokens = new ArrayList<>();
+
+        String buffer = String.valueOf(input.charAt(0));
+        for (int i = 1; i < input.length(); i++) {
+            char current = input.charAt(i);
+
+            if (this.vocab.contains(buffer) && !this.vocab.contains(buffer + current)) {
+
+                tokens.add(this.stoi.get(buffer));
+                buffer = "";
+            }
+            buffer += String.valueOf(current);
+        }
+
+        while (buffer.length() > 0) {
+            String tokenBuffer = new String(buffer);
+
+            while (!vocab.contains(tokenBuffer)) {
+                tokenBuffer = tokenBuffer.substring(0, tokenBuffer.length() - 1);
+            }
+
+            tokens.add(this.stoi.get(tokenBuffer));
+            buffer = buffer.substring(tokenBuffer.length());
+        }
+
+        return tokens;
+    }
+
+    public int encodeSingle(String input) {
+        return this.stoi.get(input);
+    }
+
+    public String decode(List<Integer> input) {
+        String output = "";
+        for (int token : input) {
+            output += this.itos.get(token);
+        }
+        return output;
+    }
+
+    public String decodeSingle(int input) {
+        return this.itos.get(input);
     }
 }
