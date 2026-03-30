@@ -2,217 +2,286 @@ package tokenizer;
 
 import java.util.*;
 import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Tokenizer {
-    private Set<String> vocab;
-    private Map<String, Integer> stoi;
-    private Map<Integer, String> itos;
+    private ReversibleMap<Integer, TokenPair> vocab;
     private int vocabSize;
+    private final int MAX_VOCAB_SIZE;
+    private int allowMultiWord;
 
-    public Tokenizer(int vocabSize, boolean deterministic) {
-        this.vocabSize = vocabSize;
-        this.vocab = deterministic ? new TreeSet<>() : new HashSet<>();
-        for (char c = 0; c < 256; c++) {
-            this.vocab.add(String.valueOf(c));
-        }
-        this.stoi = new HashMap<>();
-        this.itos = new HashMap<>();
+    public Tokenizer(int vocabSize, int allowMultiWord) {
+        this.MAX_VOCAB_SIZE = vocabSize;
+        this.vocabSize = 255;
+        this.allowMultiWord = allowMultiWord;
+        this.vocab = new ReversibleMap<>();
     }
 
     public Tokenizer(int vocabSize) {
-        this(vocabSize, false);
+        this(vocabSize, vocabSize);
     }
 
     public void train(String[] files) throws IOException {
-        if (vocabSize < 1 || files.length < 1)
+        if (MAX_VOCAB_SIZE < 1 || files.length < 1)
             throw new IllegalArgumentException();
 
-        getBaseVocab(files);
-        while (vocab.size() < vocabSize) {
-            HashMap<String, Integer> frequencyMap = new HashMap<>();
+        List<Integer> tokens = new ArrayList<>();
+        for (String file : files) {
+            tokens.addAll(byteTokenizeFile(file));
+        }
 
-            for (String file : files) {
-                ArrayList<Integer> tokens = tokenizeFile(file);
+        while (this.vocabSize < MAX_VOCAB_SIZE) {
+            HashMap<TokenPair, Integer> frequencyMap = new HashMap<>();
 
-                Iterator<Integer> tokensIter = tokens.iterator();
+            Iterator<Integer> tokensIter = tokens.iterator();
 
-                int last = tokensIter.next();
+            int last = tokensIter.next();
 
-                while (tokensIter.hasNext()) {
-                    int current = tokensIter.next();
+            while (tokensIter.hasNext()) {
+                int current = tokensIter.next();
 
-                    String combined = this.itos.get(last) + this.itos.get(current);
+                TokenPair combined = new TokenPair(last, current);
 
-                    Integer currentFreq = frequencyMap.get(combined); // i hate java so much this doesn't work with int
-                    frequencyMap.put(combined, currentFreq != null ? currentFreq + 1 : 1);
+                Integer currentFreq = frequencyMap.get(combined); // i hate java so much this doesn't work with int
+                frequencyMap.put(combined, currentFreq != null ? currentFreq + 1 : 1);
 
-                    last = current;
-                }
+                last = current;
             }
 
-            String maxString = null;
+            TokenPair maxPair = null;
             int maxFreq = 0;
 
-            for (String entry : frequencyMap.keySet()) {
+            if (this.vocabSize == this.allowMultiWord)
+                System.out.println("Allowing multi-word tokens");
+
+            for (TokenPair entry : frequencyMap.keySet()) {
                 int value = frequencyMap.get(entry);
 
-                if (value > maxFreq && !this.vocab.contains(entry)) {
+                if (value > maxFreq && !this.vocab.containsValue(entry)
+                        && (this.vocabSize > this.allowMultiWord || !isMultiWord(entry))) {
                     maxFreq = value;
-                    maxString = entry;
+                    maxPair = entry;
                 }
             }
 
-            this.vocab.add(maxString);
+            this.vocab.putKV(++this.vocabSize, maxPair);
 
-            this.buildMaps();
+            Iterator<Integer> iter = tokens.iterator();
+            ArrayList<Integer> newTokens = new ArrayList<>(tokens.size());
+            while (iter.hasNext()) {
+                last = iter.next();
+                if (iter.hasNext()) {
+                    int current = iter.next();
+                    TokenPair combined = new TokenPair(last, current);
 
-            // seems like there is a problem with my greedy tokenizing strategy
-            // if we have the sequence .\r\n
-            // and we merge the pair \r\n first,
-            // we will get that \r\n is a token, but .\r is not
-            // so when we try to tokenize, the greedy strategy stops at "." and .\r\n never
-            // gets tokenized
-            // we could take a fixed size buffer and decrease the length until tokenizable
-            // or we could keep track of all new additions and make sure we don't add one
-            // twice
-            // eventually .\r will be added
-        }
-
-        System.out.println(vocab);
-    }
-
-    public void buildMaps() {
-        int i = 0;
-        for (String w : this.vocab) {
-            this.stoi.put(w, i);
-            this.itos.put(i, w);
-            i++;
-        }
-    }
-
-    public void getBaseVocab(String[] files) throws IOException {
-        for (String file : files) {
-            BufferedInputStream input = new BufferedInputStream(new FileInputStream(file));
-
-            int res;
-
-            while ((res = input.read()) != -1) {
-                this.vocab.add(String.valueOf((char) res));
+                    if (combined.equals(maxPair))
+                        newTokens.add(this.vocabSize);
+                    else {
+                        newTokens.add(last);
+                        newTokens.add(current);
+                    }
+                } else {
+                    newTokens.add(last);
+                }
             }
 
-            this.buildMaps();
-            input.close();
+            tokens = newTokens;
+
+            if (this.vocabSize % 10 == 0)
+                System.out.println("New merge: " + toString(maxPair));
         }
     }
 
-    public ArrayList<Integer> tokenizeFile(String filename) throws IOException {
+    public boolean isMultiWord(TokenPair input) {
+        String inString = toString(input);
+        boolean hasAlphabetic = false;
+        for (int i = 0; i < inString.length(); i++) {
+            char current = inString.charAt(i);
+            if (Character.isAlphabetic(current))
+                hasAlphabetic = true;
+            if (current == ' ' && hasAlphabetic)
+                return true;
+        }
+        return false;
+    }
+
+    public String toString(TokenPair input) {
+        boolean t1merge = this.vocab.containsKey(input.__t1());
+        boolean t2merge = this.vocab.containsKey(input.__t2());
+        if (!t1merge && !t2merge) {
+            return String.valueOf((char) input.__t1()) + String.valueOf((char) input.__t2());
+        } else if (!t1merge) {
+            return String.valueOf((char) input.__t1()) + toString(this.vocab.getValue(input.__t2()));
+        } else if (!t2merge) {
+            return toString(this.vocab.getValue(input.__t1())) + String.valueOf((char) input.__t2());
+        } else {
+            return toString(this.vocab.getValue(input.__t1())) + toString(this.vocab.getValue(input.__t2()));
+        }
+    }
+
+    public ArrayList<Integer> byteTokenizeFile(String filename) throws IOException {
         BufferedInputStream input = new BufferedInputStream(new FileInputStream(filename));
 
-        ArrayList<Integer> tokens = new ArrayList<>();
+        ArrayList<Integer> tokens = new ArrayList<>(input.available());
 
         int res;
 
-        String buffer = String.valueOf((char) input.read());
-        while ((res = input.read()) != -1) {
-            if (this.vocab.contains(buffer) && !this.vocab.contains(buffer + String.valueOf((char) res))) {
-                tokens.add(this.stoi.get(buffer));
-                buffer = "";
-            }
-            buffer += String.valueOf((char) res);
-        }
-
-        while (buffer.length() > 0) {
-            String tokenBuffer = new String(buffer);
-
-            while (!vocab.contains(tokenBuffer)) {
-                tokenBuffer = tokenBuffer.substring(0, tokenBuffer.length() - 1);
-            }
-
-            tokens.add(this.stoi.get(tokenBuffer));
-            buffer = buffer.substring(tokenBuffer.length());
-        }
+        while ((res = input.read()) != -1)
+            tokens.add(res);
 
         input.close();
 
         return tokens;
     }
 
-    public void tokenizeFile(String filename, String outputFile) throws IOException {
-        ArrayList<Integer> tokens = tokenizeFile(filename);
+    public ArrayList<Integer> encode(ByteBuffer input) {
 
-        DataOutputStream output = new DataOutputStream(new FileOutputStream(outputFile));
-
-        for (int t : tokens)
-            output.writeInt(t);
-
-        output.close();
-    }
-
-    public ArrayList<Integer> encode(String input) {
         ArrayList<Integer> tokens = new ArrayList<>();
 
-        String buffer = String.valueOf(input.charAt(0));
-        for (int i = 1; i < input.length(); i++) {
-            char current = input.charAt(i);
+        while (true) {
 
-            if (this.vocab.contains(buffer) && !this.vocab.contains(buffer + current)) {
-
-                tokens.add(this.stoi.get(buffer));
-                buffer = "";
-            }
-            buffer += String.valueOf(current);
-        }
-
-        while (buffer.length() > 0) {
-            String tokenBuffer = new String(buffer);
-
-            while (!vocab.contains(tokenBuffer)) {
-                tokenBuffer = tokenBuffer.substring(0, tokenBuffer.length() - 1);
+            while (input.hasRemaining()) {
+                tokens.add((int) (input.get() & 0xff));
             }
 
-            tokens.add(this.stoi.get(tokenBuffer));
-            buffer = buffer.substring(tokenBuffer.length());
+            Set<TokenPair> merges = new HashSet<>();
+
+            for (int i = 1; i < tokens.size(); i++) {
+                merges.add(new TokenPair(tokens.get(i - 1), tokens.get(i)));
+            }
+
+            Iterator<TokenPair> iter = merges.iterator();
+            TokenPair minMerge = null;
+            int minIdx = this.vocabSize;
+            boolean hasMerge = false;
+            while (iter.hasNext()) {
+                TokenPair merge = iter.next();
+
+                if (this.vocab.containsValue(merge)) {
+                    int idx = this.vocab.getKey(merge);
+
+                    if (idx > 255) {
+                        if (idx < minIdx) {
+                            minMerge = merge;
+                            minIdx = idx;
+                        }
+
+                        hasMerge = true;
+                    }
+
+                }
+            }
+
+            if (!hasMerge)
+                break;
+
+            ArrayList<Integer> newTokens = new ArrayList<>(tokens.size());
+            Iterator<Integer> tokensIter = tokens.iterator();
+
+            int last = tokensIter.next();
+            while (tokensIter.hasNext()) {
+                int current = tokensIter.next();
+
+                TokenPair combined = new TokenPair(last, current);
+
+                if (combined.equals(minMerge)) {
+                    newTokens.add(this.vocab.getKey(combined));
+                    if (tokensIter.hasNext())
+                        current = tokensIter.next();
+                } else {
+                    newTokens.add(last);
+                    if (!tokensIter.hasNext())
+                        newTokens.add(current);
+                }
+
+                last = current;
+            }
+
+            tokens = newTokens;
         }
 
         return tokens;
     }
 
-    public int encodeSingle(String input) {
-        return this.stoi.get(input);
+    public ArrayList<Integer> encode(String input) {
+        return this.encode(StandardCharsets.UTF_8.encode(input));
     }
 
-    public String decode(List<Integer> input) {
+    public void encodeFile(String inputFile, String outputfile) throws IOException {
+        ArrayList<Integer> tokens = this.encode(ByteBuffer.wrap(Files.readAllBytes(Path.of(inputFile))));
+
+        DataOutputStream out = new DataOutputStream(new FileOutputStream(outputfile));
+
+        for (int t : tokens) {
+            out.writeInt(t);
+        }
+
+        out.close();
+    }
+
+    public String decode(List<Integer> input) throws InvalidTokenException {
         String output = "";
         for (int token : input) {
-            output += this.itos.get(token);
+            output += this.decodeSingle(token);
         }
         return output;
     }
 
-    public String decodeSingle(int input) {
-        return this.itos.get(input);
+    public String decodeSingle(int input) throws InvalidTokenException {
+        if (!this.vocab.containsKey(input) && (input < 0 || input > this.vocabSize))
+            throw new InvalidTokenException(Integer.toString(input));
+        return input > 255 ? toString(this.vocab.getValue(input)) : String.valueOf((char) input);
     }
 
-    public void saveState(String vocabFile, String stoiFile) throws IOException {
+    public void saveState(String vocabFile) throws IOException {
         PrintStream vocabOut = new PrintStream(new File(vocabFile));
-        PrintStream stoiOut = new PrintStream(new File(stoiFile));
 
-        vocabOut.print(this.vocab);
-        stoiOut.print(this.stoi);
+        for (int k : this.vocab.keySet()) {
+            vocabOut.println(k + "=" + this.vocab.getValue(k).toString());
+        }
 
         vocabOut.close();
-        stoiOut.close();
     }
 
-    public Set<String> __vocab() {
+    class TokenPair {
+        private int t1;
+        private int t2;
+
+        public TokenPair(int t1, int t2) {
+            this.t1 = t1;
+            this.t2 = t2;
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (!(other instanceof TokenPair))
+                return false;
+            return this.t1 == ((TokenPair) other).__t1() && this.t2 == ((TokenPair) other).__t2();
+        }
+
+        @Override
+        public int hashCode() {
+            return this.t1 * 31 + this.t2 * 17;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("(%d,%d)", this.t1, this.t2);
+        }
+
+        public int __t1() {
+            return this.t1;
+        }
+
+        public int __t2() {
+            return this.t2;
+        }
+    }
+
+    public ReversibleMap<Integer, TokenPair> __vocab() {
         return this.vocab;
-    };
-
-    public Map<String, Integer> __stoi() {
-        return this.stoi;
     }
-
-    public Map<Integer, String> __itos() {
-        return this.itos;
-    };
 }
