@@ -24,6 +24,12 @@ public class Tokenizer {
         this(vocabSize, vocabSize);
     }
 
+    public Tokenizer(String vocabFile) throws IOException {
+        this.vocab = new ReversibleMap<>(this.loadVocab(vocabFile));
+        this.vocabSize = this.vocab.size();
+        this.MAX_VOCAB_SIZE = vocabSize;
+    }
+
     public void train(String[] files) throws IOException {
         if (MAX_VOCAB_SIZE < 1 || files.length < 1)
             throw new IllegalArgumentException();
@@ -137,20 +143,23 @@ public class Tokenizer {
         return tokens;
     }
 
-    public ArrayList<Integer> encode(ByteBuffer input) {
+    public List<Integer> encode(ByteBuffer input) {
 
-        ArrayList<Integer> tokens = new ArrayList<>();
+        List<Integer> tokens = new ArrayList<>();
+        while (input.hasRemaining()) {
+            tokens.add((int) (input.get() & 0xff));
+        }
+
+        
+
+        
 
         while (true) {
-
-            while (input.hasRemaining()) {
-                tokens.add((int) (input.get() & 0xff));
-            }
-
             Set<TokenPair> merges = new HashSet<>();
-
             for (int i = 1; i < tokens.size(); i++) {
-                merges.add(new TokenPair(tokens.get(i - 1), tokens.get(i)));
+                TokenPair merge = new TokenPair(tokens.get(i - 1), tokens.get(i));
+                if (this.vocab.containsValue(merge))
+                    merges.add(merge);
             }
 
             Iterator<TokenPair> iter = merges.iterator();
@@ -175,7 +184,7 @@ public class Tokenizer {
                 }
             }
 
-            if (!hasMerge)
+            if (!hasMerge || minMerge == null)
                 break;
 
             ArrayList<Integer> newTokens = new ArrayList<>(tokens.size());
@@ -206,20 +215,29 @@ public class Tokenizer {
         return tokens;
     }
 
-    public ArrayList<Integer> encode(String input) {
+    public List<Integer> encode(String input) {
         return this.encode(StandardCharsets.UTF_8.encode(input));
     }
 
-    public void encodeFile(String inputFile, String outputfile) throws IOException {
-        ArrayList<Integer> tokens = this.encode(ByteBuffer.wrap(Files.readAllBytes(Path.of(inputFile))));
+    public void encodeFile(String inputFile, String outputFile, int chunkSize) throws IOException {
+        byte[] bytes = Files.readAllBytes(Path.of(inputFile));
+        DataOutputStream out = new DataOutputStream(new FileOutputStream(outputFile));
+        for (int i = 0; i < bytes.length - chunkSize; i+=chunkSize) {
+            ByteBuffer input = ByteBuffer.wrap(Arrays.copyOfRange(bytes, i, i + chunkSize));
+            long t0 = System.nanoTime();
+            List<Integer> tokens = this.encode(input);
+            System.out.println("Time to encode: " + (System.nanoTime() - t0));
+            System.out.println(i + " " + bytes.length);
+            for (int t : tokens) {
+                out.writeInt(t);
+            }
 
-        DataOutputStream out = new DataOutputStream(new FileOutputStream(outputfile));
-        
-        for (int t : tokens) {
-            out.write(t);
         }
-
         out.close();
+    }
+
+    public void encodeFile(String inputFile, String outputFile) throws IOException {
+        this.encodeFile(inputFile, outputFile, 50304);
     }
 
     public String decode(List<Integer> input) throws InvalidTokenException {
@@ -279,6 +297,34 @@ public class Tokenizer {
         public int __t2() {
             return this.t2;
         }
+    }
+
+    private HashMap<Integer, TokenPair> loadVocab(String filename) throws IOException {
+        Scanner input = new Scanner(new File(filename));
+
+        HashMap<Integer, TokenPair> output = new HashMap<>();
+
+        while (input.hasNextLine()) {
+            String line = input.nextLine();
+
+            int equalIdx = line.indexOf('=', 0);
+
+            int key = Integer.parseInt(line.substring(0, equalIdx));
+
+            String tkString = line.substring(equalIdx + 2, line.length() - 1);
+            int commaIdx = tkString.indexOf(',');
+
+            int t1 = Integer.parseInt(tkString.substring(0, commaIdx));
+            int t2 = Integer.parseInt(tkString.substring(commaIdx + 1));
+
+            TokenPair value = new TokenPair(t1, t2);
+
+            output.put(key, value);
+        }
+
+        input.close();
+
+        return output;
     }
 
     public ReversibleMap<Integer, TokenPair> __vocab() {

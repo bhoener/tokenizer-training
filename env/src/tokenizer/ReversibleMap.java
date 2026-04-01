@@ -10,6 +10,14 @@ public class ReversibleMap<K, V> {
         this.vk = new HashMap<>();
     }
 
+    public ReversibleMap(HashMap<K, V> kv) {
+        this.kv = kv;
+        this.vk = new HashMap<>();
+        for (K key : this.kv.keySet()) {
+            this.vk.put(kv.get(key), key);
+        }
+    }
+
     public void putKV(K key, V value) {
         this.kv.put(key, value);
         this.vk.put(value, key);
@@ -50,6 +58,10 @@ public class ReversibleMap<K, V> {
 
     public Map<V, K> __vk() {
         return this.vk;
+    }
+
+    public int size() {
+        return this.kv.size();
     }
 
     @Override

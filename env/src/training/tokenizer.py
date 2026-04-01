@@ -77,8 +77,6 @@ class Tokenizer:
     def decode_single(self, token: int) -> str:
         if 0 < token < 256:
             return chr(token)
-        elif token == self.vocab_size + 1:
-            return "<|endoftext|>"
         else:
             return self.decode_single(self.vocab[token][0]) + self.decode_single(
                 self.vocab[token][1]
@@ -97,7 +95,6 @@ def main() -> None:
     print("|", end="")
     for token in enc.encode("Romeo.\nhello world\n\nMERCUTIO. Sigma Fortnite balls"):
         print(f"{enc.decode([token])}|", end="")
-    
 
 
 if __name__ == "__main__":
