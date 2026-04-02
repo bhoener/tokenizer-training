@@ -1,7 +1,6 @@
 package tokenizer;
 
 import java.io.IOException;
-import java.util.*;
 
 public class EncodeFiles {
     public static void main(String[] args) throws IOException {

@@ -1,33 +1,41 @@
 package tokenizer;
 
 import java.util.*;
+
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.regex.*;
 
 public class Tokenizer {
     private ReversibleMap<Integer, TokenPair> vocab;
     private int vocabSize;
     private final int MAX_VOCAB_SIZE;
     private int allowMultiWord;
-
-    public Tokenizer(int vocabSize, int allowMultiWord) {
-        this.MAX_VOCAB_SIZE = vocabSize;
-        this.vocabSize = 255;
-        this.allowMultiWord = allowMultiWord;
-        this.vocab = new ReversibleMap<>();
-    }
+    private Map<String, Integer> tokenCache;
+    private Pattern pretokRegex = Pattern.compile("\\s+");
 
     public Tokenizer(int vocabSize) {
-        this(vocabSize, vocabSize);
+        this.MAX_VOCAB_SIZE = vocabSize;
+        this.vocabSize = 255;
+        this.vocab = new ReversibleMap<>();
+        this.tokenCache = new HashMap<>();
+        this.buildCache();
     }
 
     public Tokenizer(String vocabFile) throws IOException {
         this.vocab = new ReversibleMap<>(this.loadVocab(vocabFile));
         this.vocabSize = this.vocab.size();
         this.MAX_VOCAB_SIZE = vocabSize;
+        this.tokenCache = new HashMap<>();
+    }
+
+    private void buildCache() {
+        for (int i: this.vocab.keySet()) {
+            this.tokenCache.put(this.toString(this.vocab.getValue(i)), i);
+        }
     }
 
     public void train(String[] files) throws IOException {
@@ -67,7 +75,7 @@ public class Tokenizer {
                 int value = frequencyMap.get(entry);
 
                 if (value > maxFreq && !this.vocab.containsValue(entry)
-                        && (this.vocabSize > this.allowMultiWord || !isMultiWord(entry))) {
+                        && !isMultiWord(entry) && !containsEOT(entry)) {
                     maxFreq = value;
                     maxPair = entry;
                 }
@@ -101,7 +109,7 @@ public class Tokenizer {
         }
     }
 
-    public boolean isMultiWord(TokenPair input) {
+    private boolean isMultiWord(TokenPair input) {
         String inString = toString(input);
         boolean hasAlphabetic = false;
         for (int i = 0; i < inString.length(); i++) {
@@ -114,7 +122,11 @@ public class Tokenizer {
         return false;
     }
 
-    public String toString(TokenPair input) {
+    private static boolean containsEOT(TokenPair input) {
+        return (input.__t1() == 3 || input.__t2() == 3);
+    }
+
+    private String toString(TokenPair input) {
         boolean t1merge = this.vocab.containsKey(input.__t1());
         boolean t2merge = this.vocab.containsKey(input.__t2());
         if (!t1merge && !t2merge) {
@@ -144,28 +156,27 @@ public class Tokenizer {
     }
 
     public List<Integer> encode(ByteBuffer input) {
-
-        List<Integer> tokens = new ArrayList<>();
+        // long t0 = System.nanoTime();
+        List<Integer> tokens = new ArrayList<>(input.remaining());
         while (input.hasRemaining()) {
             tokens.add((int) (input.get() & 0xff));
         }
-
-        
-
-        
+        // System.out.println("Adding token bytes: " + (System.nanoTime() - t0));
 
         while (true) {
-            Set<TokenPair> merges = new HashSet<>();
+            // t0 = System.nanoTime();
+            Set<TokenPair> merges = new HashSet<>(tokens.size() * 2);
             for (int i = 1; i < tokens.size(); i++) {
                 TokenPair merge = new TokenPair(tokens.get(i - 1), tokens.get(i));
                 if (this.vocab.containsValue(merge))
-                    merges.add(merge);
+                     merges.add(merge);
             }
+            // System.out.println("Adding merges: " + (System.nanoTime() - t0));
 
+            // t0 = System.nanoTime();
             Iterator<TokenPair> iter = merges.iterator();
             TokenPair minMerge = null;
             int minIdx = this.vocabSize;
-            boolean hasMerge = false;
             while (iter.hasNext()) {
                 TokenPair merge = iter.next();
 
@@ -177,16 +188,18 @@ public class Tokenizer {
                             minMerge = merge;
                             minIdx = idx;
                         }
-
-                        hasMerge = true;
                     }
 
                 }
             }
 
-            if (!hasMerge || minMerge == null)
+            // System.out.println("Finding min: " + (System.nanoTime() - t0));
+
+            if (minMerge == null)
                 break;
 
+
+            // t0 = System.nanoTime();
             ArrayList<Integer> newTokens = new ArrayList<>(tokens.size());
             Iterator<Integer> tokensIter = tokens.iterator();
 
@@ -210,34 +223,46 @@ public class Tokenizer {
             }
 
             tokens = newTokens;
+            // System.out.println("Replacing tokens: " + (System.nanoTime() - t0));
         }
 
         return tokens;
     }
 
     public List<Integer> encode(String input) {
-        return this.encode(StandardCharsets.UTF_8.encode(input));
+        String[] pretokens = this.pretokRegex.split(input);
+
+        List<Integer> tokens = new ArrayList<>(pretokens.length * 2);
+        
+        for (String pretoken: pretokens) {
+            if (this.tokenCache.containsKey(pretoken)) {
+                tokens.add(this.tokenCache.get(pretoken));
+            } else {
+                tokens.addAll(this.encode(StandardCharsets.UTF_8.encode(pretoken)));
+            }
+        }
+        return tokens;
     }
 
     public void encodeFile(String inputFile, String outputFile, int chunkSize) throws IOException {
-        byte[] bytes = Files.readAllBytes(Path.of(inputFile));
+        byte[] buf = new byte[chunkSize];
+        BufferedInputStream input = new BufferedInputStream(new FileInputStream(inputFile));
         DataOutputStream out = new DataOutputStream(new FileOutputStream(outputFile));
-        for (int i = 0; i < bytes.length - chunkSize; i+=chunkSize) {
-            ByteBuffer input = ByteBuffer.wrap(Arrays.copyOfRange(bytes, i, i + chunkSize));
+        while (input.read(buf) != -1) {
             long t0 = System.nanoTime();
-            List<Integer> tokens = this.encode(input);
-            System.out.println("Time to encode: " + (System.nanoTime() - t0));
-            System.out.println(i + " " + bytes.length);
+            List<Integer> tokens = this.encode(new String(buf, StandardCharsets.UTF_8));
+            long time = System.nanoTime() - t0;
+            System.out.println("Tok/s: " + (tokens.size() / (time / 1e9)));
             for (int t : tokens) {
                 out.writeInt(t);
             }
-
         }
+        input.close();
         out.close();
     }
 
     public void encodeFile(String inputFile, String outputFile) throws IOException {
-        this.encodeFile(inputFile, outputFile, 50304);
+        this.encodeFile(inputFile, outputFile, 1024);
     }
 
     public String decode(List<Integer> input) throws InvalidTokenException {
