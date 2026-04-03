@@ -101,4 +101,19 @@ class GPT(nn.Module):
         
         self.layers = nn.ModuleList([DecoderBlock(d_model=d_model, n_heads=n_heads) for _ in range(n_layers)])
         
+        self.out_proj = nn.Linear(d_model, vocab_size)
         
+    def forward(self, x: torch.Tensor, ys: torch.Tensor | None = None) -> torch.Tensor | tuple[torch.Tensor]:
+        x = self.emb(x)
+        
+        for layer in self.layers:
+            x = layer(x)
+            
+        logits = self.out_proj(x)
+        
+        if ys is None:
+            return logits
+        
+        loss = F.cross_entropy(logits.view(-1, self.vocab_size), ys)
+        
+        return logits, loss

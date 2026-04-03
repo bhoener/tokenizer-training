@@ -30,7 +30,7 @@ class DataLoader:
         if self.device is not None:
             self.data = self.data.to(self.device)
 
-    def __call__(self) -> tuple[torch.Tensor]:
+    def next(self) -> tuple[torch.Tensor]:
         if self.idx + self.B * self.T + 1 >= len(self.data):
             self.__next_shard()
 

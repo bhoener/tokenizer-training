@@ -3,7 +3,7 @@ package tokenizer;
 import java.io.IOException;
 
 public class EncodeFiles {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InvalidTokenException {
         Tokenizer myTokenizer = new Tokenizer("src/saved_tokenizers/main/vocab.txt");
 
         for (int i = 0; i <= 2; i++) {

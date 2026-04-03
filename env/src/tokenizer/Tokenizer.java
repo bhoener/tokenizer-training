@@ -15,7 +15,7 @@ public class Tokenizer {
     private final int MAX_VOCAB_SIZE;
     private int allowMultiWord;
     private Map<String, Integer> tokenCache;
-    private Pattern pretokRegex = Pattern.compile("\\s+");
+    private Pattern pretokRegex = Pattern.compile("/\\S+|\\s+/g");
 
     public Tokenizer(int vocabSize) {
         this.MAX_VOCAB_SIZE = vocabSize;
@@ -161,6 +161,7 @@ public class Tokenizer {
         while (input.hasRemaining()) {
             tokens.add((int) (input.get() & 0xff));
         }
+
         // System.out.println("Adding token bytes: " + (System.nanoTime() - t0));
 
         while (true) {
@@ -197,7 +198,7 @@ public class Tokenizer {
 
             if (minMerge == null)
                 break;
-
+            
 
             // t0 = System.nanoTime();
             ArrayList<Integer> newTokens = new ArrayList<>(tokens.size());
@@ -211,8 +212,12 @@ public class Tokenizer {
 
                 if (combined.equals(minMerge)) {
                     newTokens.add(this.vocab.getKey(combined));
+                    
                     if (tokensIter.hasNext())
                         current = tokensIter.next();
+                    if (!tokensIter.hasNext() && combined.__t2() != current) {
+                        newTokens.add(current);
+                    }
                 } else {
                     newTokens.add(last);
                     if (!tokensIter.hasNext())
@@ -229,11 +234,11 @@ public class Tokenizer {
         return tokens;
     }
 
-    public List<Integer> encode(String input) {
+    public List<Integer> encode(String input) throws InvalidTokenException {
         String[] pretokens = this.pretokRegex.split(input);
 
         List<Integer> tokens = new ArrayList<>(pretokens.length * 2);
-        
+
         for (String pretoken: pretokens) {
             if (this.tokenCache.containsKey(pretoken)) {
                 tokens.add(this.tokenCache.get(pretoken));
@@ -241,10 +246,11 @@ public class Tokenizer {
                 tokens.addAll(this.encode(StandardCharsets.UTF_8.encode(pretoken)));
             }
         }
+
         return tokens;
     }
 
-    public void encodeFile(String inputFile, String outputFile, int chunkSize) throws IOException {
+    public void encodeFile(String inputFile, String outputFile, int chunkSize) throws IOException, InvalidTokenException {
         byte[] buf = new byte[chunkSize];
         BufferedInputStream input = new BufferedInputStream(new FileInputStream(inputFile));
         DataOutputStream out = new DataOutputStream(new FileOutputStream(outputFile));
@@ -261,7 +267,7 @@ public class Tokenizer {
         out.close();
     }
 
-    public void encodeFile(String inputFile, String outputFile) throws IOException {
+    public void encodeFile(String inputFile, String outputFile) throws IOException, InvalidTokenException {
         this.encodeFile(inputFile, outputFile, 1024);
     }
 
