@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 122, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 74, in train
+    torch.optim.Muon(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\_muon.py", line 129, in __init__
+    super().__init__(params, defaults)
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\optimizer.py", line 401, in __init__
+    param_groups = list(params)
+                   ^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 75, in <genexpr>
+    param for param in model.parameters() if param.ndim() == 2
+                                             ^^^^^^^^^^^^
+TypeError: 'int' object is not callable

@@ -1,0 +1,11 @@
+{"time":"2026-04-04T14:32:19.2704084-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-04T14:32:19.5219743-08:00","level":"INFO","msg":"stream: created new stream","id":"r2ketxib"}
+{"time":"2026-04-04T14:32:19.5219743-08:00","level":"INFO","msg":"handler: started","stream_id":"r2ketxib"}
+{"time":"2026-04-04T14:32:19.5235694-08:00","level":"INFO","msg":"stream: started","id":"r2ketxib"}
+{"time":"2026-04-04T14:32:19.5235694-08:00","level":"INFO","msg":"sender: started","stream_id":"r2ketxib"}
+{"time":"2026-04-04T14:32:19.5235694-08:00","level":"INFO","msg":"writer: started","stream_id":"r2ketxib"}
+{"time":"2026-04-04T14:34:27.187689-08:00","level":"INFO","msg":"stream: closing","id":"r2ketxib"}
+{"time":"2026-04-04T14:34:27.5290596-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-04T14:34:27.7509625-08:00","level":"INFO","msg":"handler: closed","stream_id":"r2ketxib"}
+{"time":"2026-04-04T14:34:27.7509625-08:00","level":"INFO","msg":"sender: closed","stream_id":"r2ketxib"}
+{"time":"2026-04-04T14:34:27.7509625-08:00","level":"INFO","msg":"stream: closed","id":"r2ketxib"}

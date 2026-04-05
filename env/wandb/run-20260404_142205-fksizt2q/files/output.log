@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 122, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 66, in train
+    dl = DataLoader(
+         ^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\dataloader.py", line 18, in __init__
+    self.__next_shard()
+  File "E:\Other\Tokenizer\env\src\training\dataloader.py", line 21, in __next_shard
+    self.__load_next_shard()
+  File "E:\Other\Tokenizer\env\src\training\dataloader.py", line 26, in __load_next_shard
+    assert 0 <= self.idx < len(self.shards)
+                ^^^^^^^^
+AttributeError: 'DataLoader' object has no attribute 'idx'

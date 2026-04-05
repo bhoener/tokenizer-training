@@ -6,7 +6,7 @@ def norm(x: torch.Tensor) -> torch.Tensor:
     return F.rms_norm(x, (x.size(-1),))
 
 class RoPE(nn.Module):
-    def __init__(self, d: int, base: float = 10000, device: torch.device | None = None):
+    def __init__(self, d: int, base: float = 10000, device: torch.device | None = None, cache_len: int = 1024):
         super().__init__()
         self.d = d
         self.base = base
@@ -14,6 +14,8 @@ class RoPE(nn.Module):
         self.thetas = base ** (- 2.0 * (torch.arange(0, d/2).repeat_interleave(2)) / d)
         if device is not None:
             self.thetas = self.thetas.to(device)
+            
+        self.register_buffer("angles", torch.einsum("i, j -> ij", torch.arange(cache_len), self.thetas))
     
     def rotate(self, x: torch.Tensor) -> torch.Tensor:
         odds = x[..., 1::2]
@@ -21,13 +23,9 @@ class RoPE(nn.Module):
         return torch.cat((evens, odds), dim=-1)
     
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        B, L, D = x.size()
-        idx = torch.arange(L)
-        if self.device is not None:
-            idx = idx.to(self.device)
-        
-        angles = torch.einsum("i, j -> ij", idx, self.thetas)
-        return x * torch.cos(angles) + self.rotate(x) * torch.sin(angles)
+        B, H, L, d = x.size()
+
+        return x * torch.cos(self.angles[:L, :]) + self.rotate(x) * torch.sin(self.angles[:L, :])
 
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_model: int, n_heads: int):
@@ -93,6 +91,7 @@ class DecoderBlock(nn.Module):
 class GPT(nn.Module):
     def __init__(self, vocab_size: int, d_model: int, n_heads: int, n_layers: int):
         super().__init__()
+        self.vocab_size = vocab_size
         self.d_model = d_model
         self.n_heads = n_heads
         self.n_layers = n_layers
@@ -114,6 +113,6 @@ class GPT(nn.Module):
         if ys is None:
             return logits
         
-        loss = F.cross_entropy(logits.view(-1, self.vocab_size), ys)
+        loss = F.cross_entropy(logits.view(-1, self.vocab_size), ys.view(-1))
         
         return logits, loss

@@ -268,7 +268,7 @@ public class Tokenizer {
     }
 
     public void encodeFile(String inputFile, String outputFile) throws IOException, InvalidTokenException {
-        this.encodeFile(inputFile, outputFile, 1024);
+        this.encodeFile(inputFile, outputFile, 16);
     }
 
     public String decode(List<Integer> input) throws InvalidTokenException {

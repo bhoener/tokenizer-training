@@ -1,0 +1,11 @@
+{"time":"2026-04-04T14:30:40.6795647-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-04T14:30:40.9174178-08:00","level":"INFO","msg":"stream: created new stream","id":"wpolvnc3"}
+{"time":"2026-04-04T14:30:40.9174178-08:00","level":"INFO","msg":"handler: started","stream_id":"wpolvnc3"}
+{"time":"2026-04-04T14:30:40.9189572-08:00","level":"INFO","msg":"stream: started","id":"wpolvnc3"}
+{"time":"2026-04-04T14:30:40.9189572-08:00","level":"INFO","msg":"writer: started","stream_id":"wpolvnc3"}
+{"time":"2026-04-04T14:30:40.9189572-08:00","level":"INFO","msg":"sender: started","stream_id":"wpolvnc3"}
+{"time":"2026-04-04T14:31:48.6975109-08:00","level":"INFO","msg":"stream: closing","id":"wpolvnc3"}
+{"time":"2026-04-04T14:31:49.0663497-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-04T14:31:49.2967131-08:00","level":"INFO","msg":"handler: closed","stream_id":"wpolvnc3"}
+{"time":"2026-04-04T14:31:49.2967131-08:00","level":"INFO","msg":"sender: closed","stream_id":"wpolvnc3"}
+{"time":"2026-04-04T14:31:49.2967131-08:00","level":"INFO","msg":"stream: closed","id":"wpolvnc3"}

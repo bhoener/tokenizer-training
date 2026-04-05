@@ -1,0 +1,69 @@
+step:        0 | loss:   5.2986 | norm:   0.9565 | time:     5.37 | tok/s: 10234.068379 | lr: 0.000100
+step:       10 | loss:   5.2954 | norm:   1.7491 | time:     7.59 | tok/s: 21131.190495 | lr: 0.000600
+step:       20 | loss:   5.2820 | norm:   1.6398 | time:     9.60 | tok/s: 21303.397390 | lr: 0.001100
+step:       30 | loss:   5.2936 | norm:   1.6371 | time:    11.62 | tok/s: 21049.685458 | lr: 0.001600
+step:       40 | loss:   5.3014 | norm:   1.6424 | time:    13.64 | tok/s: 21202.307322 | lr: 0.002100
+step:       50 | loss:   5.3077 | norm:   1.6693 | time:    15.65 | tok/s: 21036.076514 | lr: 0.002600
+step:       60 | loss:   5.2952 | norm:   1.5849 | time:    17.67 | tok/s: 21148.671100 | lr: 0.003100
+step:       70 | loss:   5.2976 | norm:   1.6388 | time:    19.70 | tok/s: 19179.612279 | lr: 0.003600
+step:       80 | loss:   5.2891 | norm:   1.7546 | time:    21.78 | tok/s: 20994.174847 | lr: 0.004100
+step:       90 | loss:   5.2807 | norm:   1.5576 | time:    23.84 | tok/s: 20895.228948 | lr: 0.004600
+step:      100 | loss:   5.2912 | norm:   1.7378 | time:    25.89 | tok/s: 21170.223428 | lr: 0.005100
+step:      110 | loss:   5.2950 | norm:   1.6060 | time:    27.95 | tok/s: 21051.594179 | lr: 0.005600
+step:      120 | loss:   5.2920 | norm:   1.6299 | time:    30.01 | tok/s: 21206.390089 | lr: 0.006100
+step:      130 | loss:   5.2949 | norm:   1.5247 | time:    32.07 | tok/s: 21140.993762 | lr: 0.006600
+step:      140 | loss:   5.2976 | norm:   1.5800 | time:    34.13 | tok/s: 21077.809589 | lr: 0.007100
+step:      150 | loss:   5.2979 | norm:   1.8658 | time:    36.18 | tok/s: 21133.244007 | lr: 0.007600
+step:      160 | loss:   5.2920 | norm:   1.6480 | time:    38.25 | tok/s: 20167.219196 | lr: 0.008100
+step:      170 | loss:   5.2838 | norm:   1.5426 | time:    40.31 | tok/s: 21086.346896 | lr: 0.008600
+step:      180 | loss:   5.3029 | norm:   1.6042 | time:    42.37 | tok/s: 20613.649728 | lr: 0.009100
+step:      190 | loss:   5.2964 | norm:   1.6410 | time:    44.51 | tok/s: 20765.110944 | lr: 0.009600
+step:      200 | loss:   5.2885 | norm:   1.6763 | time:    46.71 | tok/s: 20257.058110 | lr: 0.010100
+step:      210 | loss:   5.2864 | norm:   1.7821 | time:    49.03 | tok/s: 19181.196907 | lr: 0.010000
+step:      220 | loss:   5.2941 | norm:   1.6183 | time:    51.26 | tok/s: 20168.734448 | lr: 0.010000
+step:      230 | loss:   5.2956 | norm:   1.5629 | time:    53.42 | tok/s: 19583.934194 | lr: 0.010000
+step:      240 | loss:   5.2941 | norm:   1.7248 | time:    55.54 | tok/s: 20948.377566 | lr: 0.010000
+step:      250 | loss:   5.2833 | norm:   1.6678 | time:    57.61 | tok/s: 20644.514122 | lr: 0.010000
+step:      260 | loss:   5.2969 | norm:   1.6673 | time:    59.75 | tok/s: 20557.681229 | lr: 0.010000
+step:      270 | loss:   5.2959 | norm:   1.6614 | time:    61.89 | tok/s: 20053.752384 | lr: 0.010000
+step:      280 | loss:   5.2908 | norm:   1.6716 | time:    64.09 | tok/s: 20519.401832 | lr: 0.010000
+step:      290 | loss:   5.2869 | norm:   1.7230 | time:    66.17 | tok/s: 20896.448895 | lr: 0.010000
+step:      300 | loss:   5.2900 | norm:   1.7530 | time:    68.29 | tok/s: 20581.718531 | lr: 0.010000
+step:      310 | loss:   5.2899 | norm:   1.6361 | time:    70.47 | tok/s: 20650.370440 | lr: 0.010000
+step:      320 | loss:   5.2831 | norm:   1.6322 | time:    72.64 | tok/s: 19527.593659 | lr: 0.010000
+step:      330 | loss:   5.2956 | norm:   1.5684 | time:    74.76 | tok/s: 21025.032197 | lr: 0.010000
+step:      340 | loss:   5.2927 | norm:   1.6043 | time:    76.86 | tok/s: 19782.539167 | lr: 0.010000
+step:      350 | loss:   5.2885 | norm:   1.7971 | time:    79.04 | tok/s: 20317.188477 | lr: 0.010000
+step:      360 | loss:   5.3083 | norm:   1.5949 | time:    81.18 | tok/s: 19856.850647 | lr: 0.010000
+step:      370 | loss:   5.2909 | norm:   1.5834 | time:    83.34 | tok/s: 20213.322992 | lr: 0.010000
+step:      380 | loss:   5.3027 | norm:   1.6731 | time:    85.49 | tok/s: 20693.028015 | lr: 0.010000
+step:      390 | loss:   5.2926 | norm:   1.6347 | time:    87.60 | tok/s: 20692.978166 | lr: 0.010000
+step:      400 | loss:   5.3025 | norm:   1.6057 | time:    89.79 | tok/s: 17763.984523 | lr: 0.010000
+step:      410 | loss:   5.2956 | norm:   1.7882 | time:    91.91 | tok/s: 19698.115690 | lr: 0.010000
+step:      420 | loss:   5.2869 | norm:   1.6008 | time:    94.16 | tok/s: 21040.301650 | lr: 0.010000
+step:      430 | loss:   5.2940 | norm:   1.6077 | time:    96.28 | tok/s: 20997.613225 | lr: 0.010000
+step:      440 | loss:   5.3040 | norm:   1.5772 | time:    98.41 | tok/s: 20671.067846 | lr: 0.010000
+step:      450 | loss:   5.2888 | norm:   1.5683 | time:   100.57 | tok/s: 21173.563143 | lr: 0.010000
+step:      460 | loss:   5.2872 | norm:   1.8495 | time:   102.94 | tok/s: 19531.190097 | lr: 0.010000
+step:      470 | loss:   5.2917 | norm:   1.5423 | time:   105.22 | tok/s: 19060.111015 | lr: 0.010000
+step:      480 | loss:   5.2934 | norm:   1.6571 | time:   107.47 | tok/s: 19466.523878 | lr: 0.010000
+step:      490 | loss:   5.3073 | norm:   1.6473 | time:   109.69 | tok/s: 19586.524168 | lr: 0.010000
+step:      500 | loss:   5.3045 | norm:   1.6048 | time:   111.94 | tok/s: 19374.255483 | lr: 0.010000
+step:      510 | loss:   5.2842 | norm:   1.5609 | time:   114.18 | tok/s: 19672.356789 | lr: 0.010000
+step:      520 | loss:   5.2937 | norm:   1.6584 | time:   116.42 | tok/s: 18473.931110 | lr: 0.010000
+step:      530 | loss:   5.2913 | norm:   1.6534 | time:   118.67 | tok/s: 19754.151145 | lr: 0.010000
+step:      540 | loss:   5.2873 | norm:   1.6230 | time:   121.03 | tok/s: 19519.362360 | lr: 0.010000
+step:      550 | loss:   5.2936 | norm:   1.9157 | time:   123.18 | tok/s: 21036.282579 | lr: 0.010000
+step:      560 | loss:   5.2844 | norm:   1.5927 | time:   125.28 | tok/s: 21185.182078 | lr: 0.010000
+step:      570 | loss:   5.2825 | norm:   1.6150 | time:   127.34 | tok/s: 21009.759198 | lr: 0.010000
+step:      580 | loss:   5.2974 | norm:   1.6341 | time:   129.43 | tok/s: 19929.826505 | lr: 0.010000
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 122, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 96, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

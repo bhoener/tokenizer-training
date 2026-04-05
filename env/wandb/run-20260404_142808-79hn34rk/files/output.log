@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 122, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 101, in train
+    for param_group in optim.param_groups():
+                       ^^^^^^^^^^^^^^^^^^^^
+TypeError: 'list' object is not callable

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 122, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 90, in train
+    logits, loss = model(xs, ys)
+                   ^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 117, in forward
+    loss = F.cross_entropy(logits.view(-1, self.vocab_size), ys)
+                                           ^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1967, in __getattr__
+    raise AttributeError(
+AttributeError: 'GPT' object has no attribute 'vocab_size'

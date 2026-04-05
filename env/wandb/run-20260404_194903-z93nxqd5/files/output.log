@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 123, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 56, in train
+    model = GPT(
+            ^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 101, in __init__
+    self.layers = nn.ModuleList([DecoderBlock(d_model=d_model, n_heads=n_heads) for _ in range(n_layers)])
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 83, in __init__
+    self.mha = MultiHeadAttention(d_model=d_model, n_heads=n_heads)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 40, in __init__
+    self.rope = RoPE(self.d_head)
+                ^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 18, in __init__
+    self.register_buffer(torch.einsum("i, j -> ij", torch.arange(cache_len), self.thetas))
+TypeError: Module.register_buffer() missing 1 required positional argument: 'tensor'

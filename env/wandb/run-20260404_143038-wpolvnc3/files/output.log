@@ -1,0 +1,87 @@
+step:        0 | loss:   5.2992 | norm:   0.9453 | time:     5.86 | tok/s: 10276.233716 | lr:     0.00
+step:       10 | loss:   5.3040 | norm:   1.7327 | time:     8.13 | tok/s: 21020.015886 | lr:     0.50
+step:       20 | loss:   5.2965 | norm:   1.6267 | time:    10.19 | tok/s: 21165.267979 | lr:     2.00
+step:       30 | loss:   5.2817 | norm:   1.6245 | time:    12.24 | tok/s: 21194.669443 | lr:     4.50
+step:       40 | loss:   5.2940 | norm:   1.6355 | time:    14.30 | tok/s: 21143.543582 | lr:     8.00
+step:       50 | loss:   5.2893 | norm:   1.6446 | time:    16.37 | tok/s: 20967.680703 | lr:    12.50
+step:       60 | loss:   5.2835 | norm:   1.5836 | time:    18.45 | tok/s: 21010.401554 | lr:    18.00
+step:       70 | loss:   5.2910 | norm:   1.6449 | time:    20.52 | tok/s: 21060.962246 | lr:    24.50
+step:       80 | loss:   5.3002 | norm:   1.7476 | time:    22.58 | tok/s: 20966.554776 | lr:    32.00
+step:       90 | loss:   5.2827 | norm:   1.5476 | time:    24.65 | tok/s: 20987.275828 | lr:    40.50
+step:      100 | loss:   5.3116 | norm:   1.7186 | time:    26.72 | tok/s: 21014.462150 | lr:    50.00
+step:      110 | loss:   5.2892 | norm:   1.6197 | time:    28.78 | tok/s: 20947.458040 | lr:    60.50
+step:      120 | loss:   5.2904 | norm:   1.6210 | time:    30.84 | tok/s: 21086.346896 | lr:    72.00
+step:      130 | loss:   5.2986 | norm:   1.5206 | time:    32.90 | tok/s: 21073.207487 | lr:    84.50
+step:      140 | loss:   5.2666 | norm:   1.5801 | time:    34.96 | tok/s: 21117.735571 | lr:    98.00
+step:      150 | loss:   5.2900 | norm:   1.8622 | time:    37.02 | tok/s: 21138.990764 | lr:   112.50
+step:      160 | loss:   5.3041 | norm:   1.6432 | time:    39.08 | tok/s: 21136.728093 | lr:   128.00
+step:      170 | loss:   5.2837 | norm:   1.5444 | time:    41.13 | tok/s: 21123.603759 | lr:   144.50
+step:      180 | loss:   5.2894 | norm:   1.6078 | time:    43.19 | tok/s: 21252.245771 | lr:   162.00
+step:      190 | loss:   5.2897 | norm:   1.6325 | time:    45.25 | tok/s: 21115.814838 | lr:   180.50
+step:      200 | loss:   5.2898 | norm:   1.6519 | time:    47.32 | tok/s: 20939.977115 | lr:   200.00
+step:      210 | loss:   5.2861 | norm:   1.7775 | time:    49.40 | tok/s: 21030.462801 | lr:     0.01
+step:      220 | loss:   5.2968 | norm:   1.6011 | time:    51.47 | tok/s: 21273.035150 | lr:     0.01
+step:      230 | loss:   5.2923 | norm:   1.5581 | time:    53.53 | tok/s: 21045.508114 | lr:     0.01
+step:      240 | loss:   5.2845 | norm:   1.6922 | time:    55.59 | tok/s: 21183.849823 | lr:     0.01
+step:      250 | loss:   5.2840 | norm:   1.6551 | time:    57.65 | tok/s: 21236.877270 | lr:     0.01
+step:      260 | loss:   5.2876 | norm:   1.6586 | time:    59.72 | tok/s: 21129.994962 | lr:     0.01
+step:      270 | loss:   5.2864 | norm:   1.6622 | time:    61.78 | tok/s: 21114.984359 | lr:     0.01
+step:      280 | loss:   5.2915 | norm:   1.6672 | time:    63.83 | tok/s: 21156.692713 | lr:     0.01
+step:      290 | loss:   5.2860 | norm:   1.7079 | time:    65.89 | tok/s: 21229.424335 | lr:     0.01
+step:      300 | loss:   5.2860 | norm:   1.7557 | time:    67.95 | tok/s: 21149.712524 | lr:     0.01
+step:      310 | loss:   5.3165 | norm:   1.6339 | time:    70.02 | tok/s: 20436.775990 | lr:     0.01
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 122, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 90, in train
+    logits, loss = model(xs, ys)
+                   ^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 111, in forward
+    x = layer(x)
+        ^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 89, in forward
+    x = x + self.mha(norm(x))
+            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 54, in forward
+    Q, K = self.rope(Q), self.rope(K)
+           ^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 29, in forward
+    angles = torch.einsum("i, j -> ij", idx, self.thetas)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\functional.py", line 361, in einsum
+    return handle_torch_function(einsum, operands, equation, *operands)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\overrides.py", line 1734, in handle_torch_function
+    result = mode.__torch_function__(public_api, types, args, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\functional.py", line 373, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -14,6 +14,7 @@ class DataLoader:
 
         self.shards = os.listdir(self.data_dir)
         self.current_shard = 0
+        self.idx = 0
 
         self.__next_shard()
 
@@ -23,12 +24,12 @@ class DataLoader:
         self.idx = 0
 
     def __load_next_shard(self) -> None:
-        assert 0 <= self.idx < len(self.shards)
+        assert 0 <= self.current_shard < len(self.shards)
         self.data = torch.tensor(
-            np.fromfile(self.data_dir + self.shards[self.idx], dtype=">i4")
+            np.fromfile(self.data_dir + self.shards[self.idx], dtype=">i4").astype(np.int32)
         )
         if self.device is not None:
-            self.data = self.data.to(self.device)
+            self.data = self.data.to(self.device).to(torch.long)
 
     def next(self) -> tuple[torch.Tensor]:
         if self.idx + self.B * self.T + 1 >= len(self.data):
@@ -38,5 +39,7 @@ class DataLoader:
 
         xbuf = buf[:-1].view(self.B, self.T)
         ybuf = buf[1:].view(self.B, self.T)
+        
+        self.idx += self.B * self.T
 
         return xbuf, ybuf

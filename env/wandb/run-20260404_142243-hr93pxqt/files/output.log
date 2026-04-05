@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 122, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 66, in train
+    dl = DataLoader(
+         ^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\dataloader.py", line 19, in __init__
+    self.__next_shard()
+  File "E:\Other\Tokenizer\env\src\training\dataloader.py", line 22, in __next_shard
+    self.__load_next_shard()
+  File "E:\Other\Tokenizer\env\src\training\dataloader.py", line 28, in __load_next_shard
+    self.data = torch.tensor(
+                ^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+ValueError: given numpy array has byte order different from the native byte order. Conversion between byte orders is currently not supported.
