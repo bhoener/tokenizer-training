@@ -26,7 +26,7 @@ class DataLoader:
     def __load_next_shard(self) -> None:
         assert 0 <= self.current_shard < len(self.shards)
         self.data = torch.tensor(
-            np.fromfile(self.data_dir + self.shards[self.idx], dtype=">i4").astype(np.int32)
+            np.fromfile(self.data_dir + self.shards[self.current_shard], dtype=">i4").astype(np.int32)
         )
         if self.device is not None:
             self.data = self.data.to(self.device).to(torch.long)

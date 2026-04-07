@@ -1,0 +1,31 @@
+step:        0 | loss:   5.2993 | norm:   0.6621 | time:     6.42 | tok/s: 3232.092018 | lr: 0.000100
+step:       10 | loss:   5.2517 | norm:   1.5592 | time:    16.86 | tok/s: 27426.541741 | lr: 0.000600
+step:       20 | loss:   5.1205 | norm:   1.5375 | time:    22.82 | tok/s: 27420.413255 | lr: 0.001100
+step:       30 | loss:   4.8833 | norm:   1.6856 | time:    28.78 | tok/s: 27358.156804 | lr: 0.001600
+step:       40 | loss:   4.5677 | norm:   1.9708 | time:    34.75 | tok/s: 26931.715407 | lr: 0.002100
+step:       50 | loss:   4.3428 | norm:   2.1050 | time:    40.77 | tok/s: 27425.863096 | lr: 0.002600
+step:       60 | loss:   4.1191 | norm:   2.0953 | time:    46.74 | tok/s: 27383.459713 | lr: 0.003100
+step:       70 | loss:   3.8334 | norm:   2.5601 | time:    52.70 | tok/s: 27334.933745 | lr: 0.003600
+step:       80 | loss:   3.5629 | norm:   2.2121 | time:    58.67 | tok/s: 26917.010112 | lr: 0.004100
+step:       90 | loss:   3.4815 | norm:   2.3179 | time:    64.70 | tok/s: 27223.483339 | lr: 0.004600
+step:      100 | loss:   3.6580 | norm:   2.1313 | time:    70.70 | tok/s: 27245.437082 | lr: 0.005100
+step:      110 | loss:   3.3579 | norm:   2.0241 | time:    76.71 | tok/s: 27440.121715 | lr: 0.005600
+step:      120 | loss:   3.2616 | norm:   2.3988 | time:    82.69 | tok/s: 26924.402948 | lr: 0.006100
+step:      130 | loss:   3.1647 | norm:   2.5750 | time:    88.73 | tok/s: 27384.780106 | lr: 0.006600
+step:      140 | loss:   3.1129 | norm:   1.7998 | time:    94.71 | tok/s: 26831.073343 | lr: 0.007100
+step:      150 | loss:   2.9354 | norm:   2.2062 | time:   100.75 | tok/s: 27161.408347 | lr: 0.007600
+step:      160 | loss:   3.0731 | norm:   2.2332 | time:   106.76 | tok/s: 27208.942567 | lr: 0.008100
+step:      170 | loss:   3.0381 | norm:   2.6438 | time:   112.78 | tok/s: 27436.287296 | lr: 0.008600
+step:      180 | loss:   2.9585 | norm:   2.1259 | time:   118.76 | tok/s: 27305.206241 | lr: 0.009100
+step:      190 | loss:   3.0887 | norm:   2.8476 | time:   124.74 | tok/s: 27295.423468 | lr: 0.009600
+step:      200 | loss:   3.0601 | norm:   2.3696 | time:   130.72 | tok/s: 27354.301702 | lr: 0.010100
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 137, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 108, in train
+    param_group["lr"] = get_lr(step, train_time, max_lr)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 56, in get_lr
+    elif prog > 1 - args.cooldown_frac:
+                    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'cooldown_frac'. Did you mean: 'cooldown_fraction'?

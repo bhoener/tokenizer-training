@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 137, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 108, in train
+    param_group["lr"] = get_lr(step, max_lr)
+                        ^^^^^^^^^^^^^^^^^^^^
+TypeError: train.<locals>.get_lr() missing 1 required positional argument: 'max_lr'

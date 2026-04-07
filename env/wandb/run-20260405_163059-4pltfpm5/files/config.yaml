@@ -1,0 +1,87 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            paldu1m6r8oa3ctz65fybf21cm1m0wqa:
+                codePath: env\src\training\train.py
+                codePathLocal: src\training\train.py
+                cpu_count: 16
+                cpu_count_logical: 24
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "4000750497792"
+                        used: "2237133910016"
+                email: brodiehoener@icloud.com
+                executable: C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\python.exe
+                git:
+                    commit: 6cb725ca5271924a0d8011c3047bdd3e217ce9aa
+                    remote: https://github.com/bhoener/tokenizer-training.git
+                gpu: NVIDIA GeForce RTX 4060 Ti
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 4352
+                      memoryTotal: "17175674880"
+                      name: NVIDIA GeForce RTX 4060 Ti
+                      uuid: GPU-6dba68c7-bf17-a382-3cea-b36a6ebee8a9
+                host: MSI
+                memory:
+                    total: "34192588800"
+                os: Windows-11-10.0.26200-SP0
+                program: E:\Other\Tokenizer\env\src\training\train.py
+                python: CPython 3.12.10
+                root: E:\Other\Tokenizer\env
+                startedAt: "2026-04-06T00:30:59.330546Z"
+                writerId: paldu1m6r8oa3ctz65fybf21cm1m0wqa
+        m: []
+        python_version: 3.12.10
+        t:
+            "1":
+                - 1
+                - 105
+            "2":
+                - 1
+                - 105
+            "3":
+                - 16
+            "4": 3.12.10
+            "5": 0.23.0
+            "8":
+                - 3
+            "12": 0.23.0
+            "13": windows-amd64
+adam_lr:
+    value: 0.0003
+compile:
+    value: true
+d_model:
+    value: 768
+data_dir:
+    value: data/outputs/fineweb/
+device:
+    value: cuda
+grad_accum_steps:
+    value: 2
+log_every:
+    value: 10
+micro_batch_size:
+    value: 8
+muon_lr:
+    value: 0.01
+n_heads:
+    value: 12
+n_layers:
+    value: 12
+seq_len:
+    value: 512
+train_time_minutes:
+    value: 60
+vocab_size:
+    value: 32768
+wandb:
+    value: true
+wandb_project:
+    value: ImprovedTransformer
+warmup_steps:
+    value: 200
