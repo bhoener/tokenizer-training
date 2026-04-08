@@ -1,0 +1,21 @@
+Parameter containing:
+tensor([[-1.1163e-02,  2.0717e-02, -2.5716e-02,  ..., -1.9818e-02,
+         -2.3226e-02,  5.4993e-03],
+        [-9.3279e-04,  3.2298e-02, -1.2115e-02,  ..., -4.7767e-05,
+         -2.2943e-02, -1.7878e-02],
+        [-3.7487e-03, -2.6176e-02, -4.2194e-03,  ...,  2.6353e-02,
+         -2.5895e-02, -3.0563e-02],
+        ...,
+        [-3.1935e-02, -2.7298e-03,  1.9890e-03,  ..., -2.6001e-02,
+          1.6679e-02,  1.5193e-02],
+        [ 2.7877e-02,  6.9582e-03, -1.9262e-02,  ..., -7.9718e-03,
+         -2.3755e-02,  8.8009e-03],
+        [-1.9317e-02, -1.3850e-02,  1.0175e-02,  ...,  3.1134e-03,
+          3.4981e-02,  3.0831e-03]], device='cuda:0', requires_grad=True)
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 146, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 72, in train
+    nn.init.orthogonal_(param.weight)
+                        ^^^^^^^^^^^^
+AttributeError: 'Parameter' object has no attribute 'weight'

@@ -68,9 +68,9 @@ def train() -> None:
     
     for param in model.parameters():
         if param.ndim == 2 and param.size(0) == param.size(1):
-            nn.init.orthogonal_(param.weight)
+            nn.init.orthogonal_(param)
         elif param.size(1) == args.vocab_size:
-            nn.init.orthogonal_(param.weight, gain=0.01)
+            nn.init.orthogonal_(param, gain=0.01)
 
     if args.compile:
         model = torch.compile(model)

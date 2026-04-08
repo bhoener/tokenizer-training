@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 145, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 71, in train
+    nn.init.orthogonal_(param.weight)
+                        ^^^^^^^^^^^^
+AttributeError: 'Parameter' object has no attribute 'weight'
