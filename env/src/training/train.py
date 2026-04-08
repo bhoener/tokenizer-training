@@ -11,7 +11,7 @@ def train() -> None:
 
     parser.add_argument("--train_time_minutes", type=int, default=60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
-    parser.add_argument("--grad_accum_steps", type=int, default=2)
+    parser.add_argument("--grad_accum_steps", type=int, default=8)
     parser.add_argument("--seq_len", type=int, default=512)
 
     parser.add_argument("--data_dir", type=str, default="data/outputs/fineweb/")
@@ -89,6 +89,7 @@ def train() -> None:
     while (train_time := time.time() - train_start) / 60 < args.train_time_minutes:
         step_t0 = time.time()
         loss_accum = 0.0
+
         for micro_step in range(args.grad_accum_steps):
             xs, ys = dl.next()
 
@@ -107,6 +108,7 @@ def train() -> None:
             for param_group in optim.param_groups:
                 param_group["lr"] = get_lr(step, train_time, max_lr)
             optim.step()
+            optim.zero_grad()
 
         tok_s = (
             args.micro_batch_size
@@ -117,7 +119,7 @@ def train() -> None:
         run.log(
             {
                 "step": step,
-                "loss": loss.item(),
+                "loss": loss_accum,
                 "time": train_time,
                 "norm": norm.item(),
                 "tok/s": tok_s,
@@ -127,7 +129,7 @@ def train() -> None:
 
         if step % args.log_every == 0:
             print(
-                f"step: {step:8d} | loss: {loss.item():8.4f} | norm: {norm.item():8.4f} | time: {train_time:8.2f} | tok/s: {tok_s:8f} | lr: {get_lr(step, train_time, args.muon_lr):8.6f}"
+                f"step: {step:8d} | loss: {loss_accum:8.4f} | norm: {norm.item():8.4f} | time: {train_time:8.2f} | tok/s: {tok_s:8f} | lr: {get_lr(step, train_time, args.muon_lr):8.6f}"
             )
 
         step += 1

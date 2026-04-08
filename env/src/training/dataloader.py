@@ -43,3 +43,11 @@ class DataLoader:
         self.idx += self.B * self.T
 
         return xbuf, ybuf
+
+def main() -> None:
+    dl = DataLoader("data/outputs/fineweb/", 4, 8)
+    for _ in range(3):
+        print(dl.next())
+    
+if __name__ == "__main__":
+    main()
