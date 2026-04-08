@@ -100,7 +100,7 @@ class GPT(nn.Module):
         
         self.layers = nn.ModuleList([DecoderBlock(d_model=d_model, n_heads=n_heads) for _ in range(n_layers)])
         
-        self.out_proj = nn.Linear(d_model, vocab_size)
+        self.out_proj = nn.Linear(d_model, vocab_size, bias=False)
         
     def forward(self, x: torch.Tensor, ys: torch.Tensor | None = None) -> torch.Tensor | tuple[torch.Tensor]:
         x = self.emb(x)

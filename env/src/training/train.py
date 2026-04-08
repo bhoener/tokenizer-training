@@ -9,7 +9,7 @@ from dataloader import DataLoader
 def train() -> None:
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--train_time_minutes", type=int, default=60)
+    parser.add_argument("--train_time_minutes", type=int, default=5*60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
     parser.add_argument("--grad_accum_steps", type=int, default=8)
     parser.add_argument("--seq_len", type=int, default=512)
@@ -65,6 +65,12 @@ def train() -> None:
         n_heads=args.n_heads,
         n_layers=args.n_layers,
     ).to(device)
+    
+    for param in model.parameters():
+        if param.ndim == 2 and param.size(0) == param.size(1):
+            nn.init.orthogonal_(param.weight)
+        elif param.size(1) == args.vocab_size:
+            nn.init.orthogonal_(param.weight, gain=0.01)
 
     if args.compile:
         model = torch.compile(model)
@@ -94,7 +100,7 @@ def train() -> None:
             xs, ys = dl.next()
 
             with torch.amp.autocast(device_type=device.type, dtype=torch.bfloat16):
-                logits, loss = model(xs, ys)
+                _, loss = model(xs, ys)
 
             loss = loss / args.grad_accum_steps
 
