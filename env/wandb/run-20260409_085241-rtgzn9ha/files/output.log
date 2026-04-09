@@ -1,0 +1,17 @@
+step:        0 | loss:  11.2937 | norm:   2.0322 | time:     5.58 | tok/s: 18581.558605 | lr: 0.000100
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 183, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 179, in train
+    print("Final BPB:", calc_bpb(model, dl, enc))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 30, in calc_bpb
+    token_bytes = torch.tensor([len(enc.decode_single(token)) for token in xs.cpu().numpy()])
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\tokenizer.py", line 78, in decode_single
+    if 0 < token < 256:
+       ^^^^^^^^^^^^^^^
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()

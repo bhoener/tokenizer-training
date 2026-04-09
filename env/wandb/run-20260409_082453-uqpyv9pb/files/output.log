@@ -1,0 +1,23 @@
+step:        0 | loss:  11.2933 | norm:   1.9955 | time:     5.73 | tok/s: 18024.647224 | lr: 0.000100
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 163, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 160, in train
+    print("Final BPB:", calc_bpb(model, dl, enc))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 18, in calc_bpb
+    num_bytes = len(enc.decode(xs.flatten()))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\tokenizer.py", line 75, in decode
+    return "".join(self.decode_single(token) for token in src)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\tokenizer.py", line 75, in <genexpr>
+    return "".join(self.decode_single(token) for token in src)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\tokenizer.py", line 81, in decode_single
+    return self.decode_single(self.vocab[token][0]) + self.decode_single(
+                              ~~~~~~~~~~^^^^^^^
+KeyError: tensor(4363, device='cuda:0')

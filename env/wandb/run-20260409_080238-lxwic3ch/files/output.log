@@ -1,0 +1,23 @@
+step:        0 | loss:  11.2209 | norm:   2.2779 | time:     6.59 | tok/s: 15107.696992 | lr: 0.000466
+step:       10 | loss:  10.3122 | norm:   1.9642 | time:    50.51 | tok/s: 33453.227004 | lr: 0.002906
+step:       20 | loss:   8.9749 | norm:   1.9820 | time:    89.82 | tok/s: 33394.061423 | lr: 0.005090
+step:       30 | loss:   8.0664 | norm:   2.3718 | time:   129.17 | tok/s: 33392.000624 | lr: 0.007276
+step:       40 | loss:   7.3578 | norm:   3.4227 | time:   168.52 | tok/s: 33388.822706 | lr: 0.009462
+step:       50 | loss:   6.9575 | norm:   4.6120 | time:   207.86 | tok/s: 33388.042008 | lr: 0.010000
+step:       60 | loss:   6.4973 | norm:   9.0722 | time:   247.29 | tok/s: 33410.652406 | lr: 0.010000
+step:       70 | loss:   6.2253 | norm:   9.2831 | time:   286.68 | tok/s: 33195.216962 | lr: 0.010000
+step:       80 | loss:   5.7601 | norm:   6.1325 | time:   326.64 | tok/s: 32503.269442 | lr: 0.010000
+step:       90 | loss:   5.6225 | norm:   3.6567 | time:   366.58 | tok/s: 33078.789135 | lr: 0.010000
+step:      100 | loss:   5.6398 | norm:   4.0844 | time:   406.51 | tok/s: 33198.364145 | lr: 0.010000
+step:      110 | loss:   5.4640 | norm:   3.0632 | time:   446.20 | tok/s: 33387.385033 | lr: 0.010000
+step:      120 | loss:   5.3436 | norm:   3.2785 | time:   485.61 | tok/s: 33227.796112 | lr: 0.010000
+step:      130 | loss:   5.2387 | norm:   3.1337 | time:   525.28 | tok/s: 33356.955323 | lr: 0.010000
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 145, in <module>
+    if __name__ == "__main__":
+        ^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 109, in train
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

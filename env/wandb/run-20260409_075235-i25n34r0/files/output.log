@@ -1,0 +1,25 @@
+W0409 07:52:51.662000 25640 site-packages\torch\_inductor\utils.py:1691] [0/0] Not enough SMs to use max_autotune_gemm mode
+step:        0 | loss:  11.1741 | norm:   2.2512 | time:     6.57 | tok/s: 3091.759881 | lr: 0.000100
+step:       10 | loss:  10.9938 | norm:   2.2069 | time:    84.18 | tok/s: 33514.545518 | lr: 0.000600
+step:       20 | loss:  10.5021 | norm:   2.2939 | time:   125.01 | tok/s: 33231.461703 | lr: 0.001100
+step:       30 | loss:   9.9469 | norm:   1.8418 | time:   166.70 | tok/s: 31162.023913 | lr: 0.001600
+step:       40 | loss:   9.2115 | norm:   1.7517 | time:   206.19 | tok/s: 33429.383986 | lr: 0.002100
+step:       50 | loss:   8.7007 | norm:   1.5111 | time:   245.50 | tok/s: 33445.472920 | lr: 0.002600
+step:       60 | loss:   8.0744 | norm:   1.2178 | time:   284.73 | tok/s: 33415.004305 | lr: 0.003100
+step:       70 | loss:   7.5198 | norm:   1.3148 | time:   323.96 | tok/s: 33406.624407 | lr: 0.003600
+step:       80 | loss:   6.9431 | norm:   2.0955 | time:   363.29 | tok/s: 33417.053725 | lr: 0.004100
+step:       90 | loss:   6.6298 | norm:   1.8013 | time:   402.54 | tok/s: 33392.791648 | lr: 0.004600
+step:      100 | loss:   6.4311 | norm:   1.6411 | time:   442.07 | tok/s: 33243.400061 | lr: 0.005100
+step:      110 | loss:   6.1292 | norm:   2.2303 | time:   481.84 | tok/s: 32864.478540 | lr: 0.005600
+step:      120 | loss:   5.8297 | norm:   2.1293 | time:   521.28 | tok/s: 33400.959646 | lr: 0.006100
+step:      130 | loss:   5.6960 | norm:   2.0701 | time:   560.77 | tok/s: 32977.785708 | lr: 0.006600
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 145, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 109, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

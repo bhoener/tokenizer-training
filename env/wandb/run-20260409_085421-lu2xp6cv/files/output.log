@@ -1,0 +1,17 @@
+step:        0 | loss:  11.2778 | norm:   2.1130 | time:     5.69 | tok/s: 18523.015901 | lr: 0.000100
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 182, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 178, in train
+    print("Final BPB:", calc_bpb(model, dl, enc))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 31, in calc_bpb
+    total_nats += (per_token_loss * token_bytes).sum()
+                   ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!

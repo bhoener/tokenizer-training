@@ -1,15 +1,46 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 import argparse
 import time
+import math
 from model import GPT
 from dataloader import DataLoader
+from tokenizer import Tokenizer
+
+
+@torch.no_grad()
+def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
+    total_nats = 0
+    total_bytes = 0
+    
+    for _ in range(steps):
+        xs, ys = dl.next()
+
+        logits = model(xs)
+
+        per_token_loss = (
+            F.cross_entropy(
+                logits.view(-1, logits.size(-1)), ys.view(-1), reduction="none"
+            )
+            .view(-1)
+        )
+
+        token_bytes = torch.tensor([len(enc.decode_single(token)) for token in xs.view(-1).cpu().numpy()])
+
+        total_nats += (per_token_loss * token_bytes).sum()
+        total_bytes += token_bytes.sum()
+
+    total_nats = total_nats.item()
+    total_bytes = total_bytes.item()
+
+    return total_nats / (total_bytes * math.log(2))
 
 
 def train() -> None:
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--train_time_minutes", type=int, default=5*60)
+    parser.add_argument("--train_time_minutes", type=int, default=60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
     parser.add_argument("--grad_accum_steps", type=int, default=8)
     parser.add_argument("--seq_len", type=int, default=512)
@@ -65,12 +96,12 @@ def train() -> None:
         n_heads=args.n_heads,
         n_layers=args.n_layers,
     ).to(device)
-    
+
     for param in model.parameters():
         if param.ndim == 2 and param.size(0) == param.size(1):
             nn.init.orthogonal_(param)
         elif param.ndim == 2 and param.size(1) == args.vocab_size:
-            nn.init.orthogonal_(param, gain=0.01)
+            nn.init.kaiming_normal_(param, gain=0.01)
 
     if args.compile:
         model = torch.compile(model)
@@ -139,6 +170,10 @@ def train() -> None:
             )
 
         step += 1
+
+    enc = Tokenizer("src/saved_tokenizers/main/vocab.txt")
+
+    print("Final BPB:", calc_bpb(model, dl, enc))
 
 
 if __name__ == "__main__":

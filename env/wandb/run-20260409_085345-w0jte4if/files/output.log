@@ -1,0 +1,14 @@
+step:        0 | loss:  11.2614 | norm:   2.0694 | time:     5.93 | tok/s: 18542.198085 | lr: 0.000100
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 183, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 179, in train
+    print("Final BPB:", calc_bpb(model, dl, enc))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 32, in calc_bpb
+    total_nats += (per_token_loss * token_bytes).sum()
+                   ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'numpy.ndarray' and 'Tensor'
