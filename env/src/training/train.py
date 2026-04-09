@@ -12,8 +12,7 @@ from tokenizer import Tokenizer
 
 @torch.no_grad()
 def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
-    total_nats = 0
-    total_bytes = 0
+    bpb_tot = 0
     
     for _ in range(steps):
         xs, ys = dl.next()
@@ -27,15 +26,16 @@ def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
             .view(-1)
         )
 
-        token_bytes = torch.tensor([len(enc.decode_single(token)) for token in xs.view(-1).cpu().numpy()])
+        token_bytes = torch.tensor([len(enc.decode_single(token).encode("utf-8")) for token in xs.view(-1).cpu().numpy()])
+        
+        tokens_per_byte = xs.numel() / token_bytes.sum()
 
-        total_nats += (per_token_loss * token_bytes).sum()
-        total_bytes += token_bytes.sum()
-
-    total_nats = total_nats.item()
-    total_bytes = total_bytes.item()
-
-    return total_nats / (total_bytes * math.log(2))
+        loss = per_token_loss.mean()
+        
+        bpb = tokens_per_byte * loss / math.log(2)
+        
+        bpb_tot += bpb
+    return bpb_tot / steps
 
 
 def train() -> None:
@@ -59,15 +59,18 @@ def train() -> None:
     parser.add_argument("--n_layers", type=int, default=12)
 
     parser.add_argument("--device", type=str, default="cuda")
-    parser.add_argument("--compile", type=bool, default=True)
+    parser.add_argument("--compile", type=bool, default=False)
 
-    parser.add_argument("--wandb", type=bool, default=True)
+    parser.add_argument("--wandb", type=bool, default=False)
     parser.add_argument("--wandb_project", type=str, default="ImprovedTransformer")
     parser.add_argument("--log_every", type=int, default=10)
     
     parser.add_argument("--save_dir", type=str, default="saved_models")
 
     args = parser.parse_args()
+    
+    if not os.path.exists(args.save_dir):
+        os.mkdir(args.save_dir)
 
     train_start = time.time()
 
@@ -156,16 +159,18 @@ def train() -> None:
             * args.grad_accum_steps
             / (time.time() - step_t0)
         )
-        run.log(
-            {
-                "step": step,
-                "loss": loss_accum,
-                "time": train_time,
-                "norm": norm.item(),
-                "tok/s": tok_s,
-                "lr": get_lr(step, train_time, args.muon_lr),
-            }
-        )
+        
+        if args.wandb:
+            run.log(
+                {
+                    "step": step,
+                    "loss": loss_accum,
+                    "time": train_time,
+                    "norm": norm.item(),
+                    "tok/s": tok_s,
+                    "lr": get_lr(step, train_time, args.muon_lr),
+                }
+            )
 
         if step % args.log_every == 0:
             print(
@@ -173,12 +178,13 @@ def train() -> None:
             )
 
         step += 1
+        break
 
     enc = Tokenizer("src/saved_tokenizers/main/vocab.txt")
 
     print("Final BPB:", calc_bpb(model, dl, enc))
     
-    torch.save(model.state_dict(), os.path.join(args.save_dir, run.name + ".pth"))
+    torch.save(model.state_dict(), os.path.join(args.save_dir, (run.name if args.wandb else "model") + ".pth"))
 
 
 if __name__ == "__main__":

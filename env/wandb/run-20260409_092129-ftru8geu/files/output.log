@@ -1,0 +1,17 @@
+step:        0 | loss:  11.2965 | norm:   2.0167 | time:     6.85 | tok/s: 10181.333303 | lr: 0.000100
+step:       10 | loss:  11.1113 | norm:   1.8646 | time:    31.20 | tok/s: 32951.217962 | lr: 0.000600
+step:       20 | loss:  10.6921 | norm:   1.7142 | time:    51.13 | tok/s: 32876.604860 | lr: 0.001100
+step:       30 | loss:  10.0444 | norm:   1.6984 | time:    71.17 | tok/s: 32914.751957 | lr: 0.001600
+step:       40 | loss:   9.3982 | norm:   1.9015 | time:    91.13 | tok/s: 32822.508491 | lr: 0.002100
+step:       50 | loss:   8.7866 | norm:   1.5404 | time:   111.10 | tok/s: 32883.113917 | lr: 0.002600
+step:       60 | loss:   8.4419 | norm:   1.6180 | time:   131.54 | tok/s: 31939.881145 | lr: 0.003100
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 185, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 143, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

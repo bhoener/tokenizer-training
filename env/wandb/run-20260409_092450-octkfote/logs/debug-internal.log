@@ -1,0 +1,14 @@
+{"time":"2026-04-09T09:24:53.1604674-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-09T09:24:53.4017683-08:00","level":"INFO","msg":"stream: created new stream","id":"octkfote"}
+{"time":"2026-04-09T09:24:53.4017683-08:00","level":"INFO","msg":"handler: started","stream_id":"octkfote"}
+{"time":"2026-04-09T09:24:53.403977-08:00","level":"INFO","msg":"stream: started","id":"octkfote"}
+{"time":"2026-04-09T09:24:53.403977-08:00","level":"INFO","msg":"sender: started","stream_id":"octkfote"}
+{"time":"2026-04-09T09:24:53.403977-08:00","level":"INFO","msg":"writer: started","stream_id":"octkfote"}
+{"time":"2026-04-09T11:33:02.8845455-08:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":13318}
+{"time":"2026-04-09T11:33:13.2050223-08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2026-04-09T11:33:15.3525009-08:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":23}
+{"time":"2026-04-09T12:25:09.5702249-08:00","level":"INFO","msg":"stream: closing","id":"octkfote"}
+{"time":"2026-04-09T12:25:09.9630744-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-09T12:25:10.150687-08:00","level":"INFO","msg":"handler: closed","stream_id":"octkfote"}
+{"time":"2026-04-09T12:25:10.150687-08:00","level":"INFO","msg":"sender: closed","stream_id":"octkfote"}
+{"time":"2026-04-09T12:25:10.150687-08:00","level":"INFO","msg":"stream: closed","id":"octkfote"}
