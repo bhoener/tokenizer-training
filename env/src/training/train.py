@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import argparse
 import time
 import math
+import os
 from model import GPT
 from dataloader import DataLoader
 from tokenizer import Tokenizer
@@ -40,7 +41,7 @@ def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
 def train() -> None:
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--train_time_minutes", type=int, default=60)
+    parser.add_argument("--train_time_minutes", type=int, default=3*60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
     parser.add_argument("--grad_accum_steps", type=int, default=8)
     parser.add_argument("--seq_len", type=int, default=512)
@@ -63,6 +64,8 @@ def train() -> None:
     parser.add_argument("--wandb", type=bool, default=True)
     parser.add_argument("--wandb_project", type=str, default="ImprovedTransformer")
     parser.add_argument("--log_every", type=int, default=10)
+    
+    parser.add_argument("--save_dir", type=str, default="saved_models")
 
     args = parser.parse_args()
 
@@ -174,6 +177,8 @@ def train() -> None:
     enc = Tokenizer("src/saved_tokenizers/main/vocab.txt")
 
     print("Final BPB:", calc_bpb(model, dl, enc))
+    
+    torch.save(model.state_dict(), os.path.join(args.save_dir, run.name + ".pth"))
 
 
 if __name__ == "__main__":
