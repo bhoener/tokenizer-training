@@ -5,6 +5,7 @@ import argparse
 import time
 import math
 import os
+import yaml
 from model import GPT
 from dataloader import DataLoader
 from tokenizer import Tokenizer
@@ -40,6 +41,8 @@ def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
 
 def train() -> None:
     parser = argparse.ArgumentParser()
+    
+    parser.add_argument("--config_file", type=str, default=None)
 
     parser.add_argument("--train_time_minutes", type=int, default=3*60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
@@ -59,15 +62,20 @@ def train() -> None:
     parser.add_argument("--n_layers", type=int, default=12)
 
     parser.add_argument("--device", type=str, default="cuda")
-    parser.add_argument("--compile", type=bool, default=False)
+    parser.add_argument("--compile", type=bool, default=True)
 
-    parser.add_argument("--wandb", type=bool, default=False)
+    parser.add_argument("--wandb", type=bool, default=True)
     parser.add_argument("--wandb_project", type=str, default="ImprovedTransformer")
     parser.add_argument("--log_every", type=int, default=10)
     
     parser.add_argument("--save_dir", type=str, default="saved_models")
 
     args = parser.parse_args()
+    
+    if args.config_file is not None:
+        with open(args.config_file, "r", encoding="utf-8") as f:
+            for k, v in yaml.load(f, Loader=yaml.SafeLoader).items():
+                setattr(args, k, v)
     
     if not os.path.exists(args.save_dir):
         os.mkdir(args.save_dir)
@@ -178,7 +186,6 @@ def train() -> None:
             )
 
         step += 1
-        break
 
     enc = Tokenizer("src/saved_tokenizers/main/vocab.txt")
 

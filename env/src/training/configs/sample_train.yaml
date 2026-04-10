@@ -1,0 +1,25 @@
+train_time_minutes: 60
+micro_batch_size: 16
+grad_accum_steps: 8
+seq_len: 512
+
+data_dir: data/outputs/fineweb/
+
+adam_lr: 0.0003
+muon_lr: 0.01
+warmup_steps: 200
+cooldown_frac: 0.1
+
+vocab_size: 32768
+d_model: 768
+n_heads: 12
+n_layers: 12
+
+device: cuda
+compile: True
+
+wandb: True
+wandb_project: ImprovedTransformer
+log_every: 10
+
+save_dir: saved_models

@@ -9,6 +9,6 @@ public class TokenizerTrain {
         String[] files = new String[] { "data/tokenizer_train/code/0000.txt", "data/tokenizer_train/fineweb/0000.txt" };
 
         myTokenizer.train(files);
-        myTokenizer.saveState("src/saved_tokenizers/main/vocab.txt");
+        myTokenizer.saveState("src/saved_tokenizers/updated/vocab.txt");
     }
 }

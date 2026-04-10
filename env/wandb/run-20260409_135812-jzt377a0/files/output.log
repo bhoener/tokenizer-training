@@ -1,0 +1,2 @@
+step:        0 | loss:  11.2892 | norm:   2.0055 | time:     6.61 | tok/s: 10102.566267 | lr: 0.000100
+Final BPB: tensor(5.1961, device='cuda:0')

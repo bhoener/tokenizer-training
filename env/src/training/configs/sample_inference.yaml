@@ -1,0 +1,20 @@
+filepath: "saved_models/visionary-capybara-53.pth"
+
+tokenizer:
+  filepath: "src/saved_tokenizers/main/vocab.txt"
+
+model:
+  vocab_size: 32768
+  d_model: 768
+  n_heads: 12
+  n_layers: 12
+
+sampling:
+  seq_len: 512
+  temperature: 0.9
+  top_k: 30
+  freq_penalty: 0.8
+  freq_decay: 0.99
+
+system:
+  device: cuda

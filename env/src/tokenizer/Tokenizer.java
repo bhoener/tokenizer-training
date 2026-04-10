@@ -13,7 +13,6 @@ public class Tokenizer {
     private ReversibleMap<Integer, TokenPair> vocab;
     private int vocabSize;
     private final int MAX_VOCAB_SIZE;
-    private int allowMultiWord;
     private Map<String, Integer> tokenCache;
     private Pattern pretokRegex = Pattern.compile("/\\S+|\\s+/g");
 
@@ -33,7 +32,7 @@ public class Tokenizer {
     }
 
     private void buildCache() {
-        for (int i: this.vocab.keySet()) {
+        for (int i : this.vocab.keySet()) {
             this.tokenCache.put(this.toString(this.vocab.getValue(i)), i);
         }
     }
@@ -67,9 +66,6 @@ public class Tokenizer {
 
             TokenPair maxPair = null;
             int maxFreq = 0;
-
-            if (this.vocabSize == this.allowMultiWord)
-                System.out.println("Allowing multi-word tokens");
 
             for (TokenPair entry : frequencyMap.keySet()) {
                 int value = frequencyMap.get(entry);
@@ -170,7 +166,7 @@ public class Tokenizer {
             for (int i = 1; i < tokens.size(); i++) {
                 TokenPair merge = new TokenPair(tokens.get(i - 1), tokens.get(i));
                 if (this.vocab.containsValue(merge))
-                     merges.add(merge);
+                    merges.add(merge);
             }
             // System.out.println("Adding merges: " + (System.nanoTime() - t0));
 
@@ -198,7 +194,6 @@ public class Tokenizer {
 
             if (minMerge == null)
                 break;
-            
 
             // t0 = System.nanoTime();
             ArrayList<Integer> newTokens = new ArrayList<>(tokens.size());
@@ -212,7 +207,7 @@ public class Tokenizer {
 
                 if (combined.equals(minMerge)) {
                     newTokens.add(this.vocab.getKey(combined));
-                    
+
                     if (tokensIter.hasNext())
                         current = tokensIter.next();
                     if (!tokensIter.hasNext() && combined.__t2() != current) {
@@ -239,7 +234,7 @@ public class Tokenizer {
 
         List<Integer> tokens = new ArrayList<>(pretokens.length * 2);
 
-        for (String pretoken: pretokens) {
+        for (String pretoken : pretokens) {
             if (this.tokenCache.containsKey(pretoken)) {
                 tokens.add(this.tokenCache.get(pretoken));
             } else {
@@ -250,7 +245,8 @@ public class Tokenizer {
         return tokens;
     }
 
-    public void encodeFile(String inputFile, String outputFile, int chunkSize) throws IOException, InvalidTokenException {
+    public void encodeFile(String inputFile, String outputFile, int chunkSize)
+            throws IOException, InvalidTokenException {
         byte[] buf = new byte[chunkSize];
         BufferedInputStream input = new BufferedInputStream(new FileInputStream(inputFile));
         DataOutputStream out = new DataOutputStream(new FileOutputStream(outputFile));

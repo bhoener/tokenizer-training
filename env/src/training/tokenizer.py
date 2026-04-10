@@ -88,13 +88,24 @@ class Tokenizer:
 
 
 def main() -> None:
-    filepath = "src/saved_tokenizers/shakespeare/"
+    from dataloader import DataLoader
+    
+    filepath = "src/saved_tokenizers/main/"
     enc = Tokenizer(filepath + "vocab.txt")
+    
+    dl = DataLoader("data/outputs/fineweb/", B=4, T=32)
+    
+    xs, ys = dl.next()
 
-    print(enc.encode("Romeo.\nHello world\n\nMERCUTIO. Sigma Fortnite balls"))
     print("|", end="")
     for token in enc.encode("Romeo.\nhello world\n\nMERCUTIO. Sigma Fortnite balls"):
         print(f"{enc.decode([token])}|", end="")
+        
+    for token in xs.view(-1).cpu().numpy():
+        print(f"{enc.decode([token])}|", end="")
+        
+    for token in xs.view(-1).cpu().numpy():
+        print(f"{enc.decode([token])}", end="")
 
 
 if __name__ == "__main__":
