@@ -5,8 +5,6 @@ import java.util.*;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.regex.*;
 
 public class Tokenizer {
@@ -70,14 +68,14 @@ public class Tokenizer {
             for (TokenPair entry : frequencyMap.keySet()) {
                 int value = frequencyMap.get(entry);
 
-                if (value > maxFreq && !this.vocab.containsValue(entry)
-                        && !isMultiWord(entry) && !containsEOT(entry)) {
+                if (value > maxFreq && isValid(entry)) {
                     maxFreq = value;
                     maxPair = entry;
                 }
             }
 
             this.vocab.putKV(++this.vocabSize, maxPair);
+            this.tokenCache.put(toString(maxPair), this.vocabSize);
 
             Iterator<Integer> iter = tokens.iterator();
             ArrayList<Integer> newTokens = new ArrayList<>(tokens.size());
@@ -100,8 +98,7 @@ public class Tokenizer {
 
             tokens = newTokens;
 
-            if (this.vocabSize % 10 == 0)
-                System.out.println("New merge: " + toString(maxPair));
+            System.out.println("New merge: " + toString(maxPair));
         }
     }
 
@@ -116,6 +113,22 @@ public class Tokenizer {
                 return true;
         }
         return false;
+    }
+
+    private boolean hasSpecial(TokenPair input) {
+        String inString = toString(input);
+        for (int i = 0; i < inString.length(); i++) {
+            char current = inString.charAt(i);
+            if (!Character.isLetter(current) && !Character.isWhitespace(current))
+                return true;
+        }
+        return false;
+    }
+
+    private boolean isValid(TokenPair input) {
+        return !this.vocab.containsValue(input)
+                && !isMultiWord(input) && !containsEOT(input) && !hasSpecial(input)
+                && !this.tokenCache.containsKey(toString(input));
     }
 
     private static boolean containsEOT(TokenPair input) {
