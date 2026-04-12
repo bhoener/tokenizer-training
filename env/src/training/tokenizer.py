@@ -123,7 +123,6 @@ Elizabeth’s refusal of Mr. Collins offer of marriage showed an independence"""
         print(f"{enc.decode([token])}|", end="")
     print("Num tokens:", len(tokens))
     print("Tokens per character:", len(tokens) / len(src))
-    
 
 
 if __name__ == "__main__":
