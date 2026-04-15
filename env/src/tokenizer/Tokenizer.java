@@ -12,7 +12,7 @@ public class Tokenizer {
     private int vocabSize;
     private final int MAX_VOCAB_SIZE;
     private Map<String, Integer> tokenCache;
-    private Pattern pretokRegex = Pattern.compile("/\\S+|\\s+/g");
+    private Pattern pretokRegex = Pattern.compile("\\s*\\p{L}+|\\d|\\s+|[^\\s\\p{L}\\d]");
 
     public Tokenizer(int vocabSize) {
         this.MAX_VOCAB_SIZE = vocabSize;
@@ -243,11 +243,13 @@ public class Tokenizer {
     }
 
     public List<Integer> encode(String input) throws InvalidTokenException {
-        String[] pretokens = this.pretokRegex.split(input);
+        Matcher match = this.pretokRegex.matcher(input);
 
-        List<Integer> tokens = new ArrayList<>(pretokens.length * 2);
+        List<Integer> tokens = new ArrayList<>(input.length() / 2);
 
-        for (String pretoken : pretokens) {
+        while (match.find()) {
+            String pretoken = match.group();
+
             if (this.tokenCache.containsKey(pretoken)) {
                 tokens.add(this.tokenCache.get(pretoken));
             } else {
@@ -263,21 +265,25 @@ public class Tokenizer {
         byte[] buf = new byte[chunkSize];
         BufferedInputStream input = new BufferedInputStream(new FileInputStream(inputFile));
         DataOutputStream out = new DataOutputStream(new FileOutputStream(outputFile));
+
+        int count = 0;
         while (input.read(buf) != -1) {
             long t0 = System.nanoTime();
             List<Integer> tokens = this.encode(new String(buf, StandardCharsets.UTF_8));
             long time = System.nanoTime() - t0;
-            System.out.println("Tok/s: " + (tokens.size() / (time / 1e9)));
+            if (count % 1000 == 0)
+                System.out.println("Tok/s: " + (int) (tokens.size() / (time / 1e9)));
             for (int t : tokens) {
                 out.writeInt(t);
             }
+            count++;
         }
         input.close();
         out.close();
     }
 
     public void encodeFile(String inputFile, String outputFile) throws IOException, InvalidTokenException {
-        this.encodeFile(inputFile, outputFile, 16);
+        this.encodeFile(inputFile, outputFile, 256);
     }
 
     public String decode(List<Integer> input) throws InvalidTokenException {

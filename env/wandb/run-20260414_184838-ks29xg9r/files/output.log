@@ -1,0 +1,88 @@
+W0414 18:49:28.807000 24816 site-packages\torch\_inductor\utils.py:1691] [0/0] Not enough SMs to use max_autotune_gemm mode
+C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_inductor\lowering.py:7513: UserWarning:
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_inductor\lowering.py:7513: UserWarning:
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+step:        0 | loss:  10.5802 | norm:   1.0693 | time:     8.34 | tok/s: 288.663613 | lr: 0.000100
+step:       10 | loss:  10.5161 | norm:   0.7983 | time:   282.03 | tok/s: 12646.356045 | lr: 0.000600
+step:       20 | loss:  10.3188 | norm:   0.7015 | time:   333.88 | tok/s: 12645.685820 | lr: 0.001100
+step:       30 | loss:   9.9423 | norm:   0.8378 | time:   386.41 | tok/s: 12330.328598 | lr: 0.001600
+step:       40 | loss:   9.2940 | norm:   1.1025 | time:   439.11 | tok/s: 12464.661474 | lr: 0.002100
+step:       50 | loss:   8.5695 | norm:   2.0270 | time:   491.75 | tok/s: 12652.197337 | lr: 0.002600
+step:       60 | loss:   7.7805 | norm:   4.4555 | time:   543.77 | tok/s: 12652.356906 | lr: 0.003100
+step:       70 | loss:   7.2290 | norm:   2.0455 | time:   595.62 | tok/s: 12652.868252 | lr: 0.003600
+step:       80 | loss:   6.7290 | norm:   8.7874 | time:   647.45 | tok/s: 12650.709580 | lr: 0.004100
+step:       90 | loss:   6.4132 | norm:   1.8600 | time:   699.29 | tok/s: 12646.048850 | lr: 0.004600
+step:      100 | loss:   5.9939 | norm:   1.9088 | time:   751.13 | tok/s: 12644.777756 | lr: 0.005100
+step:      110 | loss:   5.8762 | norm:  46.4193 | time:   802.97 | tok/s: 12639.787766 | lr: 0.005600
+step:      120 | loss:   5.6830 | norm:   1.9547 | time:   854.92 | tok/s: 12650.456900 | lr: 0.006100
+step:      130 | loss:   5.5799 | norm:   3.3540 | time:   906.87 | tok/s: 12641.603755 | lr: 0.006600
+step:      140 | loss:   5.3710 | norm:   2.2358 | time:   958.74 | tok/s: 12637.534782 | lr: 0.007100
+step:      150 | loss:   5.3518 | norm:   1.5503 | time:  1010.60 | tok/s: 12643.476095 | lr: 0.007600
+step:      160 | loss:   5.1985 | norm:   8.5064 | time:  1062.58 | tok/s: 12634.046770 | lr: 0.008100
+step:      170 | loss:   5.2258 | norm:   1.8462 | time:  1114.46 | tok/s: 12642.001435 | lr: 0.008600
+step:      180 | loss:   5.0481 | norm:   2.2415 | time:  1166.60 | tok/s: 12647.484301 | lr: 0.009100
+step:      190 | loss:   5.0708 | norm:   2.3078 | time:  1218.45 | tok/s: 12642.093301 | lr: 0.009600
+step:      200 | loss:   4.8763 | norm:   2.7411 | time:  1270.30 | tok/s: 12640.635240 | lr: 0.010100
+step:      210 | loss:   4.8467 | norm:   3.8841 | time:  1322.14 | tok/s: 12634.160006 | lr: 0.010000
+step:      220 | loss:   4.9739 | norm:   4.0551 | time:  1373.99 | tok/s: 12646.310663 | lr: 0.010000
+step:      230 | loss:   4.8814 | norm:   2.8605 | time:  1425.93 | tok/s: 12640.592224 | lr: 0.010000
+step:      240 | loss:   4.7608 | norm:   3.6086 | time:  1477.87 | tok/s: 12644.519496 | lr: 0.010000
+step:      250 | loss:   4.9032 | norm:   4.2066 | time:  1529.84 | tok/s: 12646.315899 | lr: 0.010000
+step:      260 | loss:   4.7127 | norm:   2.2755 | time:  1581.67 | tok/s: 12638.796866 | lr: 0.010000
+step:      270 | loss:   4.7363 | norm:   3.4301 | time:  1633.52 | tok/s: 12641.533408 | lr: 0.010000
+step:      280 | loss:   4.6520 | norm:   2.0263 | time:  1685.37 | tok/s: 12647.496521 | lr: 0.010000
+step:      290 | loss:   4.5458 | norm:   3.8264 | time:  1737.22 | tok/s: 12644.762051 | lr: 0.010000
+step:      300 | loss:   4.6565 | norm:   3.5920 | time:  1789.07 | tok/s: 12644.888857 | lr: 0.010000
+step:      310 | loss:   4.6486 | norm:   9.0857 | time:  1841.01 | tok/s: 12641.963643 | lr: 0.010000
+step:      320 | loss:   4.5172 | norm:   2.6668 | time:  1892.85 | tok/s: 12643.235334 | lr: 0.010000
+step:      330 | loss:   4.4981 | norm:   2.1588 | time:  1944.70 | tok/s: 12642.275291 | lr: 0.010000
+step:      340 | loss:   4.6062 | norm:   3.7142 | time:  1996.55 | tok/s: 12643.437712 | lr: 0.010000
+step:      350 | loss:   4.4101 | norm:   1.6486 | time:  2048.40 | tok/s: 12647.104314 | lr: 0.010000
+step:      360 | loss:   4.5609 | norm:   3.0122 | time:  2100.34 | tok/s: 12650.976244 | lr: 0.010000
+step:      370 | loss:   4.4052 | norm:   2.3538 | time:  2152.16 | tok/s: 12651.670905 | lr: 0.010000
+step:      380 | loss:   4.4475 | norm:   2.0700 | time:  2204.00 | tok/s: 12640.965425 | lr: 0.010000
+step:      390 | loss:   4.4634 | norm:   1.7534 | time:  2255.96 | tok/s: 12171.082900 | lr: 0.010000
+step:      400 | loss:   4.4408 | norm:   2.0515 | time:  2308.11 | tok/s: 12648.553973 | lr: 0.010000
+step:      410 | loss:   4.4673 | norm:   1.8534 | time:  2360.06 | tok/s: 12646.232700 | lr: 0.010000
+step:      420 | loss:   4.2700 | norm:   2.5035 | time:  2412.00 | tok/s: 12645.716072 | lr: 0.010000
+step:      430 | loss:   4.3722 | norm:  14.0240 | time:  2463.84 | tok/s: 12644.297308 | lr: 0.010000
+step:      440 | loss:   4.5617 | norm:   1.9404 | time:  2515.71 | tok/s: 12644.172840 | lr: 0.010000
+step:      450 | loss:   4.3319 | norm:   1.9936 | time:  2567.56 | tok/s: 12640.096401 | lr: 0.010000
+step:      460 | loss:   4.4797 | norm:   2.3463 | time:  2619.52 | tok/s: 8515.055852 | lr: 0.010000
+step:      470 | loss:   4.3003 | norm:   1.6062 | time:  2673.89 | tok/s: 12647.186361 | lr: 0.010000
+step:      480 | loss:   4.3770 | norm:   1.4930 | time:  2725.75 | tok/s: 12644.786481 | lr: 0.010000
+step:      490 | loss:   4.4298 | norm:   2.0179 | time:  2777.71 | tok/s: 12639.000264 | lr: 0.010000
+step:      500 | loss:   4.2471 | norm:   1.6258 | time:  2829.66 | tok/s: 12641.715382 | lr: 0.010000
+step:      510 | loss:   4.3350 | norm:   1.8275 | time:  2881.52 | tok/s: 12638.933432 | lr: 0.010000
+step:      520 | loss:   4.6531 | norm:   3.9374 | time:  2933.47 | tok/s: 12642.270058 | lr: 0.010000
+step:      530 | loss:   4.3446 | norm:   3.1832 | time:  2985.42 | tok/s: 12634.357447 | lr: 0.010000
+step:      540 | loss:   4.4311 | norm:   1.6665 | time:  3037.39 | tok/s: 12642.490431 | lr: 0.010000
+step:      550 | loss:   4.6136 | norm:  98.6365 | time:  3089.25 | tok/s: 12646.647545 | lr: 0.010000
+step:      560 | loss:   4.3432 | norm:   1.6748 | time:  3141.10 | tok/s: 12645.088380 | lr: 0.010000
+step:      570 | loss:   4.2880 | norm:   1.7201 | time:  3193.05 | tok/s: 12642.506130 | lr: 0.010000
+step:      580 | loss:   4.3325 | norm:   1.4678 | time:  3244.99 | tok/s: 12647.763632 | lr: 0.009863
+step:      590 | loss:   4.4575 | norm:   2.4290 | time:  3296.84 | tok/s: 12643.716865 | lr: 0.008437
+step:      600 | loss:   4.1665 | norm:   1.1356 | time:  3348.80 | tok/s: 12642.576488 | lr: 0.007008
+step:      610 | loss:   4.0885 | norm:   5.9220 | time:  3400.85 | tok/s: 12642.761982 | lr: 0.005577
+step:      620 | loss:   3.9958 | norm:   1.4245 | time:  3452.81 | tok/s: 12638.816624 | lr: 0.004148
+step:      630 | loss:   3.9757 | norm:   0.8393 | time:  3504.76 | tok/s: 12645.154113 | lr: 0.002719
+step:      640 | loss:   3.9728 | norm:   0.6892 | time:  3556.71 | tok/s: 12645.191924 | lr: 0.001291
+C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_inductor\lowering.py:7513: UserWarning:
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+Final BPB: tensor(2.2104, device='cuda:0')

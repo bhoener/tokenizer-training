@@ -44,9 +44,9 @@ def train() -> None:
     
     parser.add_argument("--config_file", type=str, default=None)
 
-    parser.add_argument("--train_time_minutes", type=int, default=3*60)
-    parser.add_argument("--micro_batch_size", type=int, default=16)
-    parser.add_argument("--grad_accum_steps", type=int, default=8)
+    parser.add_argument("--train_time_minutes", type=int, default=60)
+    parser.add_argument("--micro_batch_size", type=int, default=8)
+    parser.add_argument("--grad_accum_steps", type=int, default=16)
     parser.add_argument("--seq_len", type=int, default=512)
 
     parser.add_argument("--data_dir", type=str, default="data/outputs/fineweb/")
@@ -60,6 +60,8 @@ def train() -> None:
     parser.add_argument("--d_model", type=int, default=768)
     parser.add_argument("--n_heads", type=int, default=12)
     parser.add_argument("--n_layers", type=int, default=12)
+    
+    parser.add_argument("--attention_residuals", type=bool, default=True)
 
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--compile", type=bool, default=True)
@@ -109,6 +111,7 @@ def train() -> None:
         d_model=args.d_model,
         n_heads=args.n_heads,
         n_layers=args.n_layers,
+        attn_res=args.attn_res,
     ).to(device)
 
     for param in model.parameters():

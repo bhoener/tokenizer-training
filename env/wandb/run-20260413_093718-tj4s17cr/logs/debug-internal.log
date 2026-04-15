@@ -1,0 +1,12 @@
+{"time":"2026-04-13T09:37:22.1370722-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-13T09:37:22.7074234-08:00","level":"INFO","msg":"stream: created new stream","id":"tj4s17cr"}
+{"time":"2026-04-13T09:37:22.7074234-08:00","level":"INFO","msg":"handler: started","stream_id":"tj4s17cr"}
+{"time":"2026-04-13T09:37:22.7157292-08:00","level":"INFO","msg":"stream: started","id":"tj4s17cr"}
+{"time":"2026-04-13T09:37:22.7157292-08:00","level":"INFO","msg":"writer: started","stream_id":"tj4s17cr"}
+{"time":"2026-04-13T09:37:22.7162386-08:00","level":"INFO","msg":"sender: started","stream_id":"tj4s17cr"}
+{"time":"2026-04-13T11:31:38.6568333-08:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/brogrammer/ImprovedTransformer/tj4s17cr/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-04-13T12:37:43.8596607-08:00","level":"INFO","msg":"stream: closing","id":"tj4s17cr"}
+{"time":"2026-04-13T12:37:44.2708473-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-13T12:37:44.4587096-08:00","level":"INFO","msg":"handler: closed","stream_id":"tj4s17cr"}
+{"time":"2026-04-13T12:37:44.4593927-08:00","level":"INFO","msg":"sender: closed","stream_id":"tj4s17cr"}
+{"time":"2026-04-13T12:37:44.4593927-08:00","level":"INFO","msg":"stream: closed","id":"tj4s17cr"}
