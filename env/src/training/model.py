@@ -90,33 +90,65 @@ class SwiGLU(nn.Module):
 
 
 class DecoderBlock(nn.Module):
-    def __init__(self, d_model: int, n_heads: int, attn_res: bool = False):
+    def __init__(
+        self,
+        d_model: int,
+        n_heads: int,
+        attn_res: bool = False,
+        layer_number: int | None = None,
+        block_size: int = 8,
+    ):
         super().__init__()
         self.d_model = d_model
         self.n_heads = n_heads
+
+        self.attn_res = attn_res
+        self.layer_number = layer_number
+        self.block_size = block_size
 
         self.mha = MultiHeadAttention(d_model=d_model, n_heads=n_heads)
         self.mlp = SwiGLU(d_in=d_model, d_h=d_model * 4, d_out=d_model)
 
         if attn_res:
-            self.q_attn = nn.Parameter(torch.randn(d_model))
-            self.q_mlp = nn.Parameter(torch.randn(d_model))
+            with torch.no_grad():
+                self.q_attn = nn.Parameter(torch.randn(d_model) / d_model**0.5)
+                self.q_mlp = nn.Parameter(torch.randn(d_model) / d_model**0.5)
 
-    def compute_res(self, hidden_states: torch.Tensor, q: torch.Tensor) -> torch.Tensor:
-        k = norm(hidden_states.permute(1, 2, 0, 3))  # (N, B, L, D) -> (B, L, N, D)
-        alphas = F.softmax(torch.einsum("b l n d, d -> b n l", k, q), dim=1)
-        out = torch.einsum("n b l d, b n l -> b l d", hidden_states, alphas)
+    # see https://arxiv.org/abs/2603.15031
+    def compute_res_block(
+        self, blocks: list[torch.Tensor], partial_block: torch.Tensor, q: torch.Tensor
+    ) -> torch.Tensor:
+
+        V = torch.stack(blocks + [partial_block])
+
+        K = norm(V)
+        alphas = torch.einsum("n b l d, d -> n b l", K, q).softmax(0)
+        out = torch.einsum("n b l d, n b l -> b l d", V, alphas)
         return out
 
-    def forward(self, x: torch.Tensor | None) -> torch.Tensor:
-        if x.ndim > 3:
-            res_out_mha = self.compute_res(x, self.q_attn)
-            res_out_mha = res_out_mha + self.mha(norm(res_out_mha))
-            x = torch.cat((x, res_out_mha.unsqueeze(0)))
-            res_out_mlp = self.compute_res(x, self.q_mlp)
-            res_out_mlp = res_out_mlp + self.mlp(norm(res_out_mlp))
-            x = torch.cat((x, res_out_mlp.unsqueeze(0)))
-            return x
+    def forward(
+        self, x: list[torch.Tensor] | torch.Tensor, hidden_states: torch.Tensor | None
+    ) -> tuple[list[torch.Tensor], torch.Tensor]:
+        if self.attn_res:
+            partial_block = hidden_states
+            h = self.compute_res_block(x, partial_block, self.q_attn)
+
+            if self.layer_number % (self.block_size // 2) == 0:
+                x.append(partial_block)
+                partial_block = None
+
+            attn_out = self.mha(norm(h))
+
+            partial_block = (
+                partial_block + attn_out if partial_block is not None else attn_out
+            )
+
+            h = self.compute_res_block(x, partial_block, self.q_mlp)
+            mlp_out = self.mlp(norm(h))
+
+            partial_block = partial_block + mlp_out
+
+            return x, partial_block
         else:
             x = x + self.mha(norm(x))
             x = x + self.mlp(norm(x))
@@ -131,6 +163,7 @@ class GPT(nn.Module):
         n_heads: int,
         n_layers: int,
         attn_res: bool = True,
+        block_size: int = 8,
     ):
         super().__init__()
         self.vocab_size = vocab_size
@@ -143,8 +176,14 @@ class GPT(nn.Module):
 
         self.layers = nn.ModuleList(
             [
-                DecoderBlock(d_model=d_model, n_heads=n_heads, attn_res=attn_res)
-                for _ in range(n_layers)
+                DecoderBlock(
+                    d_model=d_model,
+                    n_heads=n_heads,
+                    attn_res=attn_res,
+                    layer_number=i,
+                    block_size=block_size,
+                )
+                for i in range(n_layers)
             ]
         )
 
@@ -156,13 +195,15 @@ class GPT(nn.Module):
         x = self.emb(x)
 
         if self.attn_res:
-            x = x.unsqueeze(0)
-
-        for layer in self.layers:
-            x = layer(x)
-
-        if self.attn_res:
-            x = x[-1]
+            blocks = [x]
+            hidden_states = x
+            for layer in self.layers:
+                block, hidden_states = layer(blocks, hidden_states)
+                blocks.append(block)
+            x = hidden_states
+        else:
+            for layer in self.layers:
+                x = layer(x)
 
         logits = self.out_proj(x)
 

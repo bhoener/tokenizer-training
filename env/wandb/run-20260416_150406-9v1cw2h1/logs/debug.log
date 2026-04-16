@@ -1,0 +1,49 @@
+2026-04-16 15:04:06,248 INFO    MainThread:3856 [wandb_setup.py:_flush():80] Current SDK version is 0.23.0
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_setup.py:_flush():80] Configure stats pid to 3856
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_setup.py:_flush():80] Loading settings from C:\Users\brodi\.config\wandb\settings
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_setup.py:_flush():80] Loading settings from E:\Other\Tokenizer\env\wandb\settings
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_init.py:setup_run_log_directory():713] Logging user logs to E:\Other\Tokenizer\env\wandb\run-20260416_150406-9v1cw2h1\logs\debug.log
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_init.py:setup_run_log_directory():714] Logging internal logs to E:\Other\Tokenizer\env\wandb\run-20260416_150406-9v1cw2h1\logs\debug-internal.log
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_init.py:init():840] calling init triggers
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_init.py:init():845] wandb.init called with sweep_config: {}
+config: {'config_file': None, 'train_time_minutes': 60, 'micro_batch_size': 8, 'grad_accum_steps': 16, 'seq_len': 512, 'data_dir': 'data/outputs/fineweb/', 'adam_lr': 0.0003, 'muon_lr': 0.01, 'warmup_steps': 200, 'cooldown_frac': 0.1, 'vocab_size': 32768, 'd_model': 768, 'n_heads': 12, 'n_layers': 12, 'attn_res': True, 'attn_res_block_size': 4, 'device': 'cuda', 'compile': True, 'wandb': True, 'wandb_project': 'ImprovedTransformer', 'log_every': 10, 'save_dir': 'saved_models', '_wandb': {}}
+2026-04-16 15:04:06,249 INFO    MainThread:3856 [wandb_init.py:init():888] starting backend
+2026-04-16 15:04:09,331 INFO    MainThread:3856 [wandb_init.py:init():891] sending inform_init request
+2026-04-16 15:04:09,374 INFO    MainThread:3856 [wandb_init.py:init():899] backend started and connected
+2026-04-16 15:04:09,375 INFO    MainThread:3856 [wandb_init.py:init():969] updated telemetry
+2026-04-16 15:04:09,410 INFO    MainThread:3856 [wandb_init.py:init():993] communicating run to backend with 90.0 second timeout
+2026-04-16 15:04:10,587 INFO    MainThread:3856 [wandb_init.py:init():1040] starting run threads in backend
+2026-04-16 15:04:12,561 INFO    MainThread:3856 [wandb_run.py:_console_start():2504] atexit reg
+2026-04-16 15:04:12,561 INFO    MainThread:3856 [wandb_run.py:_redirect():2352] redirect: wrap_raw
+2026-04-16 15:04:12,562 INFO    MainThread:3856 [wandb_run.py:_redirect():2421] Wrapping output streams.
+2026-04-16 15:04:12,562 INFO    MainThread:3856 [wandb_run.py:_redirect():2444] Redirects installed.
+2026-04-16 15:04:12,581 INFO    MainThread:3856 [wandb_init.py:init():1080] run started, returning control to user process
+2026-04-16 15:19:49,875 INFO    wandb-AsyncioManager-main:3856 [service_client.py:_forward_responses():80] Reached EOF.
+2026-04-16 15:19:49,909 INFO    wandb-AsyncioManager-main:3856 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2026-04-16 15:19:58,962 ERROR   wandb-AsyncioManager-main:3856 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\asyncio\streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\asyncio\streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-04-16 15:19:59,018 ERROR   wandb-AsyncioManager-main:3856 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\asyncio\streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\asyncio\streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

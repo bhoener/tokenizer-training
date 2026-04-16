@@ -1,0 +1,26 @@
+step:        0 | loss:  10.3985 | norm:   0.1348 | time:    23.21 | tok/s: 1964.360260 | lr: 0.000100
+step:       10 | loss:  10.3923 | norm:   0.1403 | time:   101.43 | tok/s: 13138.275376 | lr: 0.000600
+step:       20 | loss:  10.3689 | norm:   0.2105 | time:   151.36 | tok/s: 13177.344007 | lr: 0.001100
+step:       30 | loss:  10.2981 | norm:   0.3520 | time:   201.46 | tok/s: 12941.376640 | lr: 0.001600
+step:       40 | loss:  10.0538 | norm:   1.0037 | time:   252.45 | tok/s: 12691.686625 | lr: 0.002100
+step:       50 | loss:   9.6460 | norm:   2.2662 | time:   303.26 | tok/s: 12942.027390 | lr: 0.002600
+step:       60 | loss:   8.8505 | norm:   3.3552 | time:   354.08 | tok/s: 13114.860725 | lr: 0.003100
+step:       70 | loss:   8.2147 | norm:   2.6905 | time:   404.19 | tok/s: 13170.049932 | lr: 0.003600
+step:       80 | loss:   7.6263 | norm:   2.5077 | time:   454.29 | tok/s: 12988.907316 | lr: 0.004100
+step:       90 | loss:   7.1158 | norm:   1.8339 | time:   503.98 | tok/s: 13304.311580 | lr: 0.004600
+step:      100 | loss:   6.5989 | norm:   2.4118 | time:   553.94 | tok/s: 13124.653836 | lr: 0.005100
+step:      110 | loss:   6.2604 | norm:   3.6753 | time:   603.88 | tok/s: 13181.266182 | lr: 0.005600
+step:      120 | loss:   5.9895 | norm:   4.7993 | time:   653.69 | tok/s: 13083.322951 | lr: 0.006100
+step:      130 | loss:   5.8161 | norm:   7.3535 | time:   703.52 | tok/s: 13261.677544 | lr: 0.006600
+step:      140 | loss:   5.5983 | norm:   6.2600 | time:   753.35 | tok/s: 13164.905439 | lr: 0.007100
+step:      150 | loss:   5.5228 | norm:   8.4106 | time:   803.94 | tok/s: 13068.039227 | lr: 0.007600
+step:      160 | loss:   5.3475 | norm:   7.8965 | time:   854.97 | tok/s: 12657.997396 | lr: 0.008100
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 201, in <module>
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 157, in train
+    loss.backward()
+                  ^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

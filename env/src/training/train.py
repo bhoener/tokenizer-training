@@ -14,34 +14,36 @@ from tokenizer import Tokenizer
 @torch.no_grad()
 def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
     bpb_tot = 0
-    
+
     for _ in range(steps):
         xs, ys = dl.next()
 
         logits = model(xs)
 
-        per_token_loss = (
-            F.cross_entropy(
-                logits.view(-1, logits.size(-1)), ys.view(-1), reduction="none"
-            )
-            .view(-1)
+        per_token_loss = F.cross_entropy(
+            logits.view(-1, logits.size(-1)), ys.view(-1), reduction="none"
+        ).view(-1)
+
+        token_bytes = torch.tensor(
+            [
+                len(enc.decode_single(token).encode("utf-8"))
+                for token in xs.view(-1).cpu().numpy()
+            ]
         )
 
-        token_bytes = torch.tensor([len(enc.decode_single(token).encode("utf-8")) for token in xs.view(-1).cpu().numpy()])
-        
         tokens_per_byte = xs.numel() / token_bytes.sum()
 
         loss = per_token_loss.mean()
-        
+
         bpb = tokens_per_byte * loss / math.log(2)
-        
+
         bpb_tot += bpb
     return bpb_tot / steps
 
 
 def train() -> None:
     parser = argparse.ArgumentParser()
-    
+
     parser.add_argument("--config_file", type=str, default=None)
 
     parser.add_argument("--train_time_minutes", type=int, default=60)
@@ -60,8 +62,9 @@ def train() -> None:
     parser.add_argument("--d_model", type=int, default=768)
     parser.add_argument("--n_heads", type=int, default=12)
     parser.add_argument("--n_layers", type=int, default=12)
-    
-    parser.add_argument("--attention_residuals", type=bool, default=True)
+
+    parser.add_argument("--attn_res", type=bool, default=True)
+    parser.add_argument("--attn_res_block_size", type=int, default=4)
 
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--compile", type=bool, default=True)
@@ -69,16 +72,16 @@ def train() -> None:
     parser.add_argument("--wandb", type=bool, default=True)
     parser.add_argument("--wandb_project", type=str, default="ImprovedTransformer")
     parser.add_argument("--log_every", type=int, default=10)
-    
+
     parser.add_argument("--save_dir", type=str, default="saved_models")
 
     args = parser.parse_args()
-    
+
     if args.config_file is not None:
         with open(args.config_file, "r", encoding="utf-8") as f:
             for k, v in yaml.load(f, Loader=yaml.SafeLoader).items():
                 setattr(args, k, v)
-    
+
     if not os.path.exists(args.save_dir):
         os.mkdir(args.save_dir)
 
@@ -112,6 +115,7 @@ def train() -> None:
         n_heads=args.n_heads,
         n_layers=args.n_layers,
         attn_res=args.attn_res,
+        block_size=args.attn_res_block_size,
     ).to(device)
 
     for param in model.parameters():
@@ -170,7 +174,7 @@ def train() -> None:
             * args.grad_accum_steps
             / (time.time() - step_t0)
         )
-        
+
         if args.wandb:
             run.log(
                 {
@@ -193,8 +197,11 @@ def train() -> None:
     enc = Tokenizer("src/saved_tokenizers/main/vocab.txt")
 
     print("Final BPB:", calc_bpb(model, dl, enc))
-    
-    torch.save(model.state_dict(), os.path.join(args.save_dir, (run.name if args.wandb else "model") + ".pth"))
+
+    torch.save(
+        model.state_dict(),
+        os.path.join(args.save_dir, (run.name if args.wandb else "model") + ".pth"),
+    )
 
 
 if __name__ == "__main__":
