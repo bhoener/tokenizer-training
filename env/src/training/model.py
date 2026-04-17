@@ -110,24 +110,24 @@ class DecoderBlock(nn.Module):
         self.mlp = SwiGLU(d_in=d_model, d_h=d_model * 4, d_out=d_model)
 
         if attn_res:
-            with torch.no_grad():
-                self.q_attn = nn.Parameter(torch.randn(d_model) / d_model**0.5)
-                self.q_mlp = nn.Parameter(torch.randn(d_model) / d_model**0.5)
+            self.q_attn = nn.Linear(d_model, 1)
+            self.q_mlp = nn.Linear(d_model, 1)
 
     # see https://arxiv.org/abs/2603.15031
     def compute_res_block(
-        self, blocks: list[torch.Tensor], partial_block: torch.Tensor, q: torch.Tensor
+        self, blocks: list[torch.Tensor], partial_block: torch.Tensor, q: nn.Linear
     ) -> torch.Tensor:
-
         V = torch.stack(blocks + [partial_block])
 
         K = norm(V)
-        alphas = torch.einsum("n b l d, d -> n b l", K, q).softmax(0)
+        alphas = torch.einsum("n b l d, d -> n b l", K, q.weight.squeeze()).softmax(0)
         out = torch.einsum("n b l d, n b l -> b l d", V, alphas)
         return out
 
     def forward(
-        self, x: list[torch.Tensor] | torch.Tensor, hidden_states: torch.Tensor | None
+        self,
+        x: list[torch.Tensor] | torch.Tensor,
+        hidden_states: torch.Tensor | None = None,
     ) -> tuple[list[torch.Tensor], torch.Tensor]:
         if self.attn_res:
             partial_block = hidden_states
@@ -198,8 +198,7 @@ class GPT(nn.Module):
             blocks = [x]
             hidden_states = x
             for layer in self.layers:
-                block, hidden_states = layer(blocks, hidden_states)
-                blocks.append(block)
+                blocks, hidden_states = layer(blocks, hidden_states)
             x = hidden_states
         else:
             for layer in self.layers:

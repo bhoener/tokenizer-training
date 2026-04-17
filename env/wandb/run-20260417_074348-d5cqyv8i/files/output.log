@@ -1,0 +1,27 @@
+W0417 07:44:24.746000 14856 site-packages\torch\_inductor\utils.py:1691] [0/0] Not enough SMs to use max_autotune_gemm mode
+C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_inductor\lowering.py:7513: UserWarning:
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_inductor\lowering.py:7513: UserWarning:
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+step:        0 | loss:  10.4964 | norm:   1.1506 | time:    11.56 | tok/s: 806.148323 | lr: 0.000100
+step:       10 | loss:  10.4318 | norm:   0.9703 | time:   123.42 | tok/s: 19337.815950 | lr: 0.000600
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 208, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 161, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

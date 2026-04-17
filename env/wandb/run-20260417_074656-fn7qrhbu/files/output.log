@@ -1,0 +1,45 @@
+W0417 07:47:13.843000 2552 site-packages\torch\_inductor\utils.py:1691] [0/0] Not enough SMs to use max_autotune_gemm mode
+C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_inductor\lowering.py:7513: UserWarning:
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_inductor\lowering.py:7513: UserWarning:
+Online softmax is disabled on the fly since Inductor decides to
+split the reduction. Cut an issue to PyTorch if this is an
+important use case and you want to speed it up with online
+softmax.
+
+  warnings.warn(
+step:        0 | loss:  10.6080 | norm:   2.0605 | time:     6.13 | tok/s: 1288.031577 | lr: 0.000100
+step:       10 | loss:  10.4916 | norm:   1.7072 | time:    84.51 | tok/s: 21517.582502 | lr: 0.000600
+step:       20 | loss:  10.2302 | norm:   1.3516 | time:   114.97 | tok/s: 21546.508922 | lr: 0.001100
+step:       30 | loss:   9.8427 | norm:   1.7720 | time:   145.56 | tok/s: 21508.886055 | lr: 0.001600
+step:       40 | loss:   9.1016 | norm:   2.0534 | time:   177.42 | tok/s: 20979.029888 | lr: 0.002100
+step:       50 | loss:   8.6030 | norm:   1.4330 | time:   209.80 | tok/s: 19475.570290 | lr: 0.002600
+step:       60 | loss:   7.8618 | norm:   1.1911 | time:   241.20 | tok/s: 19741.080695 | lr: 0.003100
+step:       70 | loss:   7.3385 | norm:   0.9704 | time:   273.09 | tok/s: 21185.004108 | lr: 0.003600
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 208, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 159, in train
+    loss.backward()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_tensor.py", line 620, in backward
+    return handle_torch_function(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\overrides.py", line 1734, in handle_torch_function
+    result = mode.__torch_function__(public_api, types, args, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_tensor.py", line 629, in backward
+    torch.autograd.backward(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\autograd\__init__.py", line 364, in backward
+    _engine_run_backward(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\autograd\graph.py", line 865, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -47,8 +47,8 @@ def train() -> None:
     parser.add_argument("--config_file", type=str, default=None)
 
     parser.add_argument("--train_time_minutes", type=int, default=60)
-    parser.add_argument("--micro_batch_size", type=int, default=8)
-    parser.add_argument("--grad_accum_steps", type=int, default=16)
+    parser.add_argument("--micro_batch_size", type=int, default=16)
+    parser.add_argument("--grad_accum_steps", type=int, default=8)
     parser.add_argument("--seq_len", type=int, default=512)
 
     parser.add_argument("--data_dir", type=str, default="data/outputs/fineweb/")
@@ -59,12 +59,12 @@ def train() -> None:
     parser.add_argument("--cooldown_frac", type=float, default=0.1)
 
     parser.add_argument("--vocab_size", type=int, default=32768)
-    parser.add_argument("--d_model", type=int, default=768)
-    parser.add_argument("--n_heads", type=int, default=12)
+    parser.add_argument("--d_model", type=int, default=896)
+    parser.add_argument("--n_heads", type=int, default=14)
     parser.add_argument("--n_layers", type=int, default=12)
 
-    parser.add_argument("--attn_res", type=bool, default=True)
-    parser.add_argument("--attn_res_block_size", type=int, default=4)
+    parser.add_argument("--attn_res", type=bool, default=False)
+    parser.add_argument("--attn_res_block_size", type=int, default=8)
 
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--compile", type=bool, default=True)
@@ -189,7 +189,7 @@ def train() -> None:
 
         if step % args.log_every == 0:
             print(
-                f"step: {step:8d} | loss: {loss_accum:8.4f} | norm: {norm.item():8.4f} | time: {train_time:8.2f} | tok/s: {tok_s:8f} | lr: {get_lr(step, train_time, args.muon_lr):8.6f}"
+                f"step: {step:8d} | loss: {loss_accum:8.4f} | norm: {norm.item():8.4f} | time: {train_time:8.2f} | tok/s: {tok_s:8.1f} | lr: {get_lr(step, train_time, args.muon_lr):8.6f}"
             )
 
         step += 1
