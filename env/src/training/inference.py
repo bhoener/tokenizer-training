@@ -29,6 +29,9 @@ def main() -> None:
         d_model=config["model"]["d_model"],
         n_heads=config["model"]["n_heads"],
         n_layers=config["model"]["n_layers"],
+        attn_res=config["model"]["attn_res"],
+        block_size=config["model"]["block_size"],
+        xsa=config["model"]["xsa"],
     )
 
     model.load_state_dict(

@@ -41,7 +41,7 @@ class RoPE(nn.Module):
 
 
 class MultiHeadAttention(nn.Module):
-    def __init__(self, d_model: int, n_heads: int):
+    def __init__(self, d_model: int, n_heads: int, xsa: bool = False):
         super().__init__()
         self.d_model = d_model
         self.n_heads = n_heads
@@ -57,6 +57,8 @@ class MultiHeadAttention(nn.Module):
         self.wv = nn.Linear(d_model, d_model)
 
         self.wo = nn.Linear(d_model, d_model)
+        
+        self.xsa = xsa
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         B, L, D = x.size()
@@ -66,6 +68,11 @@ class MultiHeadAttention(nn.Module):
         V = self.wv(x).view(B, L, self.n_heads, self.d_head).transpose(1, 2)
 
         attn_scores = F.scaled_dot_product_attention(Q, K, V, is_causal=True)
+        
+        # https://arxiv.org/abs/2603.09078
+        if self.xsa:
+            Vn = F.normalize(V, dim=-1) 
+            attn_scores = attn_scores - (attn_scores * Vn).sum(dim=-1, keepdim=True) * Vn 
 
         return self.wo(attn_scores.permute(0, 2, 1, 3).contiguous().view(B, L, D))
 
@@ -97,6 +104,7 @@ class DecoderBlock(nn.Module):
         attn_res: bool = False,
         layer_number: int | None = None,
         block_size: int = 8,
+        xsa: bool = False,
     ):
         super().__init__()
         self.d_model = d_model
@@ -106,12 +114,12 @@ class DecoderBlock(nn.Module):
         self.layer_number = layer_number
         self.block_size = block_size
 
-        self.mha = MultiHeadAttention(d_model=d_model, n_heads=n_heads)
+        self.mha = MultiHeadAttention(d_model=d_model, n_heads=n_heads, xsa=xsa)
         self.mlp = SwiGLU(d_in=d_model, d_h=d_model * 4, d_out=d_model)
 
         if attn_res:
-            self.q_attn = nn.Linear(d_model, 1)
-            self.q_mlp = nn.Linear(d_model, 1)
+            self.q_attn = nn.Linear(d_model, 1, bias=False)
+            self.q_mlp = nn.Linear(d_model, 1, bias=False)
 
     # see https://arxiv.org/abs/2603.15031
     def compute_res_block(
@@ -164,6 +172,7 @@ class GPT(nn.Module):
         n_layers: int,
         attn_res: bool = True,
         block_size: int = 8,
+        xsa: bool = False,
     ):
         super().__init__()
         self.vocab_size = vocab_size
@@ -182,6 +191,7 @@ class GPT(nn.Module):
                     attn_res=attn_res,
                     layer_number=i,
                     block_size=block_size,
+                    xsa=xsa,
                 )
                 for i in range(n_layers)
             ]

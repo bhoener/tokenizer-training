@@ -40,6 +40,20 @@ def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
         bpb_tot += bpb
     return bpb_tot / steps
 
+# from https://github.com/karpathy/nanoGPT/
+def estimate_mfu(total_params: int, cfg: argparse.Namespace, dt: float):
+        # first estimate the number of flops we do per iteration.
+        # see PaLM paper Appendix B as ref: https://arxiv.org/abs/2204.02311
+        N = total_params
+        L, H, Q, T = cfg.n_layers, cfg.n_heads, cfg.d_model//cfg.n_heads, cfg.seq_len
+        flops_per_token = 6*N + 12*L*H*Q*T
+        flops_per_fwdbwd = flops_per_token * T
+        flops_per_iter = flops_per_fwdbwd * cfg.grad_accum_steps * cfg.micro_batch_size
+
+        flops_achieved = flops_per_iter * (1.0/dt) # per second
+        flops_promised = 44e12 # rtx4060ti 16gb peak bf16 (might be wrong)
+        mfu = flops_achieved / flops_promised
+        return mfu
 
 def train() -> None:
     parser = argparse.ArgumentParser()
@@ -48,7 +62,7 @@ def train() -> None:
 
     parser.add_argument("--train_time_minutes", type=int, default=60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
-    parser.add_argument("--grad_accum_steps", type=int, default=8)
+    parser.add_argument("--grad_accum_steps", type=int, default=16)
     parser.add_argument("--seq_len", type=int, default=512)
 
     parser.add_argument("--data_dir", type=str, default="data/outputs/fineweb/")
@@ -65,6 +79,8 @@ def train() -> None:
 
     parser.add_argument("--attn_res", type=bool, default=False)
     parser.add_argument("--attn_res_block_size", type=int, default=8)
+    
+    parser.add_argument("--xsa", type=bool, default=False)
 
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--compile", type=bool, default=True)
@@ -116,7 +132,10 @@ def train() -> None:
         n_layers=args.n_layers,
         attn_res=args.attn_res,
         block_size=args.attn_res_block_size,
+        xsa=args.xsa,
     ).to(device)
+    
+    total_params = sum(p.numel() for p in model.parameters())
 
     for param in model.parameters():
         if param.ndim == 2 and param.size(0) == param.size(1):
@@ -168,12 +187,16 @@ def train() -> None:
             optim.step()
             optim.zero_grad()
 
+
+        dt = time.time() - step_t0
         tok_s = (
             args.micro_batch_size
             * args.seq_len
             * args.grad_accum_steps
-            / (time.time() - step_t0)
+            / dt
         )
+        
+        mfu = estimate_mfu(total_params, args, dt)
 
         if args.wandb:
             run.log(
@@ -184,12 +207,13 @@ def train() -> None:
                     "norm": norm.item(),
                     "tok/s": tok_s,
                     "lr": get_lr(step, train_time, args.muon_lr),
+                    "mfu": mfu*100,
                 }
             )
 
         if step % args.log_every == 0:
             print(
-                f"step: {step:8d} | loss: {loss_accum:8.4f} | norm: {norm.item():8.4f} | time: {train_time:8.2f} | tok/s: {tok_s:8.1f} | lr: {get_lr(step, train_time, args.muon_lr):8.6f}"
+                f"step: {step:8d} | loss: {loss_accum:8.4f} | norm: {norm.item():8.4f} | time: {train_time:8.2f} | tok/s: {tok_s:8.1f} | lr: {get_lr(step, train_time, args.muon_lr):8.6f} | mfu: {mfu*100:8.2f}%"
             )
 
         step += 1

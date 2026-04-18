@@ -1,0 +1,11 @@
+step:        0 | loss:  11.3258 | norm:   3.3110 | time:     5.56 | tok/s:  16687.0 | lr: 0.000100 | mfu:   101.90%
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 233, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 181, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

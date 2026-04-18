@@ -1,13 +1,16 @@
-filepath: "saved_models/visionary-capybara-53.pth"
+filepath: "saved_models/sage-night-81.pth"
 
 tokenizer:
-  filepath: "src/saved_tokenizers/main/vocab.txt"
+  filepath: "src/saved_tokenizers/updated/vocab.txt"
 
 model:
   vocab_size: 32768
-  d_model: 768
-  n_heads: 12
+  d_model: 896
+  n_heads: 14
   n_layers: 12
+  xsa: True
+  attn_res: False
+  block_size: 8
 
 sampling:
   seq_len: 512

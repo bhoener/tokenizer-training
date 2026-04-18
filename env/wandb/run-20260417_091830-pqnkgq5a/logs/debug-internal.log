@@ -1,0 +1,13 @@
+{"time":"2026-04-17T09:18:33.7332009-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-17T09:18:34.1493518-08:00","level":"INFO","msg":"stream: created new stream","id":"pqnkgq5a"}
+{"time":"2026-04-17T09:18:34.1493518-08:00","level":"INFO","msg":"handler: started","stream_id":"pqnkgq5a"}
+{"time":"2026-04-17T09:18:34.1535135-08:00","level":"INFO","msg":"stream: started","id":"pqnkgq5a"}
+{"time":"2026-04-17T09:18:34.1535135-08:00","level":"INFO","msg":"writer: started","stream_id":"pqnkgq5a"}
+{"time":"2026-04-17T09:18:34.1535135-08:00","level":"INFO","msg":"sender: started","stream_id":"pqnkgq5a"}
+{"time":"2026-04-17T11:04:55.5130419-08:00","level":"INFO","msg":"api: retrying HTTP error","status":503,"url":"https://api.wandb.ai/files/brogrammer/ImprovedTransformer/pqnkgq5a/file_stream","body":"no healthy upstream"}
+{"time":"2026-04-17T11:04:57.941119-08:00","level":"INFO","msg":"api: retrying HTTP error","status":503,"url":"https://api.wandb.ai/files/brogrammer/ImprovedTransformer/pqnkgq5a/file_stream","body":"no healthy upstream"}
+{"time":"2026-04-17T12:18:49.9232166-08:00","level":"INFO","msg":"stream: closing","id":"pqnkgq5a"}
+{"time":"2026-04-17T12:18:50.3719903-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-17T12:19:15.6771826-08:00","level":"INFO","msg":"handler: closed","stream_id":"pqnkgq5a"}
+{"time":"2026-04-17T12:19:15.6777465-08:00","level":"INFO","msg":"sender: closed","stream_id":"pqnkgq5a"}
+{"time":"2026-04-17T12:19:15.6777465-08:00","level":"INFO","msg":"stream: closed","id":"pqnkgq5a"}

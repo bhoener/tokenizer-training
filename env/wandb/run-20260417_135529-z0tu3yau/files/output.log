@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 233, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 200, in train
+    mfu = estimate_mfu(total_params, args, dt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 52, in estimate_mfu
+    flops_per_iter = flops_per_fwdbwd * cfg.grad_accum_steps * cfg.batch_size
+                                                               ^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'batch_size'

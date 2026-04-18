@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 233, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 175, in train
+    _, loss = model(xs, ys)
+              ^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_dynamo\eval_frame.py", line 441, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_dynamo\eval_frame.py", line 925, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 215, in forward
+    x = layer(x)
+        ^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 161, in forward
+    x = x + self.mha(norm(x))
+            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 77, in forward
+    return self.wo(Z.permute(0, 2, 1, 3).contiguous().view(B, L, D))
+                   ^
+UnboundLocalError: cannot access local variable 'Z' where it is not associated with a value
