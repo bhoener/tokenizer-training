@@ -22,12 +22,12 @@ for i in vocab:
 So instead we have a fixed size table of embeddings and use multiple hash heads so that even if collisions occur they are not detrimental:
 ```python
 class Engram(nn.Module):
-  def __init__(self, N: int, K: int, M: int, d: int):
+  def __init__(self, N: int, K: int, M: int, d_per_n: int):
     super().__init__()
     self.N = N
     self.K = K
     self.M = M
-    self.d = d
+    self.d = d_per_n // K
 
     self.emb = nn.Parameter(torch.randn(N - 2, K, M, d))
 
@@ -45,3 +45,5 @@ class Engram(nn.Module):
     idx = [[self.hash(ngram, k) for k in range(self.K)] for ngram in ngrams]
     return self.emb[len(ngrams[0]) - 2, :, idx].view(len(ngrams), -1)
 ```
+
+It seems like each hash head has a different (prime) size, so the lookup cannot be a big $n \times k \times M \times d$ lookup table.

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 247, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 141, in train
+    model = GPT(
+            ^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 396, in __init__
+    engram=Engram(
+           ^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 168, in __init__
+    self.hash = EngramHash(N=N, K=K, M=M, d=d, tokenizer=tokenizer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 63, in __init__
+    self.compressed_tok = CompressedTokenizer(tokenizer)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 17, in __init__
+    token_id: self.simplify(source_tokenizer.decode_single(token_id)) for token_id in range(len(source_tokenizer.vocab.keys()))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\tokenizer.py", line 98, in decode_single
+    return self.decode_single(self.vocab[token][0]) + self.decode_single(
+                              ~~~~~~~~~~^^^^^^^
+KeyError: 0

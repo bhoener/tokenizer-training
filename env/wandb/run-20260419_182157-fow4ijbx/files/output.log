@@ -1,0 +1,47 @@
+Model Parameters: 218.9M
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] Graph break from `Tensor.item()`, consider setting:
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     torch._dynamo.config.capture_scalar_outputs = True
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] or:
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] to include these operations in the captured graph.
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] Graph break: from user code at:
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 428, in forward
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     x = layer(x, idx)
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 356, in forward
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     x = x + self.engram(norm(x), hidden_states_or_indices)
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 184, in forward
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     idx = self.hash(indices)
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 125, in forward
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     return self.hash_sequence(x)
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 77, in hash_sequence
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     x = self.compressed_tok.encode(x)
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 29, in encode
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     simplified = self.simplify(self.source_tokenizer.decode_single(ids[b, t].item()))
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     return func(*args, **kwargs)
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]
+W0419 18:22:07.995000 8924 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]
+W0419 18:22:21.150000 8924 site-packages\torch\_inductor\utils.py:1691] [1/0] Not enough SMs to use max_autotune_gemm mode
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 247, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 199, in train
+    loss.backward()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_tensor.py", line 620, in backward
+    return handle_torch_function(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\overrides.py", line 1734, in handle_torch_function
+    result = mode.__torch_function__(public_api, types, args, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_tensor.py", line 629, in backward
+    torch.autograd.backward(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\autograd\__init__.py", line 364, in backward
+    _engine_run_backward(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\autograd\graph.py", line 865, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

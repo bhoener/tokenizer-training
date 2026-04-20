@@ -1,0 +1,11 @@
+{"time":"2026-04-19T19:47:49.6672574-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-19T19:47:49.9010785-08:00","level":"INFO","msg":"stream: created new stream","id":"tncltuvl"}
+{"time":"2026-04-19T19:47:49.9010785-08:00","level":"INFO","msg":"handler: started","stream_id":"tncltuvl"}
+{"time":"2026-04-19T19:47:49.9056472-08:00","level":"INFO","msg":"writer: started","stream_id":"tncltuvl"}
+{"time":"2026-04-19T19:47:49.9056472-08:00","level":"INFO","msg":"stream: started","id":"tncltuvl"}
+{"time":"2026-04-19T19:47:49.9056472-08:00","level":"INFO","msg":"sender: started","stream_id":"tncltuvl"}
+{"time":"2026-04-19T19:49:27.1194022-08:00","level":"INFO","msg":"stream: closing","id":"tncltuvl"}
+{"time":"2026-04-19T19:49:27.4546645-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-19T19:49:27.7492906-08:00","level":"INFO","msg":"handler: closed","stream_id":"tncltuvl"}
+{"time":"2026-04-19T19:49:27.7497939-08:00","level":"INFO","msg":"sender: closed","stream_id":"tncltuvl"}
+{"time":"2026-04-19T19:49:27.7497939-08:00","level":"INFO","msg":"stream: closed","id":"tncltuvl"}

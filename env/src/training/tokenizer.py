@@ -92,7 +92,7 @@ class Tokenizer:
         return "".join(self.decode_single(token) for token in src)
 
     def decode_single(self, token: int) -> str:
-        if 0 < token < 256:
+        if 0 <= token < 256:
             return chr(token)
         else:
             return self.decode_single(self.vocab[token][0]) + self.decode_single(

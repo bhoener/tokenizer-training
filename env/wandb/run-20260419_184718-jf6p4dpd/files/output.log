@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 247, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 141, in train
+    model = GPT(
+            ^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 394, in __init__
+    engram=Engram(
+           ^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 166, in __init__
+    self.hash = EngramHash(N=N, K=K, M=M, d=d, tokenizer=tokenizer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 61, in __init__
+    self.compressed_tok = CompressedTokenizer(tokenizer)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 22, in __init__
+    self.lut[token] = self.vocab[i]
+    ~~~~~~~~^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't assign a NoneType to a torch.cuda.FloatTensor

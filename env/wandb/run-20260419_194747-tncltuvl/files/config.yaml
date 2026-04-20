@@ -1,0 +1,113 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            7au6644sllo2dc1qjn90dp7sw4d0gka3:
+                codePath: env\src\training\train.py
+                codePathLocal: src\training\train.py
+                cpu_count: 16
+                cpu_count_logical: 24
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "4000750497792"
+                        used: "2277604163584"
+                email: brodiehoener@icloud.com
+                executable: C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\python.exe
+                git:
+                    commit: 5c6fe462c415f7c11e535200db3d26dfb68c2563
+                    remote: https://github.com/bhoener/tokenizer-training.git
+                gpu: NVIDIA GeForce RTX 4060 Ti
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 4352
+                      memoryTotal: "17175674880"
+                      name: NVIDIA GeForce RTX 4060 Ti
+                      uuid: GPU-6dba68c7-bf17-a382-3cea-b36a6ebee8a9
+                host: MSI
+                memory:
+                    total: "34192588800"
+                os: Windows-11-10.0.26200-SP0
+                program: E:\Other\Tokenizer\env\src\training\train.py
+                python: CPython 3.12.10
+                root: E:\Other\Tokenizer\env
+                startedAt: "2026-04-20T03:47:47.143397Z"
+                writerId: 7au6644sllo2dc1qjn90dp7sw4d0gka3
+        m: []
+        python_version: 3.12.10
+        t:
+            "1":
+                - 1
+                - 105
+            "2":
+                - 1
+                - 105
+            "3":
+                - 16
+            "4": 3.12.10
+            "5": 0.23.0
+            "8":
+                - 3
+            "12": 0.23.0
+            "13": windows-amd64
+adam_lr:
+    value: 0.0003
+attn_res:
+    value: false
+attn_res_block_size:
+    value: 8
+compile:
+    value: true
+config_file:
+    value: null
+cooldown_frac:
+    value: 0.1
+d_model:
+    value: 896
+data_dir:
+    value: data/outputs/fineweb/
+device:
+    value: cuda
+engram:
+    value: true
+engram_d:
+    value: null
+engram_heads:
+    value: 8
+engram_max_n:
+    value: 3
+engram_tokenizer_dir:
+    value: src/saved_tokenizers/updated/vocab.txt
+engram_vocab_sizes:
+    value:
+        - 512
+        - 2048
+grad_accum_steps:
+    value: 16
+log_every:
+    value: 10
+micro_batch_size:
+    value: 16
+muon_lr:
+    value: 0.01
+n_heads:
+    value: 14
+n_layers:
+    value: 12
+save_dir:
+    value: saved_models
+seq_len:
+    value: 512
+train_time_minutes:
+    value: 60
+vocab_size:
+    value: 32768
+wandb:
+    value: true
+wandb_project:
+    value: ImprovedTransformer
+warmup_steps:
+    value: 200
+xsa:
+    value: false

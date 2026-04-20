@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 243, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 134, in train
+    model = GPT(
+            ^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 368, in __init__
+    engram=Engram(
+           ^^^^^^^
+TypeError: Engram.__init__() missing 1 required positional argument: 'd_model'

@@ -1,0 +1,94 @@
+Model Parameters: 218.9M
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] Graph break from `Tensor.item()`, consider setting:
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     torch._dynamo.config.capture_scalar_outputs = True
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] or:
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] to include these operations in the captured graph.
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0] Graph break: from user code at:
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 429, in forward
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     x = layer(x, idx)
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 357, in forward
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     x = x + self.engram(norm(x), hidden_states_or_indices)
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 185, in forward
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     idx = self.hash(indices)
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 126, in forward
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     return self.hash_sequence(x)
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 78, in hash_sequence
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     x = self.compressed_tok.encode(x)
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     return func(*args, **kwargs)
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "E:\Other\Tokenizer\env\src\training\model.py", line 30, in encode
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     simplified = self.simplify(self.source_tokenizer.decode_single(ids[b, t].item()))
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]   File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]     return func(*args, **kwargs)
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]
+W0419 18:22:50.971000 7656 site-packages\torch\_dynamo\variables\tensor.py:1061] [0/0]
+step:        0 | loss:  11.2254 | norm:   2.7889 | time:     5.88 | tok/s:   9535.7 | lr: 0.000100 | mfu:    29.90%
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 247, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 195, in train
+    _, loss = model(xs, ys)
+              ^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_dynamo\eval_frame.py", line 441, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_dynamo\eval_frame.py", line 925, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 429, in forward
+    for layer in self.layers:
+            ^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 357, in forward
+    if self.engram is not None:
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 185, in forward
+    B, L, D = x.size()
+          ^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 126, in forward
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 78, in hash_sequence
+    def hash_sequence(self, x: torch.Tensor) -> torch.Tensor:
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Other\Tokenizer\env\src\training\model.py", line 30, in encode
+    simplified = self.simplify(self.source_tokenizer.decode_single(ids[b, t].item()))
+                                                                   ~~~^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

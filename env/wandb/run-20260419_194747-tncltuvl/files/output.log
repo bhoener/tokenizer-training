@@ -1,0 +1,14 @@
+Model Parameters: 218.9M
+W0419 19:47:59.886000 20332 site-packages\torch\_inductor\utils.py:1691] [0/0] Not enough SMs to use max_autotune_gemm mode
+step:        0 | loss:  11.2205 | norm:   2.8592 | time:     6.10 | tok/s:   4054.6 | lr: 0.000100 | mfu:    12.71%
+step:       10 | loss:  10.9463 | norm:   3.1544 | time:    83.43 | tok/s:  26242.3 | lr: 0.000600 | mfu:    82.27%
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 247, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 201, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

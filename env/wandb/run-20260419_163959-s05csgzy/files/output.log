@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 243, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 134, in train
+    model = GPT(
+            ^^^^
+TypeError: GPT.__init__() got an unexpected keyword argument 'engram_vocab_sizes'
