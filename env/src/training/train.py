@@ -62,7 +62,7 @@ def train() -> None:
 
     parser.add_argument("--config_file", type=str, default=None)
 
-    parser.add_argument("--train_time_minutes", type=int, default=60)
+    parser.add_argument("--train_time_minutes", type=int, default=3*60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
     parser.add_argument("--grad_accum_steps", type=int, default=16)
     parser.add_argument("--seq_len", type=int, default=512)
@@ -75,7 +75,7 @@ def train() -> None:
     parser.add_argument("--cooldown_frac", type=float, default=0.1)
 
     parser.add_argument("--vocab_size", type=int, default=32768)
-    parser.add_argument("--d_model", type=int, default=896)
+    parser.add_argument("--d_model", type=int, default=768)
     parser.add_argument("--n_heads", type=int, default=14)
     parser.add_argument("--n_layers", type=int, default=12)
 
@@ -87,7 +87,7 @@ def train() -> None:
     parser.add_argument("--engram", type=bool, default=True)
     parser.add_argument("--engram_max_n", type=int, default=3)
     parser.add_argument("--engram_heads", type=int, default=8)
-    parser.add_argument("--engram_vocab_sizes", type=list[int], default=[512, 2048])
+    parser.add_argument("--engram_vocab_sizes", type=list[int], default=[131072, 262144])
     parser.add_argument("--engram_d", type=int, default=None)
     parser.add_argument(
         "--engram_tokenizer_dir",

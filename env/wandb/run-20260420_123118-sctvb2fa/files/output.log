@@ -1,0 +1,30 @@
+Model Parameters: 1397.1M
+W0420 12:31:32.025000 22824 site-packages\torch\_inductor\utils.py:1691] [0/0] Not enough SMs to use max_autotune_gemm mode
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 247, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 208, in train
+    optim.step()
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\optimizer.py", line 526, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\_muon.py", line 191, in step
+    muon(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\optimizer.py", line 153, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\_muon.py", line 350, in muon
+    func(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\_muon.py", line 316, in _single_tensor_muon
+    update = _zeropower_via_newtonschulz(update, ns_coefficients, ns_steps, eps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\optim\_muon.py", line 56, in _zeropower_via_newtonschulz
+    ortho_grad = grad.bfloat16()
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.19 GiB. GPU 0 has a total capacity of 16.00 GiB of which 0 bytes is free. Of the allocated memory 20.72 GiB is allocated by PyTorch, and 571.38 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

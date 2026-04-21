@@ -1,0 +1,11 @@
+{"time":"2026-04-20T12:31:20.6174166-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-20T12:31:20.8464806-08:00","level":"INFO","msg":"stream: created new stream","id":"sctvb2fa"}
+{"time":"2026-04-20T12:31:20.8469883-08:00","level":"INFO","msg":"handler: started","stream_id":"sctvb2fa"}
+{"time":"2026-04-20T12:31:20.8485815-08:00","level":"INFO","msg":"stream: started","id":"sctvb2fa"}
+{"time":"2026-04-20T12:31:20.8485815-08:00","level":"INFO","msg":"writer: started","stream_id":"sctvb2fa"}
+{"time":"2026-04-20T12:31:20.8485815-08:00","level":"INFO","msg":"sender: started","stream_id":"sctvb2fa"}
+{"time":"2026-04-20T12:32:50.2134547-08:00","level":"INFO","msg":"stream: closing","id":"sctvb2fa"}
+{"time":"2026-04-20T12:32:50.6179304-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-20T12:32:50.8254103-08:00","level":"INFO","msg":"handler: closed","stream_id":"sctvb2fa"}
+{"time":"2026-04-20T12:32:50.8608309-08:00","level":"INFO","msg":"sender: closed","stream_id":"sctvb2fa"}
+{"time":"2026-04-20T12:32:50.8608309-08:00","level":"INFO","msg":"stream: closed","id":"sctvb2fa"}
