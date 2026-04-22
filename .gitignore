@@ -3,3 +3,4 @@
 *.pt
 *.pth
 *.txt
+env/saved_models

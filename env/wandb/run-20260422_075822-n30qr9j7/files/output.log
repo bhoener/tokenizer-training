@@ -1,0 +1,8 @@
+Model Parameters: 163.6M
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 285, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 214, in train
+    train_time = args.resume_time
+                 ^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'resume_time'. Did you mean: 'resume_step'?

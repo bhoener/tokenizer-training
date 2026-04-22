@@ -1,0 +1,14 @@
+Model Parameters: 163.6M
+step:        0 | loss:  11.2667 | norm:   2.9425 | time:     0.00 | tok/s:   6639.4 | lr: 0.000100 | mfu:    15.67%
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 285, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 267, in train
+    save_checkpoint(os.path.join(args.save_dir, "checkpoints", run.name if args.wandb else "default"), model, args, optimizers, step, train_time, run)
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 70, in save_checkpoint
+    torch.save(os.path.join(path, "model_state.pth"), model_state_dict)
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 970, in save
+    _check_save_filelike(f)
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 912, in _check_save_filelike
+    raise AttributeError(
+AttributeError: expected 'f' to be string, path, or a file-like object with a 'write' attribute

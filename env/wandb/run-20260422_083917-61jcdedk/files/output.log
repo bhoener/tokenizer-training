@@ -1,0 +1,21 @@
+Model Parameters: 163.6M
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 346, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 246, in train
+    torch.load(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 1540, in load
+    return _load(
+           ^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 2143, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\_weights_only_unpickler.py", line 537, in load
+    self.append(self.persistent_load(pid))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 2107, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 2060, in load_tensor
+    zip_file.get_storage_from_record(name, numel, torch.UntypedStorage)
+RuntimeError: PytorchStreamReader failed locating file data/1: file not found

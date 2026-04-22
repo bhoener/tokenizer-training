@@ -1,0 +1,25 @@
+Model Parameters: 163.6M
+step:        0 | loss:  11.3610 | norm:   2.8354 | time:     0.00 | tok/s:  19034.1 | lr: 0.000100 | mfu:    44.92%
+Model saved to saved_models
+step:       10 | loss:  11.1172 | norm:   3.0828 | time:    51.17 | tok/s:  33969.4 | lr: 0.000600 | mfu:    80.16%
+step:       20 | loss:  10.4483 | norm:   2.7920 | time:    89.96 | tok/s:  33899.0 | lr: 0.001100 | mfu:    79.99%
+step:       30 | loss:   9.4837 | norm:   2.4338 | time:   128.67 | tok/s:  33953.9 | lr: 0.001600 | mfu:    80.12%
+step:       40 | loss:   8.6927 | norm:   2.2182 | time:   167.37 | tok/s:  33909.7 | lr: 0.002100 | mfu:    80.02%
+step:       50 | loss:   7.8160 | norm:   1.7352 | time:   206.09 | tok/s:  33891.0 | lr: 0.002600 | mfu:    79.98%
+step:       60 | loss:   7.2340 | norm:   1.2546 | time:   244.91 | tok/s:  33911.3 | lr: 0.003100 | mfu:    80.02%
+step:       70 | loss:   6.6317 | norm:   1.1924 | time:   283.63 | tok/s:  33899.8 | lr: 0.003600 | mfu:    80.00%
+step:       80 | loss:   6.3162 | norm:   2.6086 | time:   322.36 | tok/s:  33916.4 | lr: 0.004100 | mfu:    80.04%
+step:       90 | loss:   6.0703 | norm:   3.9008 | time:   361.09 | tok/s:  33882.9 | lr: 0.004600 | mfu:    79.96%
+step:      100 | loss:   5.6940 | norm:   3.0183 | time:   399.84 | tok/s:  33906.6 | lr: 0.005100 | mfu:    80.01%
+Model saved to saved_models
+step:      110 | loss:   5.5307 | norm:   3.8691 | time:   446.23 | tok/s:  33829.5 | lr: 0.005600 | mfu:    79.83%
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 342, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 269, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

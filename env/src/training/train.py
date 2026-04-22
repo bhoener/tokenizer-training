@@ -57,12 +57,50 @@ def estimate_mfu(total_params: int, cfg: argparse.Namespace, dt: float):
     return mfu
 
 
+def save_checkpoint(
+    path: str,
+    model: GPT,
+    args: argparse.Namespace,
+    optimizers: list[torch.optim.Optimizer],
+    step: int,
+    train_time: float,
+    wandb_run=None,
+) -> None:
+    model_state_dict = model.state_dict()
+    optim_state_dicts = [optim.state_dict() for optim in optimizers]
+    args_dict = vars(args)
+    args_dict["resume_step"] = step
+    args_dict["resume_time"] = train_time
+    args_dict["wandb_run_id"] = wandb_run.id
+
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+    torch.save(model_state_dict, os.path.join(path, "model_state.pth"))
+    for optim, state in zip(optimizers, optim_state_dicts):
+        torch.save(state, os.path.join(path, f"{optim.__class__.__name__}_state.pth"))
+    with open(os.path.join(path, "train_args.yaml"), "w", encoding="utf-8") as f:
+        f.write(yaml.dump(args_dict))
+
+
+def get_namespace_from_yaml(filename: str) -> argparse.Namespace:
+    out = argparse.Namespace()
+    with open(filename, "r", encoding="utf-8") as f:
+        for k, v in yaml.load(f, Loader=yaml.SafeLoader).items():
+            setattr(out, k, v)
+    return out
+
+
 def train() -> None:
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--config_file", type=str, default=None)
 
-    parser.add_argument("--train_time_minutes", type=int, default=3*60)
+    parser.add_argument("--resume_from_dir", type=str, default=None)
+    parser.add_argument("--resume_step", type=int, default=0)
+    parser.add_argument("--resume_time", type=float, default=0)
+
+    parser.add_argument("--train_time_minutes", type=int, default=20 * 60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
     parser.add_argument("--grad_accum_steps", type=int, default=16)
     parser.add_argument("--seq_len", type=int, default=512)
@@ -76,7 +114,7 @@ def train() -> None:
 
     parser.add_argument("--vocab_size", type=int, default=32768)
     parser.add_argument("--d_model", type=int, default=768)
-    parser.add_argument("--n_heads", type=int, default=14)
+    parser.add_argument("--n_heads", type=int, default=12)
     parser.add_argument("--n_layers", type=int, default=12)
 
     parser.add_argument("--attn_res", type=bool, default=False)
@@ -84,10 +122,12 @@ def train() -> None:
 
     parser.add_argument("--xsa", type=bool, default=False)
 
-    parser.add_argument("--engram", type=bool, default=True)
+    parser.add_argument("--engram", type=bool, default=False)
     parser.add_argument("--engram_max_n", type=int, default=3)
     parser.add_argument("--engram_heads", type=int, default=8)
-    parser.add_argument("--engram_vocab_sizes", type=list[int], default=[131072, 262144])
+    parser.add_argument(
+        "--engram_vocab_sizes", type=list[int], default=[131072, 262144]
+    )
     parser.add_argument("--engram_d", type=int, default=None)
     parser.add_argument(
         "--engram_tokenizer_dir",
@@ -100,21 +140,26 @@ def train() -> None:
 
     parser.add_argument("--wandb", type=bool, default=True)
     parser.add_argument("--wandb_project", type=str, default="ImprovedTransformer")
+    parser.add_argument("--wandb_run_id", type=str, default=None)
     parser.add_argument("--log_every", type=int, default=10)
 
     parser.add_argument("--save_dir", type=str, default="saved_models")
+    parser.add_argument("--save_every", type=int, default=100)
+    parser.add_argument("--checkpoint_mode", type=str, default="overwrite")
 
     args = parser.parse_args()
 
-    if args.config_file is not None:
-        with open(args.config_file, "r", encoding="utf-8") as f:
-            for k, v in yaml.load(f, Loader=yaml.SafeLoader).items():
-                setattr(args, k, v)
+    if args.resume_from_dir is not None:
+        resume_from = args.resume_from_dir
+        args = get_namespace_from_yaml(
+            os.path.join(args.resume_from_dir, "train_args.yaml")
+        )
+        args.resume_from_dir = resume_from
+    elif args.config_file is not None:
+        args = get_namespace_from_yaml(args.config_file)
 
     if not os.path.exists(args.save_dir):
         os.mkdir(args.save_dir)
-
-    train_start = time.time()
 
     device = torch.device(args.device)
 
@@ -125,7 +170,12 @@ def train() -> None:
     if args.wandb:
         import wandb
 
-        run = wandb.init(project=args.wandb_project, config=args)
+        run = wandb.init(
+            project=args.wandb_project,
+            config=args,
+            resume="allow",
+            id=args.wandb_run_id,
+        )
 
     def get_lr(it: int, time: float, max_lr: float) -> float:
         min_lr = max_lr * 0.01
@@ -153,9 +203,17 @@ def train() -> None:
         engram_d=args.engram_d,
         engram_tokenizer=Tokenizer(args.engram_tokenizer_dir),
     ).to(device)
+    
+    if args.compile:
+        model = torch.compile(model)
+
+    if args.resume_from_dir is not None:
+        model.load_state_dict(
+            torch.load(os.path.join(args.resume_from_dir, "model_state.pth"))
+        )
 
     total_params = sum(p.numel() for p in model.parameters())
-    
+
     print(f"Model Parameters: {total_params / 1e6:.1f}M")
 
     for param in model.parameters():
@@ -164,8 +222,7 @@ def train() -> None:
         elif param.ndim == 2 and param.size(1) == args.vocab_size:
             nn.init.kaiming_normal_(param, gain=0.01)
 
-    if args.compile:
-        model = torch.compile(model)
+    
 
     dl = DataLoader(
         args.data_dir,
@@ -183,8 +240,23 @@ def train() -> None:
         ): args.adam_lr,
     }
 
-    step = 0
-    while (train_time := time.time() - train_start) / 60 < args.train_time_minutes:
+    if args.resume_from_dir is not None:
+        for optim in optimizers.keys():
+            optim.load_state_dict(
+                torch.load(
+                    os.path.join(
+                        args.resume_from_dir, f"{optim.__class__.__name__}_state.pth"
+                    )
+                )
+            )
+
+    step = args.resume_step
+    train_time = args.resume_time
+
+    for _ in range(step * args.grad_accum_steps):
+        dl.next()
+
+    while train_time / 60 < args.train_time_minutes:
         step_t0 = time.time()
         loss_accum = 0.0
 
@@ -231,7 +303,34 @@ def train() -> None:
                 f"step: {step:8d} | loss: {loss_accum:8.4f} | norm: {norm.item():8.4f} | time: {train_time:8.2f} | tok/s: {tok_s:8.1f} | lr: {get_lr(step, train_time, args.muon_lr):8.6f} | mfu: {mfu * 100:8.2f}%"
             )
 
+        if (
+            args.save_every is not None
+            and step % args.save_every == 0
+            and args.save_dir is not None
+        ):
+            save_checkpoint(
+                os.path.join(
+                    args.save_dir,
+                    "checkpoints",
+                    (run.name if args.wandb else "default")
+                    + (
+                        ""
+                        if args.checkpoint_mode == "overwrite"
+                        else f"-{step // args.save_every:04d}"
+                    ),
+                ),
+                model,
+                args,
+                optimizers,
+                step,
+                train_time,
+                run,
+            )
+            print("Model saved to", args.save_dir)
+
         step += 1
+
+        train_time += time.time() - step_t0
 
     enc = Tokenizer("src/saved_tokenizers/main/vocab.txt")
 

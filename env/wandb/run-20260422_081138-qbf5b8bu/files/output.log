@@ -1,0 +1,9 @@
+Model Parameters: 163.6M
+step:      100 | loss:  11.3592 | norm:   2.9970 | time:   403.38 | tok/s:  19060.7 | lr: 0.005100 | mfu:    44.98%
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 327, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 299, in train
+    if args.checkpoint_mode == "overwrite"
+       ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'checkpoint_mode'
