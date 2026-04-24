@@ -1,0 +1,794 @@
+Model Parameters: 163.6M
+step:        0 | loss:  11.3053 | norm:   2.9944 | time:     0.00 | tok/s:   8999.3 | lr: 0.000100 | mfu:    21.24%
+Model saved to saved_models
+step:       10 | loss:  11.0541 | norm:   3.2996 | time:    69.78 | tok/s:  29013.7 | lr: 0.000600 | mfu:    68.47%
+step:       20 | loss:  10.3752 | norm:   3.0200 | time:   115.07 | tok/s:  28924.3 | lr: 0.001100 | mfu:    68.26%
+step:       30 | loss:   9.4026 | norm:   2.4008 | time:   160.28 | tok/s:  29109.0 | lr: 0.001600 | mfu:    68.69%
+step:       40 | loss:   8.6410 | norm:   2.4789 | time:   205.56 | tok/s:  29098.7 | lr: 0.002100 | mfu:    68.67%
+step:       50 | loss:   7.7693 | norm:   1.6487 | time:   250.90 | tok/s:  29099.6 | lr: 0.002600 | mfu:    68.67%
+step:       60 | loss:   7.1950 | norm:   1.1674 | time:   296.24 | tok/s:  28972.2 | lr: 0.003100 | mfu:    68.37%
+step:       70 | loss:   6.6054 | norm:   1.0321 | time:   341.49 | tok/s:  29141.2 | lr: 0.003600 | mfu:    68.77%
+step:       80 | loss:   6.3070 | norm:   1.8791 | time:   386.73 | tok/s:  28951.6 | lr: 0.004100 | mfu:    68.32%
+step:       90 | loss:   6.0398 | norm:   2.4846 | time:   432.10 | tok/s:  31311.2 | lr: 0.004600 | mfu:    73.89%
+step:      100 | loss:   5.6884 | norm:   2.6405 | time:   477.21 | tok/s:  28832.3 | lr: 0.005100 | mfu:    68.04%
+Model saved to saved_models
+step:      110 | loss:   5.5058 | norm:   2.1276 | time:   530.58 | tok/s:  28898.7 | lr: 0.005600 | mfu:    68.20%
+step:      120 | loss:   5.3017 | norm:   2.6340 | time:   575.94 | tok/s:  28993.7 | lr: 0.006100 | mfu:    68.42%
+step:      130 | loss:   5.1761 | norm:   3.1712 | time:   621.31 | tok/s:  29028.4 | lr: 0.006600 | mfu:    68.50%
+step:      140 | loss:   4.9655 | norm:   2.6480 | time:   666.75 | tok/s:  28864.8 | lr: 0.007100 | mfu:    68.12%
+step:      150 | loss:   5.0255 | norm:   2.6010 | time:   712.22 | tok/s:  28896.6 | lr: 0.007600 | mfu:    68.19%
+step:      160 | loss:   4.8427 | norm:   4.5533 | time:   757.59 | tok/s:  29007.1 | lr: 0.008100 | mfu:    68.45%
+step:      170 | loss:   4.7762 | norm:   2.9406 | time:   802.99 | tok/s:  29032.7 | lr: 0.008600 | mfu:    68.51%
+step:      180 | loss:   4.8242 | norm:   5.0243 | time:   848.62 | tok/s:  28861.0 | lr: 0.009100 | mfu:    68.11%
+step:      190 | loss:   4.6787 | norm:   2.7745 | time:   894.15 | tok/s:  28922.4 | lr: 0.009600 | mfu:    68.25%
+step:      200 | loss:   4.5594 | norm:   3.0826 | time:   939.54 | tok/s:  28958.1 | lr: 0.010100 | mfu:    68.34%
+Model saved to saved_models
+step:      210 | loss:   4.4472 | norm:   3.4154 | time:   991.86 | tok/s:  29004.5 | lr: 0.010000 | mfu:    68.44%
+step:      220 | loss:   4.5001 | norm:   1.8767 | time:  1037.16 | tok/s:  29128.6 | lr: 0.010000 | mfu:    68.74%
+step:      230 | loss:   4.4348 | norm:   3.5304 | time:  1082.48 | tok/s:  18853.4 | lr: 0.010000 | mfu:    44.49%
+step:      240 | loss:   4.4942 | norm:   3.9841 | time:  1130.33 | tok/s:  28837.7 | lr: 0.010000 | mfu:    68.05%
+step:      250 | loss:   4.3330 | norm:   2.2063 | time:  1175.78 | tok/s:  28986.6 | lr: 0.010000 | mfu:    68.40%
+step:      260 | loss:   4.4718 | norm:   3.5273 | time:  1221.19 | tok/s:  28946.0 | lr: 0.010000 | mfu:    68.31%
+step:      270 | loss:   4.3109 | norm:   2.2319 | time:  1266.67 | tok/s:  28942.7 | lr: 0.010000 | mfu:    68.30%
+step:      280 | loss:   4.3274 | norm:   2.0912 | time:  1312.09 | tok/s:  28854.7 | lr: 0.010000 | mfu:    68.09%
+step:      290 | loss:   4.2425 | norm:   2.4553 | time:  1357.06 | tok/s:  31242.4 | lr: 0.010000 | mfu:    73.73%
+step:      300 | loss:   4.2236 | norm:   1.9400 | time:  1398.47 | tok/s:  30909.1 | lr: 0.010000 | mfu:    72.94%
+Model saved to saved_models
+step:      310 | loss:   3.9765 | norm:   2.1118 | time:  1450.58 | tok/s:  32038.7 | lr: 0.010000 | mfu:    75.60%
+step:      320 | loss:   4.0429 | norm:   2.6687 | time:  1491.94 | tok/s:  31991.5 | lr: 0.010000 | mfu:    75.49%
+step:      330 | loss:   4.1614 | norm:   1.9190 | time:  1533.23 | tok/s:  31952.2 | lr: 0.010000 | mfu:    75.40%
+step:      340 | loss:   4.1638 | norm:   1.9242 | time:  1574.80 | tok/s:  32047.8 | lr: 0.010000 | mfu:    75.63%
+step:      350 | loss:   4.0677 | norm:   2.2872 | time:  1616.15 | tok/s:  31945.1 | lr: 0.010000 | mfu:    75.38%
+step:      360 | loss:   3.9458 | norm:   1.7047 | time:  1657.45 | tok/s:  31824.1 | lr: 0.010000 | mfu:    75.10%
+step:      370 | loss:   4.0751 | norm:   2.5172 | time:  1698.79 | tok/s:  31959.7 | lr: 0.010000 | mfu:    75.42%
+step:      380 | loss:   4.0239 | norm:   2.0988 | time:  1740.21 | tok/s:  32048.7 | lr: 0.010000 | mfu:    75.63%
+step:      390 | loss:   4.0860 | norm:   2.6935 | time:  1781.64 | tok/s:  31704.4 | lr: 0.010000 | mfu:    74.82%
+step:      400 | loss:   3.9123 | norm:   1.6322 | time:  1822.95 | tok/s:  32093.5 | lr: 0.010000 | mfu:    75.73%
+Model saved to saved_models
+step:      410 | loss:   3.9790 | norm:   2.3801 | time:  1875.42 | tok/s:  31989.5 | lr: 0.010000 | mfu:    75.49%
+step:      420 | loss:   3.9364 | norm:   2.1355 | time:  1916.84 | tok/s:  31906.8 | lr: 0.010000 | mfu:    75.29%
+step:      430 | loss:   3.7940 | norm:   1.9908 | time:  1957.95 | tok/s:  31966.6 | lr: 0.010000 | mfu:    75.43%
+step:      440 | loss:   3.9368 | norm:   2.2956 | time:  1998.96 | tok/s:  33423.1 | lr: 0.010000 | mfu:    78.87%
+step:      450 | loss:   3.8980 | norm:   1.8800 | time:  2038.02 | tok/s:  33368.7 | lr: 0.010000 | mfu:    78.74%
+step:      460 | loss:   3.8179 | norm:   1.9309 | time:  2077.16 | tok/s:  21171.9 | lr: 0.010000 | mfu:    49.96%
+step:      470 | loss:   3.7630 | norm:   1.8761 | time:  2118.52 | tok/s:  33835.3 | lr: 0.010000 | mfu:    79.84%
+step:      480 | loss:   3.8231 | norm:   1.7927 | time:  2157.56 | tok/s:  33706.5 | lr: 0.010000 | mfu:    79.54%
+step:      490 | loss:   3.6916 | norm:   1.3649 | time:  2196.52 | tok/s:  33772.4 | lr: 0.010000 | mfu:    79.70%
+step:      500 | loss:   3.7830 | norm:   1.8052 | time:  2237.53 | tok/s:  33688.8 | lr: 0.010000 | mfu:    79.50%
+Model saved to saved_models
+step:      510 | loss:   3.7294 | norm:   1.9331 | time:  2287.88 | tok/s:  33576.2 | lr: 0.010000 | mfu:    79.23%
+step:      520 | loss:   3.7013 | norm:   1.5150 | time:  2326.99 | tok/s:  33830.8 | lr: 0.010000 | mfu:    79.83%
+step:      530 | loss:   3.8389 | norm:   1.6127 | time:  2365.97 | tok/s:  33731.7 | lr: 0.010000 | mfu:    79.60%
+step:      540 | loss:   3.7070 | norm:   1.9783 | time:  2407.88 | tok/s:  29765.9 | lr: 0.010000 | mfu:    70.24%
+step:      550 | loss:   3.8542 | norm:   1.7496 | time:  2450.59 | tok/s:  30289.2 | lr: 0.010000 | mfu:    71.48%
+step:      560 | loss:   3.8134 | norm:   2.1048 | time:  2494.48 | tok/s:  29900.3 | lr: 0.010000 | mfu:    70.56%
+step:      570 | loss:   3.6951 | norm:   1.8427 | time:  2536.23 | tok/s:  32263.9 | lr: 0.010000 | mfu:    76.14%
+step:      580 | loss:   3.6835 | norm:   2.1232 | time:  2576.82 | tok/s:  31220.4 | lr: 0.010000 | mfu:    73.67%
+step:      590 | loss:   3.7381 | norm:   1.7919 | time:  2617.73 | tok/s:  31815.6 | lr: 0.010000 | mfu:    75.08%
+step:      600 | loss:   3.7788 | norm:   2.1839 | time:  2657.42 | tok/s:  32803.5 | lr: 0.010000 | mfu:    77.41%
+Model saved to saved_models
+step:      610 | loss:   3.6788 | norm:   1.8559 | time:  2704.64 | tok/s:  33025.1 | lr: 0.010000 | mfu:    77.93%
+step:      620 | loss:   3.6624 | norm:   2.1319 | time:  2744.17 | tok/s:  33343.0 | lr: 0.010000 | mfu:    78.68%
+step:      630 | loss:   3.6668 | norm:   1.8740 | time:  2784.10 | tok/s:  31855.5 | lr: 0.010000 | mfu:    75.17%
+step:      640 | loss:   3.6230 | norm:   1.6432 | time:  2825.53 | tok/s:  33668.2 | lr: 0.010000 | mfu:    79.45%
+step:      650 | loss:   3.6453 | norm:   1.7832 | time:  2866.68 | tok/s:  32058.6 | lr: 0.010000 | mfu:    75.65%
+step:      660 | loss:   3.5471 | norm:   1.9316 | time:  2907.76 | tok/s:  32660.8 | lr: 0.010000 | mfu:    77.07%
+step:      670 | loss:   3.5666 | norm:   1.9181 | time:  2948.64 | tok/s:  33237.2 | lr: 0.010000 | mfu:    78.43%
+step:      680 | loss:   3.5470 | norm:   1.9787 | time:  2987.89 | tok/s:  33904.3 | lr: 0.010000 | mfu:    80.01%
+step:      690 | loss:   3.5553 | norm:   1.7033 | time:  3026.57 | tok/s:  33923.7 | lr: 0.010000 | mfu:    80.05%
+step:      700 | loss:   3.5740 | norm:   1.7468 | time:  3067.29 | tok/s:  33903.5 | lr: 0.010000 | mfu:    80.01%
+Model saved to saved_models
+step:      710 | loss:   3.5503 | norm:   1.7662 | time:  3113.48 | tok/s:  33910.1 | lr: 0.010000 | mfu:    80.02%
+step:      720 | loss:   3.5606 | norm:   1.8047 | time:  3152.25 | tok/s:  33898.8 | lr: 0.010000 | mfu:    79.99%
+step:      730 | loss:   3.4577 | norm:   1.7854 | time:  3191.02 | tok/s:  33880.1 | lr: 0.010000 | mfu:    79.95%
+step:      740 | loss:   3.4508 | norm:   1.7543 | time:  3229.70 | tok/s:  33893.3 | lr: 0.010000 | mfu:    79.98%
+step:      750 | loss:   3.4295 | norm:   1.6699 | time:  3268.47 | tok/s:  33906.2 | lr: 0.010000 | mfu:    80.01%
+step:      760 | loss:   3.4196 | norm:   2.1614 | time:  3307.14 | tok/s:  33893.5 | lr: 0.010000 | mfu:    79.98%
+step:      770 | loss:   3.3549 | norm:   1.7191 | time:  3345.81 | tok/s:  33913.3 | lr: 0.010000 | mfu:    80.03%
+step:      780 | loss:   3.3918 | norm:   1.6392 | time:  3384.48 | tok/s:  33917.2 | lr: 0.010000 | mfu:    80.04%
+step:      790 | loss:   3.5092 | norm:   1.8737 | time:  3423.24 | tok/s:  33893.7 | lr: 0.010000 | mfu:    79.98%
+step:      800 | loss:   3.5288 | norm:   2.1803 | time:  3462.02 | tok/s:  33897.2 | lr: 0.010000 | mfu:    79.99%
+Model saved to saved_models
+step:      810 | loss:   3.5517 | norm:   1.7839 | time:  3511.96 | tok/s:  33914.4 | lr: 0.010000 | mfu:    80.03%
+step:      820 | loss:   3.4786 | norm:   1.8169 | time:  3550.62 | tok/s:  33891.8 | lr: 0.010000 | mfu:    79.98%
+step:      830 | loss:   3.4679 | norm:   1.8093 | time:  3589.29 | tok/s:  33869.1 | lr: 0.010000 | mfu:    79.92%
+step:      840 | loss:   3.6285 | norm:   1.9184 | time:  3628.05 | tok/s:  33904.1 | lr: 0.010000 | mfu:    80.01%
+step:      850 | loss:   3.3364 | norm:   1.8580 | time:  3666.80 | tok/s:  33893.0 | lr: 0.010000 | mfu:    79.98%
+step:      860 | loss:   3.5810 | norm:   2.1075 | time:  3705.58 | tok/s:  33887.5 | lr: 0.010000 | mfu:    79.97%
+step:      870 | loss:   3.4852 | norm:   2.1757 | time:  3744.25 | tok/s:  33906.0 | lr: 0.010000 | mfu:    80.01%
+step:      880 | loss:   3.3657 | norm:   1.6737 | time:  3783.02 | tok/s:  33912.4 | lr: 0.010000 | mfu:    80.03%
+step:      890 | loss:   3.3936 | norm:   1.7173 | time:  3821.69 | tok/s:  33908.2 | lr: 0.010000 | mfu:    80.02%
+step:      900 | loss:   3.5050 | norm:   1.8384 | time:  3860.36 | tok/s:  33926.0 | lr: 0.010000 | mfu:    80.06%
+Model saved to saved_models
+step:      910 | loss:   3.4944 | norm:   2.0540 | time:  3910.19 | tok/s:  33920.7 | lr: 0.010000 | mfu:    80.05%
+step:      920 | loss:   3.4504 | norm:   1.8294 | time:  3948.86 | tok/s:  33883.9 | lr: 0.010000 | mfu:    79.96%
+step:      930 | loss:   3.4763 | norm:   1.8524 | time:  3990.06 | tok/s:  33895.2 | lr: 0.010000 | mfu:    79.99%
+step:      940 | loss:   3.3843 | norm:   1.8901 | time:  4028.73 | tok/s:  33887.9 | lr: 0.010000 | mfu:    79.97%
+step:      950 | loss:   3.4884 | norm:   1.8672 | time:  4067.42 | tok/s:  33900.3 | lr: 0.010000 | mfu:    80.00%
+step:      960 | loss:   3.4103 | norm:   1.7141 | time:  4106.18 | tok/s:  33884.7 | lr: 0.010000 | mfu:    79.96%
+step:      970 | loss:   3.3870 | norm:   2.2999 | time:  4144.95 | tok/s:  33892.1 | lr: 0.010000 | mfu:    79.98%
+step:      980 | loss:   3.4495 | norm:   2.1851 | time:  4183.62 | tok/s:  33907.6 | lr: 0.010000 | mfu:    80.02%
+step:      990 | loss:   3.2539 | norm:   1.8172 | time:  4222.30 | tok/s:  33909.9 | lr: 0.010000 | mfu:    80.02%
+step:     1000 | loss:   3.3426 | norm:   1.6337 | time:  4260.97 | tok/s:  33917.6 | lr: 0.010000 | mfu:    80.04%
+Model saved to saved_models
+step:     1010 | loss:   3.3218 | norm:   1.7204 | time:  4310.89 | tok/s:  33917.1 | lr: 0.010000 | mfu:    80.04%
+step:     1020 | loss:   3.2867 | norm:   2.1033 | time:  4349.56 | tok/s:  33921.7 | lr: 0.010000 | mfu:    80.05%
+step:     1030 | loss:   3.3766 | norm:   1.7047 | time:  4388.31 | tok/s:  33886.7 | lr: 0.010000 | mfu:    79.97%
+step:     1040 | loss:   3.2408 | norm:   1.6929 | time:  4427.09 | tok/s:  33900.0 | lr: 0.010000 | mfu:    80.00%
+step:     1050 | loss:   3.3881 | norm:   2.0532 | time:  4465.76 | tok/s:  33908.5 | lr: 0.010000 | mfu:    80.02%
+step:     1060 | loss:   3.5471 | norm:   1.8291 | time:  4504.42 | tok/s:  33915.7 | lr: 0.010000 | mfu:    80.03%
+step:     1070 | loss:   3.3748 | norm:   1.7947 | time:  4543.18 | tok/s:  33893.8 | lr: 0.010000 | mfu:    79.98%
+step:     1080 | loss:   3.7273 | norm:   1.9724 | time:  4581.85 | tok/s:  33908.3 | lr: 0.010000 | mfu:    80.02%
+step:     1090 | loss:   3.3734 | norm:   1.9215 | time:  4620.51 | tok/s:  33931.4 | lr: 0.010000 | mfu:    80.07%
+step:     1100 | loss:   3.3561 | norm:   1.7355 | time:  4659.18 | tok/s:  33896.9 | lr: 0.010000 | mfu:    79.99%
+Model saved to saved_models
+step:     1110 | loss:   3.3389 | norm:   1.9380 | time:  4709.14 | tok/s:  33910.1 | lr: 0.010000 | mfu:    80.02%
+step:     1120 | loss:   3.3515 | norm:   1.8602 | time:  4747.80 | tok/s:  33902.6 | lr: 0.010000 | mfu:    80.00%
+step:     1130 | loss:   3.3920 | norm:   2.0300 | time:  4786.56 | tok/s:  33881.1 | lr: 0.010000 | mfu:    79.95%
+step:     1140 | loss:   3.5505 | norm:   1.9553 | time:  4825.33 | tok/s:  33903.2 | lr: 0.010000 | mfu:    80.00%
+step:     1150 | loss:   3.7688 | norm:   2.8770 | time:  4864.00 | tok/s:  33914.9 | lr: 0.010000 | mfu:    80.03%
+step:     1160 | loss:   3.3494 | norm:   1.8739 | time:  4905.33 | tok/s:  33909.0 | lr: 0.010000 | mfu:    80.02%
+step:     1170 | loss:   3.6397 | norm:   2.2419 | time:  4944.09 | tok/s:  33894.0 | lr: 0.010000 | mfu:    79.98%
+step:     1180 | loss:   3.3973 | norm:   1.9360 | time:  4982.85 | tok/s:  33857.2 | lr: 0.010000 | mfu:    79.90%
+step:     1190 | loss:   3.3146 | norm:   1.8222 | time:  5021.53 | tok/s:  33920.8 | lr: 0.010000 | mfu:    80.05%
+step:     1200 | loss:   3.3668 | norm:   2.0591 | time:  5060.28 | tok/s:  33907.1 | lr: 0.010000 | mfu:    80.01%
+Model saved to saved_models
+step:     1210 | loss:   3.2807 | norm:   2.2627 | time:  5110.22 | tok/s:  33921.1 | lr: 0.010000 | mfu:    80.05%
+step:     1220 | loss:   3.2243 | norm:   1.7567 | time:  5148.90 | tok/s:  33915.6 | lr: 0.010000 | mfu:    80.03%
+step:     1230 | loss:   3.4182 | norm:   1.9286 | time:  5187.57 | tok/s:  33919.0 | lr: 0.010000 | mfu:    80.04%
+step:     1240 | loss:   3.2518 | norm:   2.2219 | time:  5226.23 | tok/s:  33890.8 | lr: 0.010000 | mfu:    79.98%
+step:     1250 | loss:   3.2803 | norm:   1.8294 | time:  5264.90 | tok/s:  33888.2 | lr: 0.010000 | mfu:    79.97%
+step:     1260 | loss:   3.3057 | norm:   1.7989 | time:  5303.58 | tok/s:  33901.1 | lr: 0.010000 | mfu:    80.00%
+step:     1270 | loss:   3.2714 | norm:   1.8541 | time:  5342.26 | tok/s:  33901.8 | lr: 0.010000 | mfu:    80.00%
+step:     1280 | loss:   3.2521 | norm:   1.6770 | time:  5381.03 | tok/s:  33882.9 | lr: 0.010000 | mfu:    79.96%
+step:     1290 | loss:   3.3120 | norm:   1.7023 | time:  5419.71 | tok/s:  33909.2 | lr: 0.010000 | mfu:    80.02%
+step:     1300 | loss:   3.3032 | norm:   1.8547 | time:  5458.38 | tok/s:  33925.3 | lr: 0.010000 | mfu:    80.06%
+Model saved to saved_models
+step:     1310 | loss:   3.3966 | norm:   1.7844 | time:  5508.27 | tok/s:  33921.1 | lr: 0.010000 | mfu:    80.05%
+step:     1320 | loss:   3.3496 | norm:   1.9517 | time:  5546.94 | tok/s:  33922.0 | lr: 0.010000 | mfu:    80.05%
+step:     1330 | loss:   3.4208 | norm:   1.9077 | time:  5585.60 | tok/s:  33898.0 | lr: 0.010000 | mfu:    79.99%
+step:     1340 | loss:   3.3771 | norm:   1.6267 | time:  5624.27 | tok/s:  33918.5 | lr: 0.010000 | mfu:    80.04%
+step:     1350 | loss:   3.3107 | norm:   1.9382 | time:  5662.94 | tok/s:  33898.2 | lr: 0.010000 | mfu:    79.99%
+step:     1360 | loss:   3.3525 | norm:   1.9832 | time:  5701.60 | tok/s:  33918.0 | lr: 0.010000 | mfu:    80.04%
+step:     1370 | loss:   3.2612 | norm:   1.9174 | time:  5740.29 | tok/s:  33880.0 | lr: 0.010000 | mfu:    79.95%
+step:     1380 | loss:   3.3562 | norm:   1.8503 | time:  5778.96 | tok/s:  33917.6 | lr: 0.010000 | mfu:    80.04%
+step:     1390 | loss:   3.3214 | norm:   1.6890 | time:  5820.41 | tok/s:  33938.1 | lr: 0.010000 | mfu:    80.09%
+step:     1400 | loss:   3.2814 | norm:   1.8404 | time:  5859.09 | tok/s:  33910.7 | lr: 0.010000 | mfu:    80.02%
+Model saved to saved_models
+step:     1410 | loss:   3.3075 | norm:   2.1837 | time:  5907.49 | tok/s:  33899.4 | lr: 0.010000 | mfu:    80.00%
+step:     1420 | loss:   3.3100 | norm:   2.0134 | time:  5946.16 | tok/s:  33920.9 | lr: 0.010000 | mfu:    80.05%
+step:     1430 | loss:   3.2358 | norm:   1.8736 | time:  5984.84 | tok/s:  33914.2 | lr: 0.010000 | mfu:    80.03%
+step:     1440 | loss:   3.2797 | norm:   1.7500 | time:  6023.51 | tok/s:  33875.7 | lr: 0.010000 | mfu:    79.94%
+step:     1450 | loss:   3.2991 | norm:   1.9324 | time:  6062.19 | tok/s:  33912.1 | lr: 0.010000 | mfu:    80.03%
+step:     1460 | loss:   3.3021 | norm:   2.1413 | time:  6100.87 | tok/s:  33907.9 | lr: 0.010000 | mfu:    80.02%
+step:     1470 | loss:   3.2949 | norm:   1.6670 | time:  6139.63 | tok/s:  33954.3 | lr: 0.010000 | mfu:    80.13%
+step:     1480 | loss:   3.3069 | norm:   1.8807 | time:  6178.29 | tok/s:  33933.7 | lr: 0.010000 | mfu:    80.08%
+step:     1490 | loss:   3.2686 | norm:   1.9228 | time:  6216.97 | tok/s:  33916.0 | lr: 0.010000 | mfu:    80.03%
+step:     1500 | loss:   3.2093 | norm:   2.0299 | time:  6255.65 | tok/s:  33904.5 | lr: 0.010000 | mfu:    80.01%
+Model saved to saved_models
+step:     1510 | loss:   3.1409 | norm:   1.7731 | time:  6305.36 | tok/s:  33913.0 | lr: 0.010000 | mfu:    80.03%
+step:     1520 | loss:   3.2381 | norm:   1.8623 | time:  6344.04 | tok/s:  33902.6 | lr: 0.010000 | mfu:    80.00%
+step:     1530 | loss:   3.1721 | norm:   1.9666 | time:  6382.81 | tok/s:  33899.4 | lr: 0.010000 | mfu:    80.00%
+step:     1540 | loss:   3.1487 | norm:   1.7060 | time:  6421.48 | tok/s:  33919.6 | lr: 0.010000 | mfu:    80.04%
+step:     1550 | loss:   3.2559 | norm:   1.6598 | time:  6460.25 | tok/s:  33896.1 | lr: 0.010000 | mfu:    79.99%
+step:     1560 | loss:   3.3889 | norm:   2.1638 | time:  6499.02 | tok/s:  33900.0 | lr: 0.010000 | mfu:    80.00%
+step:     1570 | loss:   3.3689 | norm:   2.0278 | time:  6537.69 | tok/s:  33899.0 | lr: 0.010000 | mfu:    79.99%
+step:     1580 | loss:   3.3729 | norm:   1.9426 | time:  6576.47 | tok/s:  33913.9 | lr: 0.010000 | mfu:    80.03%
+step:     1590 | loss:   3.3140 | norm:   2.0921 | time:  6615.23 | tok/s:  33873.7 | lr: 0.010000 | mfu:    79.94%
+step:     1600 | loss:   3.3143 | norm:   1.9313 | time:  6653.90 | tok/s:  33899.8 | lr: 0.010000 | mfu:    80.00%
+Model saved to saved_models
+step:     1610 | loss:   3.3916 | norm:   2.1911 | time:  6703.45 | tok/s:  33921.9 | lr: 0.010000 | mfu:    80.05%
+step:     1620 | loss:   3.2770 | norm:   1.9303 | time:  6742.12 | tok/s:  33923.4 | lr: 0.010000 | mfu:    80.05%
+step:     1630 | loss:   3.3281 | norm:   1.9663 | time:  6783.54 | tok/s:  33914.2 | lr: 0.010000 | mfu:    80.03%
+step:     1640 | loss:   3.3290 | norm:   1.7399 | time:  6822.30 | tok/s:  33900.8 | lr: 0.010000 | mfu:    80.00%
+step:     1650 | loss:   3.2283 | norm:   1.9114 | time:  6861.07 | tok/s:  33900.7 | lr: 0.010000 | mfu:    80.00%
+step:     1660 | loss:   3.2639 | norm:   2.0613 | time:  6899.74 | tok/s:  33912.6 | lr: 0.010000 | mfu:    80.03%
+step:     1670 | loss:   3.2381 | norm:   1.7863 | time:  6938.53 | tok/s:  33891.1 | lr: 0.010000 | mfu:    79.98%
+step:     1680 | loss:   3.2638 | norm:   1.7673 | time:  6977.20 | tok/s:  33892.2 | lr: 0.010000 | mfu:    79.98%
+step:     1690 | loss:   3.3764 | norm:   2.5226 | time:  7015.96 | tok/s:  33922.4 | lr: 0.010000 | mfu:    80.05%
+step:     1700 | loss:   3.2391 | norm:   1.9732 | time:  7054.79 | tok/s:  33903.0 | lr: 0.010000 | mfu:    80.00%
+Model saved to saved_models
+step:     1710 | loss:   3.2855 | norm:   1.7586 | time:  7100.72 | tok/s:  33907.6 | lr: 0.010000 | mfu:    80.02%
+step:     1720 | loss:   3.2685 | norm:   2.0223 | time:  7139.48 | tok/s:  33928.2 | lr: 0.010000 | mfu:    80.06%
+step:     1730 | loss:   3.1926 | norm:   2.0135 | time:  7178.25 | tok/s:  33889.6 | lr: 0.010000 | mfu:    79.97%
+step:     1740 | loss:   3.2454 | norm:   1.8198 | time:  7216.91 | tok/s:  33908.5 | lr: 0.010000 | mfu:    80.02%
+step:     1750 | loss:   3.2222 | norm:   2.0897 | time:  7255.57 | tok/s:  33912.4 | lr: 0.010000 | mfu:    80.03%
+step:     1760 | loss:   3.2015 | norm:   2.1799 | time:  7294.23 | tok/s:  33909.3 | lr: 0.010000 | mfu:    80.02%
+step:     1770 | loss:   3.1577 | norm:   2.0560 | time:  7332.89 | tok/s:  33800.1 | lr: 0.010000 | mfu:    79.76%
+step:     1780 | loss:   3.1805 | norm:   2.1827 | time:  7371.57 | tok/s:  33919.9 | lr: 0.010000 | mfu:    80.04%
+step:     1790 | loss:   3.2639 | norm:   2.8575 | time:  7410.23 | tok/s:  33898.8 | lr: 0.010000 | mfu:    79.99%
+step:     1800 | loss:   3.1464 | norm:   1.8037 | time:  7448.99 | tok/s:  33886.7 | lr: 0.010000 | mfu:    79.97%
+Model saved to saved_models
+step:     1810 | loss:   3.1538 | norm:   1.6884 | time:  7498.99 | tok/s:  33928.3 | lr: 0.010000 | mfu:    80.06%
+step:     1820 | loss:   3.2931 | norm:   1.7828 | time:  7537.66 | tok/s:  33918.8 | lr: 0.010000 | mfu:    80.04%
+step:     1830 | loss:   3.2908 | norm:   2.1432 | time:  7576.34 | tok/s:  33910.7 | lr: 0.010000 | mfu:    80.02%
+step:     1840 | loss:   3.3103 | norm:   2.0215 | time:  7615.13 | tok/s:  33882.8 | lr: 0.010000 | mfu:    79.96%
+step:     1850 | loss:   3.2881 | norm:   1.7586 | time:  7653.90 | tok/s:  33898.2 | lr: 0.010000 | mfu:    79.99%
+step:     1860 | loss:   3.3532 | norm:   2.1270 | time:  7695.17 | tok/s:  33893.5 | lr: 0.010000 | mfu:    79.98%
+step:     1870 | loss:   3.2529 | norm:   1.9492 | time:  7733.84 | tok/s:  33922.5 | lr: 0.010000 | mfu:    80.05%
+step:     1880 | loss:   3.1845 | norm:   1.8924 | time:  7772.60 | tok/s:  33892.1 | lr: 0.010000 | mfu:    79.98%
+step:     1890 | loss:   3.2677 | norm:   1.9683 | time:  7811.27 | tok/s:  33916.7 | lr: 0.010000 | mfu:    80.04%
+step:     1900 | loss:   3.3097 | norm:   1.8607 | time:  7849.95 | tok/s:  33914.5 | lr: 0.010000 | mfu:    80.03%
+Model saved to saved_models
+step:     1910 | loss:   3.3331 | norm:   2.2704 | time:  7899.83 | tok/s:  33914.1 | lr: 0.010000 | mfu:    80.03%
+step:     1920 | loss:   3.2539 | norm:   1.8199 | time:  7938.59 | tok/s:  33896.6 | lr: 0.010000 | mfu:    79.99%
+step:     1930 | loss:   3.3754 | norm:   2.1673 | time:  7977.26 | tok/s:  33908.3 | lr: 0.010000 | mfu:    80.02%
+step:     1940 | loss:   3.2029 | norm:   1.8948 | time:  8016.02 | tok/s:  33884.8 | lr: 0.010000 | mfu:    79.96%
+step:     1950 | loss:   3.1932 | norm:   1.8751 | time:  8054.69 | tok/s:  33919.8 | lr: 0.010000 | mfu:    80.04%
+step:     1960 | loss:   3.2029 | norm:   1.8589 | time:  8093.36 | tok/s:  33915.4 | lr: 0.010000 | mfu:    80.03%
+step:     1970 | loss:   3.2748 | norm:   2.0585 | time:  8132.03 | tok/s:  33918.3 | lr: 0.010000 | mfu:    80.04%
+step:     1980 | loss:   3.2011 | norm:   2.1257 | time:  8170.70 | tok/s:  33900.2 | lr: 0.010000 | mfu:    80.00%
+step:     1990 | loss:   3.1871 | norm:   1.7700 | time:  8209.37 | tok/s:  33928.2 | lr: 0.010000 | mfu:    80.06%
+step:     2000 | loss:   3.2589 | norm:   2.0046 | time:  8248.04 | tok/s:  33911.9 | lr: 0.010000 | mfu:    80.03%
+Model saved to saved_models
+step:     2010 | loss:   3.1128 | norm:   1.7337 | time:  8297.88 | tok/s:  33935.7 | lr: 0.010000 | mfu:    80.08%
+step:     2020 | loss:   3.2284 | norm:   2.0592 | time:  8336.54 | tok/s:  33929.5 | lr: 0.010000 | mfu:    80.07%
+step:     2030 | loss:   3.1389 | norm:   1.7666 | time:  8375.21 | tok/s:  33926.3 | lr: 0.010000 | mfu:    80.06%
+step:     2040 | loss:   3.1162 | norm:   2.0704 | time:  8413.89 | tok/s:  33893.6 | lr: 0.010000 | mfu:    79.98%
+step:     2050 | loss:   3.1934 | norm:   2.0852 | time:  8452.65 | tok/s:  33923.3 | lr: 0.010000 | mfu:    80.05%
+step:     2060 | loss:   3.0958 | norm:   1.9293 | time:  8491.32 | tok/s:  33922.3 | lr: 0.010000 | mfu:    80.05%
+step:     2070 | loss:   3.2576 | norm:   2.1542 | time:  8529.98 | tok/s:  33899.7 | lr: 0.010000 | mfu:    80.00%
+step:     2080 | loss:   3.2291 | norm:   2.1425 | time:  8568.65 | tok/s:  33916.0 | lr: 0.010000 | mfu:    80.03%
+step:     2090 | loss:   3.3127 | norm:   2.7404 | time:  8609.94 | tok/s:  33928.4 | lr: 0.010000 | mfu:    80.06%
+step:     2100 | loss:   3.3428 | norm:   1.8873 | time:  8648.69 | tok/s:  33884.5 | lr: 0.010000 | mfu:    79.96%
+Model saved to saved_models
+step:     2110 | loss:   3.2781 | norm:   1.8283 | time:  8702.96 | tok/s:  33925.6 | lr: 0.010000 | mfu:    80.06%
+step:     2120 | loss:   3.2810 | norm:   2.2093 | time:  8741.62 | tok/s:  33912.1 | lr: 0.010000 | mfu:    80.03%
+step:     2130 | loss:   3.1843 | norm:   2.2942 | time:  8780.29 | tok/s:  33893.9 | lr: 0.010000 | mfu:    79.98%
+step:     2140 | loss:   3.2358 | norm:   1.9547 | time:  8819.05 | tok/s:  33921.4 | lr: 0.010000 | mfu:    80.05%
+step:     2150 | loss:   3.2550 | norm:   1.9362 | time:  8857.84 | tok/s:  33905.1 | lr: 0.010000 | mfu:    80.01%
+step:     2160 | loss:   3.1831 | norm:   1.9312 | time:  8896.61 | tok/s:  33881.9 | lr: 0.010000 | mfu:    79.95%
+step:     2170 | loss:   3.4337 | norm:   2.1900 | time:  8935.28 | tok/s:  33910.7 | lr: 0.010000 | mfu:    80.02%
+step:     2180 | loss:   3.2854 | norm:   1.8222 | time:  8973.94 | tok/s:  33916.3 | lr: 0.010000 | mfu:    80.04%
+step:     2190 | loss:   3.2732 | norm:   1.8862 | time:  9012.70 | tok/s:  33912.2 | lr: 0.010000 | mfu:    80.03%
+step:     2200 | loss:   3.2402 | norm:   1.9594 | time:  9051.37 | tok/s:  33929.2 | lr: 0.010000 | mfu:    80.07%
+Model saved to saved_models
+step:     2210 | loss:   3.1861 | norm:   2.0207 | time:  9105.44 | tok/s:  33918.7 | lr: 0.010000 | mfu:    80.04%
+step:     2220 | loss:   3.2323 | norm:   1.5892 | time:  9144.10 | tok/s:  33904.0 | lr: 0.010000 | mfu:    80.01%
+step:     2230 | loss:   3.1994 | norm:   1.9860 | time:  9182.78 | tok/s:  33893.9 | lr: 0.010000 | mfu:    79.98%
+step:     2240 | loss:   3.3206 | norm:   2.3260 | time:  9221.47 | tok/s:  33917.7 | lr: 0.010000 | mfu:    80.04%
+step:     2250 | loss:   3.2690 | norm:   2.0814 | time:  9260.24 | tok/s:  33870.3 | lr: 0.010000 | mfu:    79.93%
+step:     2260 | loss:   3.3593 | norm:   8.5007 | time:  9298.92 | tok/s:  33895.8 | lr: 0.010000 | mfu:    79.99%
+step:     2270 | loss:   3.1742 | norm:   2.0731 | time:  9337.59 | tok/s:  33888.6 | lr: 0.010000 | mfu:    79.97%
+step:     2280 | loss:   3.1931 | norm:   2.0362 | time:  9376.28 | tok/s:  33887.2 | lr: 0.010000 | mfu:    79.97%
+step:     2290 | loss:   3.0481 | norm:   2.4265 | time:  9414.95 | tok/s:  33889.9 | lr: 0.010000 | mfu:    79.97%
+step:     2300 | loss:   3.1505 | norm:   2.2486 | time:  9453.63 | tok/s:  33916.8 | lr: 0.010000 | mfu:    80.04%
+Model saved to saved_models
+step:     2310 | loss:   3.0824 | norm:   1.8890 | time:  9507.92 | tok/s:  33921.0 | lr: 0.010000 | mfu:    80.05%
+step:     2320 | loss:   3.2984 | norm:   2.4184 | time:  9549.18 | tok/s:  33909.3 | lr: 0.010000 | mfu:    80.02%
+step:     2330 | loss:   3.2707 | norm:   1.8564 | time:  9587.94 | tok/s:  33913.0 | lr: 0.010000 | mfu:    80.03%
+step:     2340 | loss:   3.2408 | norm:   2.0175 | time:  9626.61 | tok/s:  33919.8 | lr: 0.010000 | mfu:    80.04%
+step:     2350 | loss:   3.2808 | norm:   2.4193 | time:  9665.37 | tok/s:  33881.6 | lr: 0.010000 | mfu:    79.95%
+step:     2360 | loss:   3.2433 | norm:   1.9682 | time:  9704.04 | tok/s:  33929.8 | lr: 0.010000 | mfu:    80.07%
+step:     2370 | loss:   3.2211 | norm:   1.8933 | time:  9742.80 | tok/s:  33900.4 | lr: 0.010000 | mfu:    80.00%
+step:     2380 | loss:   3.2335 | norm:   2.6285 | time:  9781.46 | tok/s:  33922.8 | lr: 0.010000 | mfu:    80.05%
+step:     2390 | loss:   3.2726 | norm:   1.8938 | time:  9820.12 | tok/s:  33904.3 | lr: 0.010000 | mfu:    80.01%
+step:     2400 | loss:   3.1563 | norm:   1.8006 | time:  9858.79 | tok/s:  33907.5 | lr: 0.010000 | mfu:    80.01%
+Model saved to saved_models
+step:     2410 | loss:   3.1817 | norm:   2.1973 | time:  9908.52 | tok/s:  33903.7 | lr: 0.010000 | mfu:    80.01%
+step:     2420 | loss:   3.1587 | norm:   2.5300 | time:  9947.19 | tok/s:  33891.1 | lr: 0.010000 | mfu:    79.98%
+step:     2430 | loss:   3.1750 | norm:   2.0687 | time:  9985.85 | tok/s:  33904.0 | lr: 0.010000 | mfu:    80.01%
+step:     2440 | loss:   3.3940 | norm:   1.8621 | time: 10024.66 | tok/s:  33918.6 | lr: 0.010000 | mfu:    80.04%
+step:     2450 | loss:   3.1219 | norm:   2.4899 | time: 10063.34 | tok/s:  33909.3 | lr: 0.010000 | mfu:    80.02%
+step:     2460 | loss:   3.1790 | norm:   1.7691 | time: 10102.02 | tok/s:  33919.3 | lr: 0.010000 | mfu:    80.04%
+step:     2470 | loss:   3.1438 | norm:   1.8946 | time: 10140.77 | tok/s:  33879.4 | lr: 0.010000 | mfu:    79.95%
+step:     2480 | loss:   3.2525 | norm:   2.0520 | time: 10179.55 | tok/s:  33885.4 | lr: 0.010000 | mfu:    79.96%
+step:     2490 | loss:   3.1575 | norm:   1.8388 | time: 10218.32 | tok/s:  33883.0 | lr: 0.010000 | mfu:    79.96%
+step:     2500 | loss:   3.2758 | norm:   2.0843 | time: 10256.99 | tok/s:  33918.8 | lr: 0.010000 | mfu:    80.04%
+Model saved to saved_models
+step:     2510 | loss:   3.0578 | norm:   1.8168 | time: 10311.06 | tok/s:  33906.6 | lr: 0.010000 | mfu:    80.01%
+step:     2520 | loss:   3.0583 | norm:   1.9677 | time: 10349.74 | tok/s:  33904.3 | lr: 0.010000 | mfu:    80.01%
+step:     2530 | loss:   3.3338 | norm:   2.3726 | time: 10388.40 | tok/s:  33896.1 | lr: 0.010000 | mfu:    79.99%
+step:     2540 | loss:   3.1350 | norm:   1.8851 | time: 10427.08 | tok/s:  33905.8 | lr: 0.010000 | mfu:    80.01%
+step:     2550 | loss:   3.1218 | norm:   2.2378 | time: 10468.99 | tok/s:  33906.2 | lr: 0.010000 | mfu:    80.01%
+step:     2560 | loss:   3.1936 | norm:   2.2632 | time: 10507.74 | tok/s:  33893.2 | lr: 0.010000 | mfu:    79.98%
+step:     2570 | loss:   3.1071 | norm:   1.7049 | time: 10546.42 | tok/s:  33905.8 | lr: 0.010000 | mfu:    80.01%
+step:     2580 | loss:   3.2681 | norm:   2.0001 | time: 10585.10 | tok/s:  33894.2 | lr: 0.010000 | mfu:    79.98%
+step:     2590 | loss:   3.2660 | norm:   1.8707 | time: 10623.87 | tok/s:  33916.7 | lr: 0.010000 | mfu:    80.04%
+step:     2600 | loss:   3.1152 | norm:   1.9405 | time: 10662.70 | tok/s:  33884.2 | lr: 0.010000 | mfu:    79.96%
+Model saved to saved_models
+step:     2610 | loss:   3.2082 | norm:   2.3116 | time: 10709.31 | tok/s:  33919.0 | lr: 0.010000 | mfu:    80.04%
+step:     2620 | loss:   3.2871 | norm:   2.5137 | time: 10747.98 | tok/s:  33899.8 | lr: 0.010000 | mfu:    80.00%
+step:     2630 | loss:   3.2123 | norm:   2.2652 | time: 10786.66 | tok/s:  33928.6 | lr: 0.010000 | mfu:    80.06%
+step:     2640 | loss:   3.2274 | norm:   2.1445 | time: 10825.33 | tok/s:  33914.3 | lr: 0.010000 | mfu:    80.03%
+step:     2650 | loss:   3.1760 | norm:   2.1932 | time: 10864.09 | tok/s:  33901.7 | lr: 0.010000 | mfu:    80.00%
+step:     2660 | loss:   3.1409 | norm:   1.8466 | time: 10902.86 | tok/s:  33888.6 | lr: 0.010000 | mfu:    79.97%
+step:     2670 | loss:   3.2027 | norm:   2.1067 | time: 10941.54 | tok/s:  33905.0 | lr: 0.010000 | mfu:    80.01%
+step:     2680 | loss:   3.2356 | norm:   2.3571 | time: 10980.20 | tok/s:  33909.7 | lr: 0.010000 | mfu:    80.02%
+step:     2690 | loss:   3.2115 | norm:   1.8057 | time: 11018.97 | tok/s:  33895.3 | lr: 0.010000 | mfu:    79.99%
+step:     2700 | loss:   3.1966 | norm:   1.9594 | time: 11057.64 | tok/s:  33913.5 | lr: 0.010000 | mfu:    80.03%
+Model saved to saved_models
+step:     2710 | loss:   3.2038 | norm:   2.1027 | time: 11107.33 | tok/s:  33908.0 | lr: 0.010000 | mfu:    80.02%
+step:     2720 | loss:   3.2485 | norm:   1.7470 | time: 11146.08 | tok/s:  33918.2 | lr: 0.010000 | mfu:    80.04%
+step:     2730 | loss:   3.1725 | norm:   2.0298 | time: 11184.84 | tok/s:  33903.0 | lr: 0.010000 | mfu:    80.00%
+step:     2740 | loss:   3.2462 | norm:   1.9786 | time: 11223.51 | tok/s:  33912.8 | lr: 0.010000 | mfu:    80.03%
+step:     2750 | loss:   3.2268 | norm:   2.1707 | time: 11262.18 | tok/s:  33892.2 | lr: 0.010000 | mfu:    79.98%
+step:     2760 | loss:   3.1638 | norm:   1.9801 | time: 11300.85 | tok/s:  33901.7 | lr: 0.010000 | mfu:    80.00%
+step:     2770 | loss:   3.1956 | norm:   2.1610 | time: 11339.52 | tok/s:  33905.5 | lr: 0.010000 | mfu:    80.01%
+step:     2780 | loss:   3.1111 | norm:   1.8594 | time: 11380.96 | tok/s:  33927.6 | lr: 0.010000 | mfu:    80.06%
+step:     2790 | loss:   3.1120 | norm:   2.0167 | time: 11419.63 | tok/s:  33916.0 | lr: 0.010000 | mfu:    80.03%
+step:     2800 | loss:   3.1332 | norm:   2.2513 | time: 11458.30 | tok/s:  33903.3 | lr: 0.010000 | mfu:    80.01%
+Model saved to saved_models
+step:     2810 | loss:   3.0944 | norm:   1.9823 | time: 11508.41 | tok/s:  33874.0 | lr: 0.010000 | mfu:    79.94%
+step:     2820 | loss:   3.1786 | norm:   2.0762 | time: 11547.09 | tok/s:  33903.2 | lr: 0.010000 | mfu:    80.00%
+step:     2830 | loss:   3.1784 | norm:   2.2805 | time: 11585.85 | tok/s:  33895.3 | lr: 0.010000 | mfu:    79.99%
+step:     2840 | loss:   3.3247 | norm:   2.3676 | time: 11624.54 | tok/s:  33909.1 | lr: 0.010000 | mfu:    80.02%
+step:     2850 | loss:   3.2045 | norm:   2.1355 | time: 11663.21 | tok/s:  33891.4 | lr: 0.010000 | mfu:    79.98%
+step:     2860 | loss:   3.1710 | norm:   2.1199 | time: 11701.88 | tok/s:  33897.4 | lr: 0.010000 | mfu:    79.99%
+step:     2870 | loss:   3.1523 | norm:   2.1772 | time: 11740.55 | tok/s:  33913.7 | lr: 0.010000 | mfu:    80.03%
+step:     2880 | loss:   3.1131 | norm:   2.0408 | time: 11779.22 | tok/s:  33919.0 | lr: 0.010000 | mfu:    80.04%
+step:     2890 | loss:   3.1880 | norm:   1.8643 | time: 11817.88 | tok/s:  33927.7 | lr: 0.010000 | mfu:    80.06%
+step:     2900 | loss:   3.0785 | norm:   1.9282 | time: 11856.64 | tok/s:  33880.7 | lr: 0.010000 | mfu:    79.95%
+Model saved to saved_models
+step:     2910 | loss:   3.1036 | norm:   2.2412 | time: 11910.28 | tok/s:  33915.7 | lr: 0.010000 | mfu:    80.03%
+step:     2920 | loss:   3.1642 | norm:   2.0618 | time: 11948.93 | tok/s:  33898.2 | lr: 0.010000 | mfu:    79.99%
+step:     2930 | loss:   3.2026 | norm:   2.4325 | time: 11987.59 | tok/s:  33922.8 | lr: 0.010000 | mfu:    80.05%
+step:     2940 | loss:   3.1731 | norm:   2.2357 | time: 12026.26 | tok/s:  33924.0 | lr: 0.010000 | mfu:    80.05%
+step:     2950 | loss:   3.1824 | norm:   1.9032 | time: 12064.92 | tok/s:  33906.1 | lr: 0.010000 | mfu:    80.01%
+step:     2960 | loss:   3.1840 | norm:   1.8161 | time: 12103.58 | tok/s:  33912.8 | lr: 0.010000 | mfu:    80.03%
+step:     2970 | loss:   3.1684 | norm:   2.3345 | time: 12142.24 | tok/s:  33902.9 | lr: 0.010000 | mfu:    80.00%
+step:     2980 | loss:   3.1025 | norm:   1.9846 | time: 12181.00 | tok/s:  33911.0 | lr: 0.010000 | mfu:    80.02%
+step:     2990 | loss:   3.1794 | norm:   1.8669 | time: 12219.75 | tok/s:  33903.7 | lr: 0.010000 | mfu:    80.01%
+step:     3000 | loss:   3.1729 | norm:   2.0266 | time: 12258.42 | tok/s:  33895.2 | lr: 0.010000 | mfu:    79.99%
+Model saved to saved_models
+step:     3010 | loss:   3.1079 | norm:   1.8019 | time: 12308.13 | tok/s:  33893.9 | lr: 0.010000 | mfu:    79.98%
+step:     3020 | loss:   3.1525 | norm:   2.0335 | time: 12349.49 | tok/s:  33923.6 | lr: 0.010000 | mfu:    80.05%
+step:     3030 | loss:   3.1020 | norm:   2.2902 | time: 12388.16 | tok/s:  33914.6 | lr: 0.010000 | mfu:    80.03%
+step:     3040 | loss:   3.1520 | norm:   2.1404 | time: 12426.81 | tok/s:  33913.0 | lr: 0.010000 | mfu:    80.03%
+step:     3050 | loss:   3.1394 | norm:   2.1960 | time: 12465.48 | tok/s:  33925.6 | lr: 0.010000 | mfu:    80.06%
+step:     3060 | loss:   3.1861 | norm:   2.5110 | time: 12504.14 | tok/s:  33920.8 | lr: 0.010000 | mfu:    80.05%
+step:     3070 | loss:   3.0502 | norm:   1.7494 | time: 12542.89 | tok/s:  33908.2 | lr: 0.010000 | mfu:    80.02%
+step:     3080 | loss:   3.1130 | norm:   2.0588 | time: 12581.55 | tok/s:  33904.0 | lr: 0.010000 | mfu:    80.01%
+step:     3090 | loss:   3.3336 | norm:   2.2640 | time: 12620.21 | tok/s:  33919.8 | lr: 0.010000 | mfu:    80.04%
+step:     3100 | loss:   3.1314 | norm:   2.1060 | time: 12658.87 | tok/s:  33920.3 | lr: 0.010000 | mfu:    80.04%
+Model saved to saved_models
+step:     3110 | loss:   3.2909 | norm:   2.1163 | time: 12708.64 | tok/s:  33916.5 | lr: 0.010000 | mfu:    80.04%
+step:     3120 | loss:   3.1363 | norm:   2.1427 | time: 12747.30 | tok/s:  33919.5 | lr: 0.010000 | mfu:    80.04%
+step:     3130 | loss:   3.2503 | norm:   2.6563 | time: 12785.96 | tok/s:  33904.3 | lr: 0.010000 | mfu:    80.01%
+step:     3140 | loss:   3.2893 | norm:   2.3865 | time: 12824.62 | tok/s:  33898.7 | lr: 0.010000 | mfu:    79.99%
+step:     3150 | loss:   3.1855 | norm:   2.0561 | time: 12863.29 | tok/s:  33896.0 | lr: 0.010000 | mfu:    79.99%
+step:     3160 | loss:   3.1838 | norm:   2.1138 | time: 12901.95 | tok/s:  33931.0 | lr: 0.010000 | mfu:    80.07%
+step:     3170 | loss:   3.2819 | norm:   2.6024 | time: 12940.62 | tok/s:  33904.5 | lr: 0.010000 | mfu:    80.01%
+step:     3180 | loss:   3.2524 | norm:   1.8697 | time: 12979.37 | tok/s:  33884.6 | lr: 0.010000 | mfu:    79.96%
+step:     3190 | loss:   3.1005 | norm:   2.4061 | time: 13018.13 | tok/s:  33905.9 | lr: 0.010000 | mfu:    80.01%
+step:     3200 | loss:   3.1952 | norm:   2.1195 | time: 13056.79 | tok/s:  33908.0 | lr: 0.010000 | mfu:    80.02%
+Model saved to saved_models
+step:     3210 | loss:   3.1156 | norm:   1.9477 | time: 13106.50 | tok/s:  33925.5 | lr: 0.010000 | mfu:    80.06%
+step:     3220 | loss:   3.1792 | norm:   2.0662 | time: 13145.15 | tok/s:  33925.2 | lr: 0.010000 | mfu:    80.06%
+step:     3230 | loss:   3.1696 | norm:   2.0634 | time: 13183.81 | tok/s:  33900.3 | lr: 0.010000 | mfu:    80.00%
+step:     3240 | loss:   3.2246 | norm:   2.2633 | time: 13222.57 | tok/s:  33899.4 | lr: 0.010000 | mfu:    80.00%
+step:     3250 | loss:   3.1952 | norm:   1.8139 | time: 13264.02 | tok/s:  33939.7 | lr: 0.010000 | mfu:    80.09%
+step:     3260 | loss:   3.2735 | norm:   1.9310 | time: 13302.70 | tok/s:  33897.6 | lr: 0.010000 | mfu:    79.99%
+step:     3270 | loss:   3.2092 | norm:   2.3044 | time: 13341.39 | tok/s:  33890.4 | lr: 0.010000 | mfu:    79.97%
+step:     3280 | loss:   3.0548 | norm:   2.2040 | time: 13380.16 | tok/s:  33897.5 | lr: 0.010000 | mfu:    79.99%
+step:     3290 | loss:   3.0012 | norm:   2.3917 | time: 13418.85 | tok/s:  33887.5 | lr: 0.010000 | mfu:    79.97%
+step:     3300 | loss:   3.1159 | norm:   2.1917 | time: 13457.54 | tok/s:  33886.7 | lr: 0.010000 | mfu:    79.97%
+Model saved to saved_models
+step:     3310 | loss:   3.0433 | norm:   2.1979 | time: 13507.18 | tok/s:  33921.9 | lr: 0.010000 | mfu:    80.05%
+step:     3320 | loss:   3.1454 | norm:   1.9894 | time: 13545.85 | tok/s:  33903.0 | lr: 0.010000 | mfu:    80.00%
+step:     3330 | loss:   3.0736 | norm:   2.2454 | time: 13584.63 | tok/s:  33878.2 | lr: 0.010000 | mfu:    79.95%
+step:     3340 | loss:   3.2009 | norm:   2.4728 | time: 13623.31 | tok/s:  33907.7 | lr: 0.010000 | mfu:    80.02%
+step:     3350 | loss:   3.2879 | norm:   2.4004 | time: 13662.09 | tok/s:  33907.9 | lr: 0.010000 | mfu:    80.02%
+step:     3360 | loss:   3.2023 | norm:   1.8817 | time: 13700.86 | tok/s:  33907.1 | lr: 0.010000 | mfu:    80.01%
+step:     3370 | loss:   3.3502 | norm:   2.2076 | time: 13739.53 | tok/s:  33890.8 | lr: 0.010000 | mfu:    79.98%
+step:     3380 | loss:   3.2001 | norm:   2.1243 | time: 13778.31 | tok/s:  33852.1 | lr: 0.010000 | mfu:    79.88%
+step:     3390 | loss:   3.1387 | norm:   2.0024 | time: 13817.00 | tok/s:  33901.9 | lr: 0.010000 | mfu:    80.00%
+step:     3400 | loss:   3.2407 | norm:   1.9462 | time: 13855.92 | tok/s:  33905.2 | lr: 0.010000 | mfu:    80.01%
+Model saved to saved_models
+step:     3410 | loss:   3.1955 | norm:   2.0820 | time: 13901.56 | tok/s:  33902.7 | lr: 0.010000 | mfu:    80.00%
+step:     3420 | loss:   3.1272 | norm:   2.2728 | time: 13940.34 | tok/s:  33877.7 | lr: 0.010000 | mfu:    79.94%
+step:     3430 | loss:   3.1881 | norm:   2.2482 | time: 13979.17 | tok/s:  33878.7 | lr: 0.010000 | mfu:    79.95%
+step:     3440 | loss:   3.1783 | norm:   1.7482 | time: 14017.96 | tok/s:  33891.8 | lr: 0.010000 | mfu:    79.98%
+step:     3450 | loss:   3.2328 | norm:   1.7255 | time: 14056.74 | tok/s:  33886.9 | lr: 0.010000 | mfu:    79.97%
+step:     3460 | loss:   3.1308 | norm:   2.4243 | time: 14095.51 | tok/s:  33892.5 | lr: 0.010000 | mfu:    79.98%
+step:     3470 | loss:   3.1617 | norm:   2.0091 | time: 14134.35 | tok/s:  33863.7 | lr: 0.010000 | mfu:    79.91%
+step:     3480 | loss:   3.1178 | norm:   2.2182 | time: 14173.14 | tok/s:  33880.0 | lr: 0.010000 | mfu:    79.95%
+step:     3490 | loss:   3.1529 | norm:   1.8867 | time: 14214.24 | tok/s:  33919.4 | lr: 0.010000 | mfu:    80.04%
+step:     3500 | loss:   3.2216 | norm:   1.8889 | time: 14253.00 | tok/s:  33911.0 | lr: 0.010000 | mfu:    80.02%
+Model saved to saved_models
+step:     3510 | loss:   3.0875 | norm:   2.2106 | time: 14303.08 | tok/s:  33878.0 | lr: 0.010000 | mfu:    79.95%
+step:     3520 | loss:   3.1525 | norm:   2.0174 | time: 14341.85 | tok/s:  33893.3 | lr: 0.010000 | mfu:    79.98%
+step:     3530 | loss:   3.0578 | norm:   1.9495 | time: 14380.61 | tok/s:  33906.3 | lr: 0.010000 | mfu:    80.01%
+step:     3540 | loss:   3.0747 | norm:   1.8206 | time: 14419.37 | tok/s:  33900.8 | lr: 0.010000 | mfu:    80.00%
+step:     3550 | loss:   3.1264 | norm:   2.1283 | time: 14458.13 | tok/s:  33916.9 | lr: 0.010000 | mfu:    80.04%
+step:     3560 | loss:   3.1436 | norm:   2.0180 | time: 14496.89 | tok/s:  33916.7 | lr: 0.010000 | mfu:    80.04%
+step:     3570 | loss:   3.0863 | norm:   2.1587 | time: 14535.71 | tok/s:  33901.9 | lr: 0.010000 | mfu:    80.00%
+step:     3580 | loss:   2.9895 | norm:   1.7489 | time: 14574.58 | tok/s:  32724.8 | lr: 0.010000 | mfu:    77.22%
+step:     3590 | loss:   3.1147 | norm:   2.3246 | time: 14615.68 | tok/s:  30387.5 | lr: 0.010000 | mfu:    71.71%
+step:     3600 | loss:   3.2206 | norm:   1.9623 | time: 14658.63 | tok/s:  30112.0 | lr: 0.010000 | mfu:    71.06%
+Model saved to saved_models
+step:     3610 | loss:   3.1300 | norm:   2.4597 | time: 14722.69 | tok/s:  33623.0 | lr: 0.010000 | mfu:    79.34%
+step:     3620 | loss:   3.1229 | norm:   2.1213 | time: 14763.93 | tok/s:  32323.1 | lr: 0.010000 | mfu:    76.28%
+step:     3630 | loss:   3.0546 | norm:   2.0379 | time: 14804.05 | tok/s:  31874.2 | lr: 0.010000 | mfu:    75.22%
+step:     3640 | loss:   3.0793 | norm:   1.9234 | time: 14844.18 | tok/s:  33780.9 | lr: 0.010000 | mfu:    79.72%
+step:     3650 | loss:   3.1622 | norm:   2.4420 | time: 14885.93 | tok/s:  32254.4 | lr: 0.010000 | mfu:    76.11%
+step:     3660 | loss:   3.1808 | norm:   1.9141 | time: 14925.90 | tok/s:  32791.5 | lr: 0.010000 | mfu:    77.38%
+step:     3670 | loss:   3.2130 | norm:   1.9190 | time: 14967.27 | tok/s:  31236.5 | lr: 0.010000 | mfu:    73.71%
+step:     3680 | loss:   3.1502 | norm:   2.0040 | time: 15009.25 | tok/s:  30176.7 | lr: 0.010000 | mfu:    71.21%
+step:     3690 | loss:   3.1919 | norm:   2.0127 | time: 15050.91 | tok/s:  31966.8 | lr: 0.010000 | mfu:    75.44%
+step:     3700 | loss:   3.0868 | norm:   2.0403 | time: 15092.14 | tok/s:  31018.3 | lr: 0.010000 | mfu:    73.20%
+Model saved to saved_models
+step:     3710 | loss:   3.2877 | norm:   1.8651 | time: 15146.97 | tok/s:  31325.1 | lr: 0.010000 | mfu:    73.92%
+step:     3720 | loss:   3.1506 | norm:   1.9107 | time: 15191.20 | tok/s:  30620.7 | lr: 0.010000 | mfu:    72.26%
+step:     3730 | loss:   3.1105 | norm:   2.2053 | time: 15233.47 | tok/s:  31459.5 | lr: 0.010000 | mfu:    74.24%
+step:     3740 | loss:   3.0829 | norm:   1.8680 | time: 15274.10 | tok/s:  33666.6 | lr: 0.010000 | mfu:    79.45%
+step:     3750 | loss:   3.1547 | norm:   1.6533 | time: 15313.65 | tok/s:  32693.6 | lr: 0.010000 | mfu:    77.15%
+step:     3760 | loss:   3.0686 | norm:   1.9937 | time: 15353.45 | tok/s:  33227.5 | lr: 0.010000 | mfu:    78.41%
+step:     3770 | loss:   3.0944 | norm:   1.7755 | time: 15393.36 | tok/s:  32904.6 | lr: 0.010000 | mfu:    77.65%
+step:     3780 | loss:   3.0599 | norm:   2.1843 | time: 15433.74 | tok/s:  32881.5 | lr: 0.010000 | mfu:    77.59%
+step:     3790 | loss:   3.0709 | norm:   1.9983 | time: 15473.77 | tok/s:  32819.8 | lr: 0.010000 | mfu:    77.45%
+step:     3800 | loss:   3.0698 | norm:   2.2500 | time: 15514.08 | tok/s:  31486.0 | lr: 0.010000 | mfu:    74.30%
+Model saved to saved_models
+step:     3810 | loss:   2.9512 | norm:   1.5424 | time: 15566.42 | tok/s:  33642.8 | lr: 0.010000 | mfu:    79.39%
+step:     3820 | loss:   3.1708 | norm:   2.0136 | time: 15606.36 | tok/s:  33687.9 | lr: 0.010000 | mfu:    79.50%
+step:     3830 | loss:   2.9045 | norm:   2.0433 | time: 15645.82 | tok/s:  33760.3 | lr: 0.010000 | mfu:    79.67%
+step:     3840 | loss:   3.0202 | norm:   2.1002 | time: 15685.02 | tok/s:  32632.3 | lr: 0.010000 | mfu:    77.01%
+step:     3850 | loss:   3.1304 | norm:   1.8295 | time: 15725.23 | tok/s:  31808.2 | lr: 0.010000 | mfu:    75.06%
+step:     3860 | loss:   3.2220 | norm:   2.1082 | time: 15766.73 | tok/s:  33447.4 | lr: 0.010000 | mfu:    78.93%
+step:     3870 | loss:   3.1210 | norm:   2.0747 | time: 15806.11 | tok/s:  33923.7 | lr: 0.010000 | mfu:    80.05%
+step:     3880 | loss:   3.1653 | norm:   2.1378 | time: 15844.83 | tok/s:  33888.1 | lr: 0.010000 | mfu:    79.97%
+step:     3890 | loss:   3.1364 | norm:   2.1507 | time: 15883.48 | tok/s:  33927.3 | lr: 0.010000 | mfu:    80.06%
+step:     3900 | loss:   3.2681 | norm:   1.8577 | time: 15922.12 | tok/s:  33940.1 | lr: 0.010000 | mfu:    80.09%
+Model saved to saved_models
+step:     3910 | loss:   3.1613 | norm:   1.8182 | time: 15972.14 | tok/s:  33925.8 | lr: 0.010000 | mfu:    80.06%
+step:     3920 | loss:   3.0997 | norm:   2.0526 | time: 16010.80 | tok/s:  33934.2 | lr: 0.010000 | mfu:    80.08%
+step:     3930 | loss:   3.1006 | norm:   1.9764 | time: 16049.46 | tok/s:  33911.7 | lr: 0.010000 | mfu:    80.02%
+step:     3940 | loss:   3.1641 | norm:   1.6451 | time: 16088.12 | tok/s:  33883.2 | lr: 0.010000 | mfu:    79.96%
+step:     3950 | loss:   3.1129 | norm:   1.9357 | time: 16129.63 | tok/s:  33961.7 | lr: 0.010000 | mfu:    80.14%
+step:     3960 | loss:   3.2006 | norm:   2.0824 | time: 16168.27 | tok/s:  33927.9 | lr: 0.010000 | mfu:    80.06%
+step:     3970 | loss:   3.2468 | norm:   1.9268 | time: 16206.93 | tok/s:  33926.4 | lr: 0.010000 | mfu:    80.06%
+step:     3980 | loss:   3.1158 | norm:   1.9925 | time: 16245.58 | tok/s:  33903.9 | lr: 0.010000 | mfu:    80.01%
+step:     3990 | loss:   3.3776 | norm:   2.1940 | time: 16284.31 | tok/s:  33901.3 | lr: 0.010000 | mfu:    80.00%
+step:     4000 | loss:   3.0745 | norm:   1.8215 | time: 16322.98 | tok/s:  33916.5 | lr: 0.010000 | mfu:    80.04%
+Model saved to saved_models
+step:     4010 | loss:   3.0022 | norm:   1.7843 | time: 16372.78 | tok/s:  33925.0 | lr: 0.010000 | mfu:    80.06%
+step:     4020 | loss:   3.1727 | norm:   2.2143 | time: 16411.43 | tok/s:  33915.1 | lr: 0.010000 | mfu:    80.03%
+step:     4030 | loss:   3.1066 | norm:   2.1709 | time: 16450.09 | tok/s:  33909.9 | lr: 0.010000 | mfu:    80.02%
+step:     4040 | loss:   3.0164 | norm:   1.9343 | time: 16488.74 | tok/s:  33934.1 | lr: 0.010000 | mfu:    80.08%
+step:     4050 | loss:   2.8861 | norm:   2.1898 | time: 16527.39 | tok/s:  33927.8 | lr: 0.010000 | mfu:    80.06%
+step:     4060 | loss:   3.0458 | norm:   1.7232 | time: 16566.05 | tok/s:  33938.7 | lr: 0.010000 | mfu:    80.09%
+step:     4070 | loss:   3.0016 | norm:   2.0324 | time: 16604.70 | tok/s:  33919.3 | lr: 0.010000 | mfu:    80.04%
+step:     4080 | loss:   2.9741 | norm:   1.9508 | time: 16643.36 | tok/s:  33888.6 | lr: 0.010000 | mfu:    79.97%
+step:     4090 | loss:   3.0599 | norm:   1.8598 | time: 16682.01 | tok/s:  33927.7 | lr: 0.010000 | mfu:    80.06%
+step:     4100 | loss:   3.0556 | norm:   1.8189 | time: 16720.97 | tok/s:  32011.1 | lr: 0.010000 | mfu:    75.54%
+Model saved to saved_models
+step:     4110 | loss:   3.1347 | norm:   1.7805 | time: 16771.15 | tok/s:  33607.1 | lr: 0.010000 | mfu:    79.31%
+step:     4120 | loss:   3.1606 | norm:   1.9371 | time: 16811.96 | tok/s:  32919.4 | lr: 0.010000 | mfu:    77.68%
+step:     4130 | loss:   3.1359 | norm:   2.0326 | time: 16853.50 | tok/s:  32570.0 | lr: 0.010000 | mfu:    76.86%
+step:     4140 | loss:   3.1184 | norm:   2.3133 | time: 16893.04 | tok/s:  32570.4 | lr: 0.010000 | mfu:    76.86%
+step:     4150 | loss:   3.2315 | norm:   2.3761 | time: 16932.57 | tok/s:  31894.4 | lr: 0.010000 | mfu:    75.26%
+step:     4160 | loss:   3.2134 | norm:   1.9017 | time: 16972.99 | tok/s:  32437.1 | lr: 0.010000 | mfu:    76.55%
+step:     4170 | loss:   3.1446 | norm:   1.8642 | time: 17013.39 | tok/s:  31511.5 | lr: 0.010000 | mfu:    74.36%
+step:     4180 | loss:   3.1148 | norm:   1.8908 | time: 17053.15 | tok/s:  19574.7 | lr: 0.010000 | mfu:    46.19%
+step:     4190 | loss:   3.0953 | norm:   1.8783 | time: 17095.62 | tok/s:  31242.6 | lr: 0.010000 | mfu:    73.73%
+step:     4200 | loss:   3.1380 | norm:   1.8608 | time: 17136.48 | tok/s:  31842.4 | lr: 0.010000 | mfu:    75.14%
+Model saved to saved_models
+step:     4210 | loss:   3.2382 | norm:   2.0786 | time: 17187.60 | tok/s:  32708.9 | lr: 0.010000 | mfu:    77.19%
+step:     4220 | loss:   3.1780 | norm:   1.8553 | time: 17231.86 | tok/s:  33702.7 | lr: 0.010000 | mfu:    79.53%
+step:     4230 | loss:   2.9185 | norm:   1.9130 | time: 17272.55 | tok/s:  31496.6 | lr: 0.010000 | mfu:    74.33%
+step:     4240 | loss:   3.0360 | norm:   1.9865 | time: 17313.58 | tok/s:  30392.2 | lr: 0.010000 | mfu:    71.72%
+step:     4250 | loss:   3.1103 | norm:   2.0078 | time: 17353.88 | tok/s:  32753.7 | lr: 0.010000 | mfu:    77.29%
+step:     4260 | loss:   3.1254 | norm:   1.7059 | time: 17394.47 | tok/s:  28318.7 | lr: 0.010000 | mfu:    66.83%
+step:     4270 | loss:   3.1032 | norm:   2.1170 | time: 17434.56 | tok/s:  28828.3 | lr: 0.010000 | mfu:    68.03%
+step:     4280 | loss:   3.0906 | norm:   1.6639 | time: 17476.20 | tok/s:  32008.4 | lr: 0.010000 | mfu:    75.53%
+step:     4290 | loss:   3.1255 | norm:   1.7993 | time: 17517.19 | tok/s:  32161.7 | lr: 0.010000 | mfu:    75.90%
+step:     4300 | loss:   2.9630 | norm:   1.6322 | time: 17558.74 | tok/s:  28414.5 | lr: 0.010000 | mfu:    67.05%
+Model saved to saved_models
+step:     4310 | loss:   2.9937 | norm:   1.7359 | time: 17612.56 | tok/s:  31837.2 | lr: 0.010000 | mfu:    75.13%
+step:     4320 | loss:   2.9726 | norm:   2.0539 | time: 17653.03 | tok/s:  31635.4 | lr: 0.010000 | mfu:    74.65%
+step:     4330 | loss:   3.0283 | norm:   1.5444 | time: 17693.28 | tok/s:  32943.9 | lr: 0.010000 | mfu:    77.74%
+step:     4340 | loss:   3.1030 | norm:   1.6940 | time: 17733.45 | tok/s:  33599.6 | lr: 0.010000 | mfu:    79.29%
+step:     4350 | loss:   3.0668 | norm:   1.9136 | time: 17773.24 | tok/s:  33897.7 | lr: 0.010000 | mfu:    79.99%
+step:     4360 | loss:   3.1148 | norm:   1.9614 | time: 17813.36 | tok/s:  30288.2 | lr: 0.010000 | mfu:    71.47%
+step:     4370 | loss:   3.2151 | norm:   1.6505 | time: 17855.47 | tok/s:  32861.2 | lr: 0.010000 | mfu:    77.55%
+step:     4380 | loss:   3.1601 | norm:   2.2414 | time: 17895.84 | tok/s:  32387.4 | lr: 0.010000 | mfu:    76.43%
+step:     4390 | loss:   3.0688 | norm:   2.0178 | time: 17936.89 | tok/s:  32011.2 | lr: 0.010000 | mfu:    75.54%
+step:     4400 | loss:   3.1121 | norm:   1.5732 | time: 17976.85 | tok/s:  31409.4 | lr: 0.010000 | mfu:    74.12%
+Model saved to saved_models
+step:     4410 | loss:   3.0030 | norm:   2.0108 | time: 18028.17 | tok/s:  32655.7 | lr: 0.010000 | mfu:    77.06%
+step:     4420 | loss:   3.1165 | norm:   2.1058 | time: 18070.60 | tok/s:  33142.8 | lr: 0.010000 | mfu:    78.21%
+step:     4430 | loss:   3.1057 | norm:   2.1410 | time: 18110.75 | tok/s:  33785.6 | lr: 0.010000 | mfu:    79.73%
+step:     4440 | loss:   3.0952 | norm:   1.7706 | time: 18150.06 | tok/s:  31730.6 | lr: 0.010000 | mfu:    74.88%
+step:     4450 | loss:   3.0253 | norm:   1.9702 | time: 18190.28 | tok/s:  33080.7 | lr: 0.010000 | mfu:    78.06%
+step:     4460 | loss:   3.1814 | norm:   1.7051 | time: 18229.81 | tok/s:  32505.6 | lr: 0.010000 | mfu:    76.71%
+step:     4470 | loss:   3.1600 | norm:   2.1739 | time: 18269.68 | tok/s:  32828.8 | lr: 0.010000 | mfu:    77.47%
+step:     4480 | loss:   3.1139 | norm:   1.8477 | time: 18310.09 | tok/s:  32939.4 | lr: 0.010000 | mfu:    77.73%
+step:     4490 | loss:   3.0962 | norm:   1.7483 | time: 18349.30 | tok/s:  33030.2 | lr: 0.010000 | mfu:    77.94%
+step:     4500 | loss:   3.0469 | norm:   2.1167 | time: 18388.66 | tok/s:  33369.9 | lr: 0.010000 | mfu:    78.75%
+Model saved to saved_models
+step:     4510 | loss:   3.0578 | norm:   1.8228 | time: 18443.95 | tok/s:  33472.1 | lr: 0.010000 | mfu:    78.99%
+step:     4520 | loss:   3.0870 | norm:   2.0736 | time: 18483.90 | tok/s:  32527.0 | lr: 0.010000 | mfu:    76.76%
+step:     4530 | loss:   3.1087 | norm:   1.7348 | time: 18523.62 | tok/s:  33508.4 | lr: 0.010000 | mfu:    79.07%
+step:     4540 | loss:   3.1159 | norm:   2.0323 | time: 18563.99 | tok/s:  33207.4 | lr: 0.010000 | mfu:    78.36%
+step:     4550 | loss:   3.1145 | norm:   1.9267 | time: 18604.28 | tok/s:  33350.5 | lr: 0.010000 | mfu:    78.70%
+step:     4560 | loss:   3.0883 | norm:   2.1825 | time: 18644.69 | tok/s:  32365.7 | lr: 0.010000 | mfu:    76.38%
+step:     4570 | loss:   3.0453 | norm:   1.8065 | time: 18684.52 | tok/s:  33570.3 | lr: 0.010000 | mfu:    79.22%
+step:     4580 | loss:   3.0800 | norm:   2.0470 | time: 18723.83 | tok/s:  33641.8 | lr: 0.010000 | mfu:    79.39%
+step:     4590 | loss:   3.0483 | norm:   1.9811 | time: 18763.68 | tok/s:  32907.1 | lr: 0.010000 | mfu:    77.65%
+step:     4600 | loss:   2.9598 | norm:   1.7489 | time: 18803.54 | tok/s:  32968.5 | lr: 0.010000 | mfu:    77.80%
+Model saved to saved_models
+step:     4610 | loss:   3.0411 | norm:   1.6882 | time: 18851.63 | tok/s:  33735.2 | lr: 0.010000 | mfu:    79.61%
+step:     4620 | loss:   3.1114 | norm:   2.1893 | time: 18891.88 | tok/s:  32635.5 | lr: 0.010000 | mfu:    77.01%
+step:     4630 | loss:   3.1649 | norm:   2.0330 | time: 18932.35 | tok/s:  32958.2 | lr: 0.010000 | mfu:    77.77%
+step:     4640 | loss:   3.0808 | norm:   2.0221 | time: 18973.24 | tok/s:  31137.6 | lr: 0.010000 | mfu:    73.48%
+step:     4650 | loss:   3.1255 | norm:   2.2106 | time: 19017.88 | tok/s:  31380.2 | lr: 0.010000 | mfu:    74.05%
+step:     4660 | loss:   3.1068 | norm:   1.9261 | time: 19058.86 | tok/s:  32530.5 | lr: 0.010000 | mfu:    76.77%
+step:     4670 | loss:   3.1483 | norm:   1.9222 | time: 19098.43 | tok/s:  32294.6 | lr: 0.010000 | mfu:    76.21%
+step:     4680 | loss:   3.1011 | norm:   2.0394 | time: 19138.35 | tok/s:  33708.4 | lr: 0.010000 | mfu:    79.55%
+step:     4690 | loss:   3.2025 | norm:   1.9637 | time: 19178.63 | tok/s:  32628.2 | lr: 0.010000 | mfu:    77.00%
+step:     4700 | loss:   3.1068 | norm:   1.8345 | time: 19219.64 | tok/s:  33083.0 | lr: 0.010000 | mfu:    78.07%
+Model saved to saved_models
+step:     4710 | loss:   3.1505 | norm:   2.1002 | time: 19271.27 | tok/s:  33518.2 | lr: 0.010000 | mfu:    79.10%
+step:     4720 | loss:   3.1508 | norm:   2.1775 | time: 19311.06 | tok/s:  29801.8 | lr: 0.010000 | mfu:    70.33%
+step:     4730 | loss:   3.1624 | norm:   1.8539 | time: 19351.60 | tok/s:  21769.2 | lr: 0.010000 | mfu:    51.37%
+step:     4740 | loss:   3.1244 | norm:   1.8215 | time: 19396.74 | tok/s:  31564.3 | lr: 0.010000 | mfu:    74.49%
+step:     4750 | loss:   3.0700 | norm:   1.7420 | time: 19440.02 | tok/s:  33142.2 | lr: 0.010000 | mfu:    78.21%
+step:     4760 | loss:   3.1712 | norm:   2.0136 | time: 19479.41 | tok/s:  33580.7 | lr: 0.010000 | mfu:    79.24%
+step:     4770 | loss:   3.1183 | norm:   1.7082 | time: 19529.35 | tok/s:  33771.6 | lr: 0.010000 | mfu:    79.69%
+step:     4780 | loss:   3.1381 | norm:   1.9234 | time: 19568.26 | tok/s:  33564.5 | lr: 0.010000 | mfu:    79.21%
+step:     4790 | loss:   3.1322 | norm:   1.8979 | time: 19607.20 | tok/s:  33869.8 | lr: 0.010000 | mfu:    79.93%
+step:     4800 | loss:   3.1051 | norm:   1.8427 | time: 19646.50 | tok/s:  33661.1 | lr: 0.010000 | mfu:    79.43%
+Model saved to saved_models
+step:     4810 | loss:   3.0741 | norm:   1.6200 | time: 19697.22 | tok/s:  33304.9 | lr: 0.010000 | mfu:    78.59%
+step:     4820 | loss:   3.0878 | norm:   1.6330 | time: 19736.70 | tok/s:  33191.2 | lr: 0.010000 | mfu:    78.32%
+step:     4830 | loss:   3.0415 | norm:   1.8713 | time: 19776.98 | tok/s:  31100.5 | lr: 0.010000 | mfu:    73.39%
+step:     4840 | loss:   3.1175 | norm:   1.8496 | time: 19818.62 | tok/s:  33393.5 | lr: 0.010000 | mfu:    78.80%
+step:     4850 | loss:   3.0046 | norm:   1.6652 | time: 19859.25 | tok/s:  31015.8 | lr: 0.010000 | mfu:    73.19%
+step:     4860 | loss:   2.9367 | norm:   1.7193 | time: 19899.06 | tok/s:  26684.2 | lr: 0.010000 | mfu:    62.97%
+step:     4870 | loss:   3.1177 | norm:   1.8278 | time: 19942.60 | tok/s:  15204.0 | lr: 0.010000 | mfu:    35.88%
+step:     4880 | loss:   3.0854 | norm:   1.7780 | time: 20014.59 | tok/s:  29659.6 | lr: 0.010000 | mfu:    69.99%
+step:     4890 | loss:   3.1621 | norm:   1.5728 | time: 20056.80 | tok/s:  32295.2 | lr: 0.010000 | mfu:    76.21%
+step:     4900 | loss:   3.1003 | norm:   2.0449 | time: 20096.35 | tok/s:  33561.7 | lr: 0.010000 | mfu:    79.20%
+Model saved to saved_models
+step:     4910 | loss:   3.1487 | norm:   2.1575 | time: 20153.55 | tok/s:  32194.0 | lr: 0.010000 | mfu:    75.97%
+step:     4920 | loss:   3.0926 | norm:   1.6995 | time: 20194.54 | tok/s:  32619.9 | lr: 0.010000 | mfu:    76.98%
+step:     4930 | loss:   3.1429 | norm:   1.5832 | time: 20235.38 | tok/s:  32590.4 | lr: 0.010000 | mfu:    76.91%
+step:     4940 | loss:   3.4086 | norm:   1.5399 | time: 20275.13 | tok/s:  32943.3 | lr: 0.010000 | mfu:    77.74%
+step:     4950 | loss:   3.2086 | norm:   1.9316 | time: 20313.83 | tok/s:  33985.7 | lr: 0.010000 | mfu:    80.20%
+step:     4960 | loss:   3.1099 | norm:   1.9672 | time: 20352.39 | tok/s:  33981.5 | lr: 0.010000 | mfu:    80.19%
+step:     4970 | loss:   3.1752 | norm:   1.9081 | time: 20390.95 | tok/s:  34005.6 | lr: 0.010000 | mfu:    80.25%
+step:     4980 | loss:   3.1852 | norm:   2.0218 | time: 20429.52 | tok/s:  34003.0 | lr: 0.010000 | mfu:    80.24%
+step:     4990 | loss:   3.3649 | norm:   1.9277 | time: 20468.08 | tok/s:  33981.6 | lr: 0.010000 | mfu:    80.19%
+step:     5000 | loss:   3.0900 | norm:   1.9216 | time: 20506.66 | tok/s:  33982.6 | lr: 0.010000 | mfu:    80.19%
+Model saved to saved_models
+step:     5010 | loss:   3.0103 | norm:   1.7353 | time: 20554.70 | tok/s:  34003.2 | lr: 0.010000 | mfu:    80.24%
+step:     5020 | loss:   3.0668 | norm:   2.2104 | time: 20593.26 | tok/s:  33999.3 | lr: 0.010000 | mfu:    80.23%
+step:     5030 | loss:   3.0164 | norm:   2.1836 | time: 20631.84 | tok/s:  33995.1 | lr: 0.010000 | mfu:    80.22%
+step:     5040 | loss:   3.1337 | norm:   1.6914 | time: 20670.43 | tok/s:  33983.8 | lr: 0.010000 | mfu:    80.20%
+step:     5050 | loss:   3.0433 | norm:   1.8414 | time: 20709.07 | tok/s:  33976.8 | lr: 0.010000 | mfu:    80.18%
+step:     5060 | loss:   3.1416 | norm:   2.1585 | time: 20747.66 | tok/s:  33996.7 | lr: 0.010000 | mfu:    80.23%
+step:     5070 | loss:   3.1326 | norm:   2.0563 | time: 20786.31 | tok/s:  33989.3 | lr: 0.010000 | mfu:    80.21%
+step:     5080 | loss:   3.0104 | norm:   1.7561 | time: 20824.90 | tok/s:  33970.8 | lr: 0.010000 | mfu:    80.16%
+step:     5090 | loss:   2.9508 | norm:   1.7111 | time: 20863.48 | tok/s:  33968.1 | lr: 0.010000 | mfu:    80.16%
+step:     5100 | loss:   3.0114 | norm:   1.7755 | time: 20902.07 | tok/s:  33969.7 | lr: 0.010000 | mfu:    80.16%
+Model saved to saved_models
+step:     5110 | loss:   3.0092 | norm:   1.7443 | time: 20952.60 | tok/s:  34008.0 | lr: 0.010000 | mfu:    80.25%
+step:     5120 | loss:   3.0010 | norm:   1.7086 | time: 20991.17 | tok/s:  33981.8 | lr: 0.010000 | mfu:    80.19%
+step:     5130 | loss:   3.1193 | norm:   1.9100 | time: 21029.75 | tok/s:  33986.1 | lr: 0.010000 | mfu:    80.20%
+step:     5140 | loss:   3.1267 | norm:   2.4116 | time: 21068.33 | tok/s:  33994.7 | lr: 0.010000 | mfu:    80.22%
+step:     5150 | loss:   3.1186 | norm:   2.1069 | time: 21106.97 | tok/s:  33968.9 | lr: 0.010000 | mfu:    80.16%
+step:     5160 | loss:   3.0480 | norm:   1.8125 | time: 21145.64 | tok/s:  33984.8 | lr: 0.010000 | mfu:    80.20%
+step:     5170 | loss:   3.1250 | norm:   2.0759 | time: 21184.22 | tok/s:  33975.3 | lr: 0.010000 | mfu:    80.17%
+step:     5180 | loss:   3.3176 | norm:   2.1177 | time: 21222.81 | tok/s:  33984.3 | lr: 0.010000 | mfu:    80.20%
+step:     5190 | loss:   3.0851 | norm:   1.6882 | time: 21261.39 | tok/s:  33982.7 | lr: 0.010000 | mfu:    80.19%
+step:     5200 | loss:   3.1405 | norm:   1.7898 | time: 21299.98 | tok/s:  33994.4 | lr: 0.010000 | mfu:    80.22%
+Model saved to saved_models
+step:     5210 | loss:   3.1750 | norm:   1.8522 | time: 21349.63 | tok/s:  34009.1 | lr: 0.010000 | mfu:    80.25%
+step:     5220 | loss:   3.1177 | norm:   1.8421 | time: 21388.28 | tok/s:  33954.3 | lr: 0.010000 | mfu:    80.13%
+step:     5230 | loss:   3.2475 | norm:   1.9945 | time: 21426.94 | tok/s:  33987.2 | lr: 0.010000 | mfu:    80.20%
+step:     5240 | loss:   3.1361 | norm:   1.9207 | time: 21465.53 | tok/s:  33987.6 | lr: 0.010000 | mfu:    80.20%
+step:     5250 | loss:   3.0610 | norm:   1.7669 | time: 21504.18 | tok/s:  33967.6 | lr: 0.010000 | mfu:    80.16%
+step:     5260 | loss:   3.0891 | norm:   1.6540 | time: 21542.87 | tok/s:  33986.4 | lr: 0.010000 | mfu:    80.20%
+step:     5270 | loss:   3.0516 | norm:   1.8668 | time: 21581.46 | tok/s:  33979.2 | lr: 0.010000 | mfu:    80.18%
+step:     5280 | loss:   3.1231 | norm:   1.8960 | time: 21620.04 | tok/s:  34003.6 | lr: 0.010000 | mfu:    80.24%
+step:     5290 | loss:   3.0822 | norm:   1.7010 | time: 21658.61 | tok/s:  33990.4 | lr: 0.010000 | mfu:    80.21%
+step:     5300 | loss:   3.1065 | norm:   1.6912 | time: 21697.19 | tok/s:  34002.9 | lr: 0.010000 | mfu:    80.24%
+Model saved to saved_models
+step:     5310 | loss:   2.9997 | norm:   1.9762 | time: 21746.69 | tok/s:  33996.3 | lr: 0.010000 | mfu:    80.22%
+step:     5320 | loss:   3.0506 | norm:   2.1977 | time: 21785.26 | tok/s:  33980.1 | lr: 0.010000 | mfu:    80.19%
+step:     5330 | loss:   3.1920 | norm:   2.1248 | time: 21823.91 | tok/s:  33984.3 | lr: 0.010000 | mfu:    80.20%
+step:     5340 | loss:   3.1043 | norm:   1.8620 | time: 21862.49 | tok/s:  33974.9 | lr: 0.010000 | mfu:    80.17%
+step:     5350 | loss:   3.0142 | norm:   1.8132 | time: 21902.55 | tok/s:  33999.4 | lr: 0.010000 | mfu:    80.23%
+step:     5360 | loss:   3.0355 | norm:   1.7305 | time: 21941.12 | tok/s:  33985.2 | lr: 0.010000 | mfu:    80.20%
+step:     5370 | loss:   3.0399 | norm:   1.8082 | time: 21979.78 | tok/s:  33989.8 | lr: 0.010000 | mfu:    80.21%
+step:     5380 | loss:   2.9839 | norm:   1.9283 | time: 22018.36 | tok/s:  33979.7 | lr: 0.010000 | mfu:    80.19%
+step:     5390 | loss:   3.1148 | norm:   1.7420 | time: 22056.93 | tok/s:  33989.8 | lr: 0.010000 | mfu:    80.21%
+step:     5400 | loss:   3.1581 | norm:   2.0245 | time: 22095.51 | tok/s:  33982.7 | lr: 0.010000 | mfu:    80.19%
+Model saved to saved_models
+step:     5410 | loss:   3.1392 | norm:   1.9373 | time: 22145.10 | tok/s:  33996.8 | lr: 0.010000 | mfu:    80.23%
+step:     5420 | loss:   3.0329 | norm:   1.8696 | time: 22183.67 | tok/s:  33992.2 | lr: 0.010000 | mfu:    80.21%
+step:     5430 | loss:   3.0796 | norm:   1.7354 | time: 22222.25 | tok/s:  33965.3 | lr: 0.010000 | mfu:    80.15%
+step:     5440 | loss:   3.1944 | norm:   2.2096 | time: 22260.83 | tok/s:  34007.6 | lr: 0.010000 | mfu:    80.25%
+step:     5450 | loss:   3.0685 | norm:   2.0251 | time: 22299.40 | tok/s:  33996.9 | lr: 0.010000 | mfu:    80.23%
+step:     5460 | loss:   3.2108 | norm:   1.9325 | time: 22338.05 | tok/s:  33976.0 | lr: 0.010000 | mfu:    80.18%
+step:     5470 | loss:   3.0765 | norm:   1.9099 | time: 22376.63 | tok/s:  33978.7 | lr: 0.010000 | mfu:    80.18%
+step:     5480 | loss:   3.1088 | norm:   1.7072 | time: 22415.28 | tok/s:  33982.5 | lr: 0.010000 | mfu:    80.19%
+step:     5490 | loss:   3.0945 | norm:   1.5308 | time: 22453.88 | tok/s:  33952.5 | lr: 0.010000 | mfu:    80.12%
+step:     5500 | loss:   3.0933 | norm:   1.8836 | time: 22492.46 | tok/s:  34006.3 | lr: 0.010000 | mfu:    80.25%
+Model saved to saved_models
+step:     5510 | loss:   3.0311 | norm:   2.0428 | time: 22542.24 | tok/s:  33991.3 | lr: 0.010000 | mfu:    80.21%
+step:     5520 | loss:   3.0284 | norm:   1.9338 | time: 22580.89 | tok/s:  33985.3 | lr: 0.010000 | mfu:    80.20%
+step:     5530 | loss:   3.0395 | norm:   1.6387 | time: 22619.47 | tok/s:  33980.8 | lr: 0.010000 | mfu:    80.19%
+step:     5540 | loss:   3.0817 | norm:   1.5874 | time: 22658.12 | tok/s:  33992.0 | lr: 0.010000 | mfu:    80.21%
+step:     5550 | loss:   3.1833 | norm:   1.9229 | time: 22696.70 | tok/s:  33990.0 | lr: 0.010000 | mfu:    80.21%
+step:     5560 | loss:   3.0618 | norm:   1.9647 | time: 22735.26 | tok/s:  34004.4 | lr: 0.010000 | mfu:    80.24%
+step:     5570 | loss:   2.9174 | norm:   1.5572 | time: 22773.82 | tok/s:  33997.7 | lr: 0.010000 | mfu:    80.23%
+step:     5580 | loss:   3.0779 | norm:   1.7591 | time: 22815.04 | tok/s:  34014.8 | lr: 0.010000 | mfu:    80.27%
+step:     5590 | loss:   3.0587 | norm:   1.7714 | time: 22853.60 | tok/s:  33973.4 | lr: 0.010000 | mfu:    80.17%
+step:     5600 | loss:   3.0783 | norm:   2.2057 | time: 22892.24 | tok/s:  33988.1 | lr: 0.010000 | mfu:    80.21%
+Model saved to saved_models
+step:     5610 | loss:   2.9516 | norm:   1.6200 | time: 22941.68 | tok/s:  33987.8 | lr: 0.010000 | mfu:    80.20%
+step:     5620 | loss:   2.9333 | norm:   1.6244 | time: 22980.24 | tok/s:  34003.7 | lr: 0.010000 | mfu:    80.24%
+step:     5630 | loss:   3.2135 | norm:   2.4311 | time: 23018.81 | tok/s:  34015.2 | lr: 0.010000 | mfu:    80.27%
+step:     5640 | loss:   3.0685 | norm:   2.0479 | time: 23057.39 | tok/s:  34006.8 | lr: 0.010000 | mfu:    80.25%
+step:     5650 | loss:   3.0336 | norm:   1.6882 | time: 23095.95 | tok/s:  34010.7 | lr: 0.010000 | mfu:    80.26%
+step:     5660 | loss:   2.9358 | norm:   1.6930 | time: 23134.59 | tok/s:  33990.0 | lr: 0.010000 | mfu:    80.21%
+step:     5670 | loss:   3.0936 | norm:   1.5842 | time: 23173.23 | tok/s:  33968.4 | lr: 0.010000 | mfu:    80.16%
+step:     5680 | loss:   3.1563 | norm:   2.2889 | time: 23211.81 | tok/s:  33994.5 | lr: 0.010000 | mfu:    80.22%
+step:     5690 | loss:   3.0943 | norm:   1.8117 | time: 23250.49 | tok/s:  33951.2 | lr: 0.010000 | mfu:    80.12%
+step:     5700 | loss:   3.1219 | norm:   1.8847 | time: 23289.07 | tok/s:  33985.0 | lr: 0.010000 | mfu:    80.20%
+Model saved to saved_models
+step:     5710 | loss:   3.1575 | norm:   1.9365 | time: 23338.76 | tok/s:  33978.6 | lr: 0.010000 | mfu:    80.18%
+step:     5720 | loss:   3.0404 | norm:   1.9043 | time: 23377.34 | tok/s:  33974.9 | lr: 0.010000 | mfu:    80.17%
+step:     5730 | loss:   3.1561 | norm:   1.9195 | time: 23415.92 | tok/s:  33993.8 | lr: 0.010000 | mfu:    80.22%
+step:     5740 | loss:   3.1372 | norm:   1.9473 | time: 23454.50 | tok/s:  33997.1 | lr: 0.010000 | mfu:    80.23%
+step:     5750 | loss:   3.1512 | norm:   1.8847 | time: 23493.08 | tok/s:  33971.5 | lr: 0.010000 | mfu:    80.17%
+step:     5760 | loss:   3.1320 | norm:   1.7008 | time: 23531.66 | tok/s:  33963.5 | lr: 0.010000 | mfu:    80.15%
+step:     5770 | loss:   3.0777 | norm:   1.7533 | time: 23570.25 | tok/s:  33996.7 | lr: 0.010000 | mfu:    80.23%
+step:     5780 | loss:   3.1797 | norm:   1.4954 | time: 23608.83 | tok/s:  33978.1 | lr: 0.010000 | mfu:    80.18%
+step:     5790 | loss:   3.0504 | norm:   1.7339 | time: 23647.41 | tok/s:  33955.9 | lr: 0.010000 | mfu:    80.13%
+step:     5800 | loss:   3.0986 | norm:   1.8500 | time: 23686.00 | tok/s:  34001.6 | lr: 0.010000 | mfu:    80.24%
+Model saved to saved_models
+step:     5810 | loss:   2.9099 | norm:   1.6584 | time: 23740.21 | tok/s:  34006.4 | lr: 0.010000 | mfu:    80.25%
+step:     5820 | loss:   3.1416 | norm:   1.7599 | time: 23781.41 | tok/s:  33978.7 | lr: 0.010000 | mfu:    80.18%
+step:     5830 | loss:   2.9657 | norm:   1.9269 | time: 23819.97 | tok/s:  33988.9 | lr: 0.010000 | mfu:    80.21%
+step:     5840 | loss:   3.0353 | norm:   1.6836 | time: 23858.55 | tok/s:  33968.4 | lr: 0.010000 | mfu:    80.16%
+step:     5850 | loss:   2.9747 | norm:   1.7720 | time: 23897.11 | tok/s:  33961.5 | lr: 0.010000 | mfu:    80.14%
+step:     5860 | loss:   2.9787 | norm:   1.8698 | time: 23935.69 | tok/s:  34008.1 | lr: 0.010000 | mfu:    80.25%
+step:     5870 | loss:   3.0759 | norm:   1.7783 | time: 23974.26 | tok/s:  34012.0 | lr: 0.010000 | mfu:    80.26%
+step:     5880 | loss:   3.0815 | norm:   1.7142 | time: 24012.83 | tok/s:  34004.8 | lr: 0.010000 | mfu:    80.24%
+step:     5890 | loss:   3.3938 | norm:   1.8207 | time: 24051.40 | tok/s:  33994.4 | lr: 0.010000 | mfu:    80.22%
+step:     5900 | loss:   3.1023 | norm:   2.1229 | time: 24089.97 | tok/s:  34005.1 | lr: 0.010000 | mfu:    80.25%
+Model saved to saved_models
+step:     5910 | loss:   3.0928 | norm:   1.7764 | time: 24139.68 | tok/s:  33993.6 | lr: 0.010000 | mfu:    80.22%
+step:     5920 | loss:   3.0273 | norm:   1.7548 | time: 24178.24 | tok/s:  33983.9 | lr: 0.010000 | mfu:    80.20%
+step:     5930 | loss:   3.1411 | norm:   1.6541 | time: 24216.81 | tok/s:  33980.4 | lr: 0.010000 | mfu:    80.19%
+step:     5940 | loss:   3.1881 | norm:   2.0386 | time: 24255.39 | tok/s:  33969.2 | lr: 0.010000 | mfu:    80.16%
+step:     5950 | loss:   3.1124 | norm:   1.7892 | time: 24293.97 | tok/s:  34003.9 | lr: 0.010000 | mfu:    80.24%
+step:     5960 | loss:   3.0461 | norm:   1.7218 | time: 24332.54 | tok/s:  33999.3 | lr: 0.010000 | mfu:    80.23%
+step:     5970 | loss:   3.1049 | norm:   1.7119 | time: 24371.11 | tok/s:  33970.4 | lr: 0.010000 | mfu:    80.16%
+step:     5980 | loss:   3.1094 | norm:   1.9095 | time: 24409.69 | tok/s:  33994.9 | lr: 0.010000 | mfu:    80.22%
+step:     5990 | loss:   3.1075 | norm:   1.9134 | time: 24448.25 | tok/s:  33983.8 | lr: 0.010000 | mfu:    80.19%
+step:     6000 | loss:   3.0411 | norm:   1.6826 | time: 24486.83 | tok/s:  33963.1 | lr: 0.010000 | mfu:    80.15%
+Model saved to saved_models
+step:     6010 | loss:   3.0605 | norm:   1.7312 | time: 24536.93 | tok/s:  34013.9 | lr: 0.010000 | mfu:    80.27%
+step:     6020 | loss:   3.0585 | norm:   1.8688 | time: 24575.52 | tok/s:  33979.3 | lr: 0.010000 | mfu:    80.18%
+step:     6030 | loss:   3.0895 | norm:   1.6738 | time: 24614.11 | tok/s:  33971.1 | lr: 0.010000 | mfu:    80.17%
+step:     6040 | loss:   3.0649 | norm:   1.6781 | time: 24652.70 | tok/s:  33975.4 | lr: 0.010000 | mfu:    80.18%
+step:     6050 | loss:   3.1165 | norm:   1.6390 | time: 24691.28 | tok/s:  33968.5 | lr: 0.010000 | mfu:    80.16%
+step:     6060 | loss:   3.1365 | norm:   1.8780 | time: 24732.43 | tok/s:  33996.7 | lr: 0.010000 | mfu:    80.23%
+step:     6070 | loss:   2.9054 | norm:   1.8431 | time: 24771.01 | tok/s:  34004.3 | lr: 0.010000 | mfu:    80.24%
+step:     6080 | loss:   3.0734 | norm:   2.0299 | time: 24809.58 | tok/s:  33986.6 | lr: 0.010000 | mfu:    80.20%
+step:     6090 | loss:   2.9759 | norm:   2.2456 | time: 24848.17 | tok/s:  33966.1 | lr: 0.010000 | mfu:    80.15%
+step:     6100 | loss:   3.0493 | norm:   1.5832 | time: 24886.75 | tok/s:  33985.7 | lr: 0.010000 | mfu:    80.20%
+Model saved to saved_models
+step:     6110 | loss:   2.9999 | norm:   2.2664 | time: 24936.42 | tok/s:  33976.6 | lr: 0.010000 | mfu:    80.18%
+step:     6120 | loss:   2.9504 | norm:   1.7262 | time: 24975.00 | tok/s:  33983.5 | lr: 0.010000 | mfu:    80.19%
+step:     6130 | loss:   2.9521 | norm:   1.7591 | time: 25013.57 | tok/s:  33997.2 | lr: 0.010000 | mfu:    80.23%
+step:     6140 | loss:   3.1452 | norm:   2.0152 | time: 25052.14 | tok/s:  34006.2 | lr: 0.010000 | mfu:    80.25%
+step:     6150 | loss:   3.0810 | norm:   1.6737 | time: 25090.71 | tok/s:  34000.1 | lr: 0.010000 | mfu:    80.23%
+step:     6160 | loss:   3.0734 | norm:   1.7069 | time: 25129.28 | tok/s:  33994.9 | lr: 0.010000 | mfu:    80.22%
+step:     6170 | loss:   3.1472 | norm:   1.7358 | time: 25167.85 | tok/s:  34002.9 | lr: 0.010000 | mfu:    80.24%
+step:     6180 | loss:   2.9977 | norm:   1.7830 | time: 25206.43 | tok/s:  33980.6 | lr: 0.010000 | mfu:    80.19%
+step:     6190 | loss:   3.0713 | norm:   1.8599 | time: 25245.00 | tok/s:  34003.9 | lr: 0.010000 | mfu:    80.24%
+step:     6200 | loss:   3.1509 | norm:   1.8480 | time: 25283.56 | tok/s:  33962.1 | lr: 0.010000 | mfu:    80.14%
+Model saved to saved_models
+step:     6210 | loss:   3.1392 | norm:   1.7918 | time: 25337.67 | tok/s:  34008.0 | lr: 0.010000 | mfu:    80.25%
+step:     6220 | loss:   3.1170 | norm:   1.7564 | time: 25376.23 | tok/s:  34019.3 | lr: 0.010000 | mfu:    80.28%
+step:     6230 | loss:   3.0612 | norm:   2.0204 | time: 25414.79 | tok/s:  34003.0 | lr: 0.010000 | mfu:    80.24%
+step:     6240 | loss:   3.0657 | norm:   1.7341 | time: 25453.36 | tok/s:  34006.3 | lr: 0.010000 | mfu:    80.25%
+step:     6250 | loss:   3.1267 | norm:   1.7225 | time: 25491.93 | tok/s:  34013.3 | lr: 0.010000 | mfu:    80.26%
+step:     6260 | loss:   3.0304 | norm:   1.7315 | time: 25530.51 | tok/s:  33984.7 | lr: 0.010000 | mfu:    80.20%
+step:     6270 | loss:   3.0824 | norm:   1.7038 | time: 25569.07 | tok/s:  34003.6 | lr: 0.010000 | mfu:    80.24%
+step:     6280 | loss:   2.9750 | norm:   1.6965 | time: 25607.64 | tok/s:  34012.7 | lr: 0.010000 | mfu:    80.26%
+step:     6290 | loss:   3.0938 | norm:   1.7520 | time: 25648.86 | tok/s:  34014.8 | lr: 0.010000 | mfu:    80.27%
+step:     6300 | loss:   3.0339 | norm:   1.8085 | time: 25687.45 | tok/s:  33958.6 | lr: 0.010000 | mfu:    80.14%
+Model saved to saved_models
+step:     6310 | loss:   3.0638 | norm:   1.6146 | time: 25736.96 | tok/s:  34017.3 | lr: 0.010000 | mfu:    80.27%
+step:     6320 | loss:   3.0392 | norm:   1.8371 | time: 25775.53 | tok/s:  33982.4 | lr: 0.010000 | mfu:    80.19%
+step:     6330 | loss:   2.9817 | norm:   1.8077 | time: 25814.10 | tok/s:  33999.2 | lr: 0.010000 | mfu:    80.23%
+step:     6340 | loss:   3.0131 | norm:   1.8083 | time: 25852.67 | tok/s:  33996.1 | lr: 0.010000 | mfu:    80.22%
+step:     6350 | loss:   3.0327 | norm:   1.7338 | time: 25891.24 | tok/s:  33986.9 | lr: 0.010000 | mfu:    80.20%
+step:     6360 | loss:   2.9498 | norm:   1.9073 | time: 25929.82 | tok/s:  33974.6 | lr: 0.010000 | mfu:    80.17%
+step:     6370 | loss:   3.0141 | norm:   1.5301 | time: 25968.38 | tok/s:  33997.1 | lr: 0.010000 | mfu:    80.23%
+step:     6380 | loss:   3.0799 | norm:   1.7181 | time: 26006.95 | tok/s:  33999.7 | lr: 0.010000 | mfu:    80.23%
+step:     6390 | loss:   3.1096 | norm:   1.7521 | time: 26045.52 | tok/s:  33964.2 | lr: 0.010000 | mfu:    80.15%
+step:     6400 | loss:   3.1115 | norm:   1.9181 | time: 26084.09 | tok/s:  33997.9 | lr: 0.010000 | mfu:    80.23%
+Model saved to saved_models
+step:     6410 | loss:   3.1129 | norm:   1.7951 | time: 26133.77 | tok/s:  34023.8 | lr: 0.010000 | mfu:    80.29%
+step:     6420 | loss:   3.0979 | norm:   1.5412 | time: 26172.34 | tok/s:  33974.2 | lr: 0.010000 | mfu:    80.17%
+step:     6430 | loss:   3.1378 | norm:   1.6169 | time: 26210.91 | tok/s:  33986.8 | lr: 0.010000 | mfu:    80.20%
+step:     6440 | loss:   3.0262 | norm:   2.0534 | time: 26249.48 | tok/s:  33959.7 | lr: 0.010000 | mfu:    80.14%
+step:     6450 | loss:   3.0953 | norm:   1.7221 | time: 26288.05 | tok/s:  33988.8 | lr: 0.010000 | mfu:    80.21%
+step:     6460 | loss:   3.0686 | norm:   1.7101 | time: 26326.62 | tok/s:  33994.4 | lr: 0.010000 | mfu:    80.22%
+step:     6470 | loss:   3.1617 | norm:   1.5389 | time: 26365.20 | tok/s:  33983.7 | lr: 0.010000 | mfu:    80.19%
+step:     6480 | loss:   3.0874 | norm:   1.9664 | time: 26403.78 | tok/s:  33990.8 | lr: 0.010000 | mfu:    80.21%
+step:     6490 | loss:   3.0947 | norm:   1.7993 | time: 26442.36 | tok/s:  34008.3 | lr: 0.010000 | mfu:    80.25%
+step:     6500 | loss:   3.0830 | norm:   1.6831 | time: 26480.93 | tok/s:  33975.0 | lr: 0.010000 | mfu:    80.17%
+Model saved to saved_models
+step:     6510 | loss:   3.1039 | norm:   1.5923 | time: 26530.42 | tok/s:  34073.5 | lr: 0.010000 | mfu:    80.41%
+step:     6520 | loss:   3.0534 | norm:   1.4903 | time: 26568.98 | tok/s:  33968.7 | lr: 0.010000 | mfu:    80.16%
+step:     6530 | loss:   3.0316 | norm:   1.8884 | time: 26610.13 | tok/s:  33999.4 | lr: 0.010000 | mfu:    80.23%
+step:     6540 | loss:   3.1308 | norm:   2.3284 | time: 26648.69 | tok/s:  33983.4 | lr: 0.010000 | mfu:    80.19%
+step:     6550 | loss:   3.1097 | norm:   1.6381 | time: 26687.26 | tok/s:  33996.2 | lr: 0.010000 | mfu:    80.22%
+step:     6560 | loss:   3.1170 | norm:   1.8433 | time: 26725.83 | tok/s:  33985.5 | lr: 0.010000 | mfu:    80.20%
+step:     6570 | loss:   3.0959 | norm:   1.7783 | time: 26764.40 | tok/s:  33995.0 | lr: 0.010000 | mfu:    80.22%
+step:     6580 | loss:   3.0104 | norm:   1.7368 | time: 26802.96 | tok/s:  33998.6 | lr: 0.010000 | mfu:    80.23%
+step:     6590 | loss:   2.9468 | norm:   1.5332 | time: 26841.53 | tok/s:  33992.8 | lr: 0.010000 | mfu:    80.22%
+step:     6600 | loss:   3.0116 | norm:   1.5213 | time: 26880.11 | tok/s:  33991.1 | lr: 0.010000 | mfu:    80.21%
+Model saved to saved_models
+step:     6610 | loss:   3.1521 | norm:   1.7891 | time: 26929.72 | tok/s:  33975.7 | lr: 0.010000 | mfu:    80.18%
+step:     6620 | loss:   2.8819 | norm:   1.8242 | time: 26968.29 | tok/s:  33988.6 | lr: 0.010000 | mfu:    80.21%
+step:     6630 | loss:   3.0353 | norm:   1.7566 | time: 27006.88 | tok/s:  33972.4 | lr: 0.010000 | mfu:    80.17%
+step:     6640 | loss:   3.0956 | norm:   1.9089 | time: 27045.46 | tok/s:  33998.6 | lr: 0.010000 | mfu:    80.23%
+step:     6650 | loss:   3.0748 | norm:   1.7520 | time: 27084.04 | tok/s:  33993.9 | lr: 0.010000 | mfu:    80.22%
+step:     6660 | loss:   3.2035 | norm:   2.0139 | time: 27122.62 | tok/s:  33993.4 | lr: 0.010000 | mfu:    80.22%
+step:     6670 | loss:   3.1132 | norm:   1.6165 | time: 27161.20 | tok/s:  33994.6 | lr: 0.010000 | mfu:    80.22%
+step:     6680 | loss:   3.0643 | norm:   1.7084 | time: 27199.79 | tok/s:  33991.6 | lr: 0.010000 | mfu:    80.21%
+step:     6690 | loss:   3.2453 | norm:   1.9253 | time: 27238.37 | tok/s:  34009.1 | lr: 0.010000 | mfu:    80.25%
+step:     6700 | loss:   3.0448 | norm:   1.6933 | time: 27276.95 | tok/s:  33990.6 | lr: 0.010000 | mfu:    80.21%
+Model saved to saved_models
+step:     6710 | loss:   3.1420 | norm:   1.9289 | time: 27326.60 | tok/s:  34010.1 | lr: 0.010000 | mfu:    80.26%
+step:     6720 | loss:   3.1217 | norm:   1.6662 | time: 27365.17 | tok/s:  34011.1 | lr: 0.010000 | mfu:    80.26%
+step:     6730 | loss:   3.1551 | norm:   1.8742 | time: 27403.73 | tok/s:  34007.0 | lr: 0.010000 | mfu:    80.25%
+step:     6740 | loss:   3.0957 | norm:   1.8357 | time: 27442.29 | tok/s:  34005.1 | lr: 0.010000 | mfu:    80.25%
+step:     6750 | loss:   3.0082 | norm:   1.8966 | time: 27480.86 | tok/s:  33995.1 | lr: 0.010000 | mfu:    80.22%
+step:     6760 | loss:   3.0509 | norm:   1.5598 | time: 27522.24 | tok/s:  33996.3 | lr: 0.010000 | mfu:    80.22%
+step:     6770 | loss:   3.0516 | norm:   1.5411 | time: 27560.81 | tok/s:  33982.0 | lr: 0.010000 | mfu:    80.19%
+step:     6780 | loss:   3.0757 | norm:   1.5938 | time: 27599.39 | tok/s:  33996.3 | lr: 0.010000 | mfu:    80.22%
+step:     6790 | loss:   3.0832 | norm:   1.7052 | time: 27637.96 | tok/s:  33995.8 | lr: 0.010000 | mfu:    80.22%
+step:     6800 | loss:   2.9580 | norm:   1.8042 | time: 27676.53 | tok/s:  33961.3 | lr: 0.010000 | mfu:    80.14%
+Model saved to saved_models
+step:     6810 | loss:   3.0291 | norm:   2.0745 | time: 27726.49 | tok/s:  34017.4 | lr: 0.010000 | mfu:    80.27%
+step:     6820 | loss:   3.1616 | norm:   1.6625 | time: 27765.07 | tok/s:  33989.5 | lr: 0.010000 | mfu:    80.21%
+step:     6830 | loss:   2.9690 | norm:   1.8627 | time: 27803.66 | tok/s:  33986.3 | lr: 0.010000 | mfu:    80.20%
+step:     6840 | loss:   3.2258 | norm:   3.4854 | time: 27842.23 | tok/s:  34007.5 | lr: 0.010000 | mfu:    80.25%
+step:     6850 | loss:   2.9881 | norm:   2.1632 | time: 27880.80 | tok/s:  34002.7 | lr: 0.010000 | mfu:    80.24%
+step:     6860 | loss:   3.0054 | norm:   1.6869 | time: 27919.38 | tok/s:  33975.2 | lr: 0.010000 | mfu:    80.17%
+step:     6870 | loss:   3.0539 | norm:   1.6845 | time: 27957.95 | tok/s:  33986.0 | lr: 0.010000 | mfu:    80.20%
+step:     6880 | loss:   2.9226 | norm:   2.0166 | time: 27996.52 | tok/s:  33992.4 | lr: 0.010000 | mfu:    80.22%
+step:     6890 | loss:   3.0579 | norm:   1.8051 | time: 28035.10 | tok/s:  33952.2 | lr: 0.010000 | mfu:    80.12%
+step:     6900 | loss:   3.2031 | norm:   1.9571 | time: 28073.69 | tok/s:  33969.2 | lr: 0.010000 | mfu:    80.16%
+Model saved to saved_models
+step:     6910 | loss:   3.0499 | norm:   1.5056 | time: 28124.33 | tok/s:  34011.5 | lr: 0.010000 | mfu:    80.26%
+step:     6920 | loss:   3.1646 | norm:   1.7007 | time: 28162.90 | tok/s:  34001.2 | lr: 0.010000 | mfu:    80.24%
+step:     6930 | loss:   3.2964 | norm:   1.8038 | time: 28201.47 | tok/s:  33972.5 | lr: 0.010000 | mfu:    80.17%
+step:     6940 | loss:   3.0924 | norm:   1.7225 | time: 28240.05 | tok/s:  34007.1 | lr: 0.010000 | mfu:    80.25%
+step:     6950 | loss:   3.0508 | norm:   1.7020 | time: 28278.62 | tok/s:  33994.2 | lr: 0.010000 | mfu:    80.22%
+step:     6960 | loss:   3.1178 | norm:   1.7697 | time: 28317.19 | tok/s:  33987.4 | lr: 0.010000 | mfu:    80.20%
+step:     6970 | loss:   3.2287 | norm:   1.9577 | time: 28355.76 | tok/s:  33995.6 | lr: 0.010000 | mfu:    80.22%
+step:     6980 | loss:   3.1887 | norm:   2.0163 | time: 28394.33 | tok/s:  33988.7 | lr: 0.010000 | mfu:    80.21%
+step:     6990 | loss:   3.0988 | norm:   1.7955 | time: 28432.90 | tok/s:  19567.3 | lr: 0.010000 | mfu:    46.17%
+step:     7000 | loss:   3.0068 | norm:   1.6461 | time: 28474.31 | tok/s:  33992.7 | lr: 0.010000 | mfu:    80.22%
+Model saved to saved_models
+step:     7010 | loss:   3.1408 | norm:   1.5227 | time: 28523.42 | tok/s:  33995.1 | lr: 0.010000 | mfu:    80.22%
+step:     7020 | loss:   3.0267 | norm:   1.4944 | time: 28561.99 | tok/s:  33994.5 | lr: 0.010000 | mfu:    80.22%
+step:     7030 | loss:   3.1412 | norm:   1.9141 | time: 28600.57 | tok/s:  33990.0 | lr: 0.010000 | mfu:    80.21%
+step:     7040 | loss:   3.0046 | norm:   1.6562 | time: 28639.15 | tok/s:  33961.4 | lr: 0.010000 | mfu:    80.14%
+step:     7050 | loss:   3.1048 | norm:   2.0009 | time: 28677.73 | tok/s:  33976.5 | lr: 0.010000 | mfu:    80.18%
+step:     7060 | loss:   3.0367 | norm:   1.6636 | time: 28716.30 | tok/s:  33982.8 | lr: 0.010000 | mfu:    80.19%
+step:     7070 | loss:   2.9918 | norm:   1.7737 | time: 28754.85 | tok/s:  34004.8 | lr: 0.010000 | mfu:    80.24%
+step:     7080 | loss:   2.8669 | norm:   1.5723 | time: 28793.41 | tok/s:  34001.9 | lr: 0.010000 | mfu:    80.24%
+step:     7090 | loss:   2.9659 | norm:   1.6053 | time: 28831.98 | tok/s:  33996.6 | lr: 0.010000 | mfu:    80.23%
+step:     7100 | loss:   3.0115 | norm:   1.7988 | time: 28870.54 | tok/s:  33992.0 | lr: 0.010000 | mfu:    80.21%
+Model saved to saved_models
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 346, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 273, in train
+    loss_accum += loss.detach().item()
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\utils\_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

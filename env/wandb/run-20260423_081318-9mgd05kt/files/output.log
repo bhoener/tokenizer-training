@@ -1,0 +1,14 @@
+Model Parameters: 163.6M
+step:     7100 | loss:  20.6939 | norm: 216.7461 | time: 28870.54 | tok/s:   6558.5 | lr: 0.010000 | mfu:    15.48%
+Traceback (most recent call last):
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 346, in <module>
+    train()
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 311, in train
+    save_checkpoint(
+  File "E:\Other\Tokenizer\env\src\training\train.py", line 81, in save_checkpoint
+    torch.save(state, os.path.join(path, f"{optim.__class__.__name__}_state.pth"))
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 977, in save
+    _save(
+  File "C:\Users\brodi\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\torch\serialization.py", line 1286, in _save
+    zip_file.write_record(name, storage, num_bytes)
+KeyboardInterrupt

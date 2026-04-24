@@ -216,11 +216,12 @@ def train() -> None:
 
     print(f"Model Parameters: {total_params / 1e6:.1f}M")
 
-    for param in model.parameters():
-        if param.ndim == 2 and param.size(0) == param.size(1):
-            nn.init.orthogonal_(param)
-        elif param.ndim == 2 and param.size(1) == args.vocab_size:
-            nn.init.kaiming_normal_(param, gain=0.01)
+    if (args.resume_from_dir is None):
+        for param in model.parameters():
+            if param.ndim == 2 and param.size(0) == param.size(1):
+                nn.init.orthogonal_(param)
+            elif param.ndim == 2 and param.size(1) == args.vocab_size:
+                nn.init.kaiming_normal_(param, gain=0.01)
 
     
 
@@ -307,6 +308,7 @@ def train() -> None:
             args.save_every is not None
             and step % args.save_every == 0
             and args.save_dir is not None
+            and step != args.resume_step
         ):
             save_checkpoint(
                 os.path.join(

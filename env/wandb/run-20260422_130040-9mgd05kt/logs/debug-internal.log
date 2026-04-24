@@ -1,0 +1,12 @@
+{"time":"2026-04-22T13:00:43.0737328-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-22T13:00:43.5522835-08:00","level":"INFO","msg":"stream: created new stream","id":"9mgd05kt"}
+{"time":"2026-04-22T13:00:43.5530831-08:00","level":"INFO","msg":"handler: started","stream_id":"9mgd05kt"}
+{"time":"2026-04-22T13:00:43.558907-08:00","level":"INFO","msg":"stream: started","id":"9mgd05kt"}
+{"time":"2026-04-22T13:00:43.559419-08:00","level":"INFO","msg":"sender: started","stream_id":"9mgd05kt"}
+{"time":"2026-04-22T13:00:43.558907-08:00","level":"INFO","msg":"writer: started","stream_id":"9mgd05kt"}
+{"time":"2026-04-22T18:48:11.2956614-08:00","level":"INFO","msg":"api: retrying HTTP error","status":503,"url":"https://api.wandb.ai/graphql","body":"upstream connect error or disconnect/reset before headers. reset reason: connection termination"}
+{"time":"2026-04-22T21:02:26.2235947-08:00","level":"INFO","msg":"stream: closing","id":"9mgd05kt"}
+{"time":"2026-04-22T21:02:26.7114371-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-22T21:02:27.0579233-08:00","level":"INFO","msg":"handler: closed","stream_id":"9mgd05kt"}
+{"time":"2026-04-22T21:02:27.0584272-08:00","level":"INFO","msg":"sender: closed","stream_id":"9mgd05kt"}
+{"time":"2026-04-22T21:02:27.0584272-08:00","level":"INFO","msg":"stream: closed","id":"9mgd05kt"}
