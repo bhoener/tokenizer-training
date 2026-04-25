@@ -6,6 +6,9 @@ import yaml
 from tokenizer import Tokenizer
 
 
+def to_prompt(question: str) -> str:
+    return f"USER:\n\n{question}\n\nASSISTANT:\n\n"
+
 @torch.no_grad()
 def main() -> None:
     parser = argparse.ArgumentParser()
@@ -46,7 +49,7 @@ def main() -> None:
     while (prompt := input("Enter a prompt: ")).lower() not in {"q", "quit", "exit"}:
         freqs = {}
 
-        prompt_tokens = [3] + enc.encode(prompt)
+        prompt_tokens = [3] + enc.encode(to_prompt(prompt) if config["sampling"]["use_system_prompt"] else prompt)
 
         while (len(prompt_tokens)) < config["sampling"]["seq_len"] - 1:
             x = torch.tensor(prompt_tokens, device=device).unsqueeze(0)

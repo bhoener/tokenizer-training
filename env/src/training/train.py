@@ -100,7 +100,9 @@ def train() -> None:
     parser.add_argument("--resume_step", type=int, default=0)
     parser.add_argument("--resume_time", type=float, default=0)
 
-    parser.add_argument("--train_time_minutes", type=int, default=20 * 60)
+    parser.add_argument("--finetune_from", type=str, default=None)
+
+    parser.add_argument("--train_time_minutes", type=int, default=1 * 60)
     parser.add_argument("--micro_batch_size", type=int, default=16)
     parser.add_argument("--grad_accum_steps", type=int, default=16)
     parser.add_argument("--seq_len", type=int, default=512)
@@ -203,7 +205,7 @@ def train() -> None:
         engram_d=args.engram_d,
         engram_tokenizer=Tokenizer(args.engram_tokenizer_dir),
     ).to(device)
-    
+
     if args.compile:
         model = torch.compile(model)
 
@@ -211,19 +213,21 @@ def train() -> None:
         model.load_state_dict(
             torch.load(os.path.join(args.resume_from_dir, "model_state.pth"))
         )
+    elif args.finetune_from is not None:
+        model.load_state_dict(
+            torch.load(args.finetune_from)
+        )
 
     total_params = sum(p.numel() for p in model.parameters())
 
     print(f"Model Parameters: {total_params / 1e6:.1f}M")
 
-    if (args.resume_from_dir is None):
+    if args.resume_from_dir is None and args.finetune_from is None:
         for param in model.parameters():
             if param.ndim == 2 and param.size(0) == param.size(1):
                 nn.init.orthogonal_(param)
             elif param.ndim == 2 and param.size(1) == args.vocab_size:
                 nn.init.kaiming_normal_(param, gain=0.01)
-
-    
 
     dl = DataLoader(
         args.data_dir,

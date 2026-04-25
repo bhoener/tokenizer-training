@@ -1,4 +1,4 @@
-filepath: "saved_models/checkpoints/peachy-elevator-131/model_state.pth"
+filepath: "saved_models/sweet-fog-133.pth"
 
 tokenizer:
   filepath: "src/saved_tokenizers/updated/vocab.txt"
@@ -13,8 +13,9 @@ model:
   block_size: 8
 
 sampling:
+  use_system_prompt: true
   seq_len: 512
-  temperature: 0.9
+  temperature: 0.6
   top_k: 30
   freq_penalty: 0.8
   freq_decay: 0.99

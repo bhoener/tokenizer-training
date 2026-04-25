@@ -19,7 +19,12 @@ class DataLoader:
         self.__next_shard()
 
     def __next_shard(self) -> None:
-        self.__load_next_shard()
+        try:
+            self.__load_next_shard()
+        except AssertionError:
+            print("Dataloader reached last shard. Restarting.")
+            self.current_shard = 0
+            self.__load_next_shard()
         self.current_shard += 1
         self.idx = 0
 

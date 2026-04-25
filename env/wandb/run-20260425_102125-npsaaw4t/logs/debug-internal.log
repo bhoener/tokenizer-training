@@ -1,0 +1,11 @@
+{"time":"2026-04-25T10:21:27.8546647-08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-04-25T10:21:28.4333598-08:00","level":"INFO","msg":"stream: created new stream","id":"npsaaw4t"}
+{"time":"2026-04-25T10:21:28.4339976-08:00","level":"INFO","msg":"handler: started","stream_id":"npsaaw4t"}
+{"time":"2026-04-25T10:21:28.4437329-08:00","level":"INFO","msg":"stream: started","id":"npsaaw4t"}
+{"time":"2026-04-25T10:21:28.4437329-08:00","level":"INFO","msg":"writer: started","stream_id":"npsaaw4t"}
+{"time":"2026-04-25T10:21:28.4437329-08:00","level":"INFO","msg":"sender: started","stream_id":"npsaaw4t"}
+{"time":"2026-04-25T10:48:32.7622582-08:00","level":"INFO","msg":"stream: closing","id":"npsaaw4t"}
+{"time":"2026-04-25T10:48:33.2439693-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-25T10:48:33.4358423-08:00","level":"INFO","msg":"handler: closed","stream_id":"npsaaw4t"}
+{"time":"2026-04-25T10:48:33.4374804-08:00","level":"INFO","msg":"sender: closed","stream_id":"npsaaw4t"}
+{"time":"2026-04-25T10:48:33.4374804-08:00","level":"INFO","msg":"stream: closed","id":"npsaaw4t"}
