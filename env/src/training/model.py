@@ -365,7 +365,7 @@ class GPT(nn.Module):
         d_model: int,
         n_heads: int,
         n_layers: int,
-        attn_res: bool = True,
+        attn_res: bool = False,
         block_size: int = 8,
         xsa: bool = False,
         engram: bool = False,

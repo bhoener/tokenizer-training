@@ -9,36 +9,7 @@ import yaml
 from model import GPT
 from dataloader import DataLoader
 from tokenizer import Tokenizer
-
-
-@torch.no_grad()
-def calc_bpb(model: GPT, dl: DataLoader, enc: Tokenizer, steps: int = 10):
-    bpb_tot = 0
-
-    for _ in range(steps):
-        xs, ys = dl.next()
-
-        logits = model(xs)
-
-        per_token_loss = F.cross_entropy(
-            logits.view(-1, logits.size(-1)), ys.view(-1), reduction="none"
-        ).view(-1)
-
-        token_bytes = torch.tensor(
-            [
-                len(enc.decode_single(token).encode("utf-8"))
-                for token in xs.view(-1).cpu().numpy()
-            ]
-        )
-
-        tokens_per_byte = xs.numel() / token_bytes.sum()
-
-        loss = per_token_loss.mean()
-
-        bpb = tokens_per_byte * loss / math.log(2)
-
-        bpb_tot += bpb
-    return bpb_tot / steps
+from eval_bpb import calc_bpb
 
 
 # from https://github.com/karpathy/nanoGPT/
